@@ -11,6 +11,7 @@
         <module>hl-eureka</module>
         <module>hl-gateway</module>
         <module>hl-common</module>
+        <module>hl-services</module>
     </modules>
     <packaging>pom</packaging>
 

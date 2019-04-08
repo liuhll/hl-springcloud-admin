@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: hl-product
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL:http://service1:8000/eureka}
