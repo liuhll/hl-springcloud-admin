@@ -1,5 +1,8 @@
 package com.liuhll.hl.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum ResultCode {
     Ok(0,"成功"),
     UnAuthentication(1,"未认证"),
