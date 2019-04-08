@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: hl-zuul-gateway
+server:
+  port: 9000
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SEVICE_URLS:http://service1:8000/eureka}
