@@ -10,6 +10,7 @@
     <modules>
         <module>hl-eureka</module>
         <module>hl-gateway</module>
+        <module>hl-common</module>
     </modules>
     <packaging>pom</packaging>
 
