@@ -1,10 +1,10 @@
 server:
-  port: 8091
+  port: 8090
   servlet:
-    context-path: /product
+    context-path: /identity
 spring:
   application:
-    name: hl-product
+    name: hl-identity
   jpa:
     show-sql: true
     hibernate:
@@ -13,7 +13,7 @@ spring:
       hibernate.format_sql: true
     open-in-view: false
   datasource:
-    url: jdbc:mysql://127.0.0.1:13306/product_data?autoReconnect=true
+    url: jdbc:mysql://127.0.0.1:13306/identity_data?autoReconnect=true
     username: root
     password: qwe!P4ss
     tomcat:
@@ -27,7 +27,7 @@ eureka:
       defaultZone: ${EUREKA_SERVICE_URL:http://service1:8000/eureka}
 
 swagger:
-  title: 产品服务组件
-  description: 提供产品相关服务接口
+  title: 身份认证与授权组件
+  description: 提供用户登录、身份认证与授权相关接口
   version: v1.0.0
   enable: true

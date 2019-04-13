@@ -1,5 +1,6 @@
-package com.liuhll.hl.product.conf;
+package com.liuhll.hl.common.conf;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -14,8 +15,20 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class Swagger2Config {
 
+    @Value("${swagger.title}")
+    private String appTitle;
+
+    @Value("${swagger.description}")
+    private String appDesc;
+
+    @Value("${swagger.version}")
+    private String appVersion;
+
+    @Value("${swagger.enable}")
+    private boolean enable;
+
     @Bean
-    public Docket getApis(){
+    public Docket getApis() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(getApiInfo())
                 .select()
@@ -23,17 +36,15 @@ public class Swagger2Config {
                 .paths(PathSelectors.any())
                 .build()
                 .pathMapping("/")
+                .enable(enable)
                 ;
     }
 
-    private ApiInfo getApiInfo()
-    {
+    private ApiInfo getApiInfo() {
         return new ApiInfoBuilder()
-                .title("product server app component")
-                .description("product server api docs")
-                .version("v1.0.0")
+                .title(appTitle)
+                .description(appDesc)
+                .version(appVersion)
                 .build();
     }
-
-
 }

@@ -29,6 +29,18 @@
             <groupId>javax.persistence</groupId>
             <artifactId>javax.persistence-api</artifactId>
         </dependency>
+
+        <!--swagger2 api docs-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
     </dependencies>
 
 
