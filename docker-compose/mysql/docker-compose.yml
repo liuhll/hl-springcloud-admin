@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "qwe!P4ss"
+      MYSQL_USER: "hl"
+      MYSQL_PASSWORD: "qwe!P4ss"
+    volumes:
+      - ./.mysql/data:/var/lib/mysql
+    ports:
+      - "13306:3306"
+    networks:
+     - hl_service_net
+networks:
+  hl_service_net:
+    driver: bridge
+    name: hl_spring_cloud_sample_network
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.31.0.1/16
