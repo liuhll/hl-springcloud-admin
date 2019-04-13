@@ -1,8 +1,8 @@
-package com.liuhll.hl.advice;
+package com.liuhll.hl.common.advice;
 
-import com.liuhll.hl.annotation.IgnoreResponseAdvice;
-import com.liuhll.hl.utils.ResponseResultUtil;
-import com.liuhll.hl.vo.ResponseResult;
+import com.liuhll.hl.common.annotation.IgnoreResponseAdvice;
+import com.liuhll.hl.common.utils.ResponseResultUtil;
+import com.liuhll.hl.common.vo.ResponseResult;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -10,6 +10,8 @@ import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
+
+import java.util.regex.Pattern;
 
 @RestControllerAdvice
 public class CommonResponseDataAdvice implements ResponseBodyAdvice<Object> {
@@ -29,6 +31,9 @@ public class CommonResponseDataAdvice implements ResponseBodyAdvice<Object> {
     public Object beforeBodyWrite(Object o, MethodParameter methodParameter,
                                   MediaType mediaType, Class<? extends HttpMessageConverter<?>> aClass,
                                   ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
+        if (serverHttpRequest.getURI().getPath().contains("swagger") || serverHttpRequest.getURI().getPath().contains("api-docs")){
+            return  o;
+        }
         if (null == o){
             return ResponseResultUtil.success(o);
         }
@@ -38,4 +43,5 @@ public class CommonResponseDataAdvice implements ResponseBodyAdvice<Object> {
         return ResponseResultUtil.success(o);
 
     }
+
 }

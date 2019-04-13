@@ -1,4 +1,4 @@
-package com.liuhll.hl.domain.auditing;
+package com.liuhll.hl.common.domain.auditing;
 
 import lombok.Data;
 

@@ -1,6 +1,6 @@
-package com.liuhll.hl.exception;
+package com.liuhll.hl.common.exception;
 
-import com.liuhll.hl.enums.ResultCode;
+import com.liuhll.hl.common.enums.ResultCode;
 
 public class UnAuthorizedException extends HlException {
     public UnAuthorizedException(String errorMessage){

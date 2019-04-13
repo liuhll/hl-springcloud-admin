@@ -1,4 +1,4 @@
-package com.liuhll.hl.domain.auditing;
+package com.liuhll.hl.common.domain.auditing;
 
 import lombok.Data;
 
@@ -7,8 +7,7 @@ import javax.persistence.Column;
 import java.util.Date;
 
 @Data
-public abstract class ModificationAudited {
-
+public abstract class FullAudited extends CreationAudited {
     @Basic
     @Column(name = "update_by")
     private Long updateBy;

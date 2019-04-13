@@ -1,7 +1,7 @@
-package com.liuhll.hl.utils;
+package com.liuhll.hl.common.utils;
 
-import com.liuhll.hl.enums.ResultCode;
-import com.liuhll.hl.vo.ResponseResult;
+import com.liuhll.hl.common.enums.ResultCode;
+import com.liuhll.hl.common.vo.ResponseResult;
 
 public class ResponseResultUtil {
 

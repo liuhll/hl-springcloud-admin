@@ -1,4 +1,4 @@
-package com.liuhll.hl.annotation;
+package com.liuhll.hl.common.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

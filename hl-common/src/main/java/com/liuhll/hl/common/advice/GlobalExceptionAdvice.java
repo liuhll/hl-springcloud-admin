@@ -1,9 +1,9 @@
-package com.liuhll.hl.advice;
+package com.liuhll.hl.common.advice;
 
-import com.liuhll.hl.enums.ResultCode;
-import com.liuhll.hl.exception.HlException;
-import com.liuhll.hl.utils.ResponseResultUtil;
-import com.liuhll.hl.vo.ResponseResult;
+import com.liuhll.hl.common.enums.ResultCode;
+import com.liuhll.hl.common.exception.HlException;
+import com.liuhll.hl.common.utils.ResponseResultUtil;
+import com.liuhll.hl.common.vo.ResponseResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

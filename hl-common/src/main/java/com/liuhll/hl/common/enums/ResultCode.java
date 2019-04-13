@@ -1,4 +1,4 @@
-package com.liuhll.hl.enums;
+package com.liuhll.hl.common.enums;
 
 import lombok.Getter;
 

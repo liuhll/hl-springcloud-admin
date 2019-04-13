@@ -1,7 +1,7 @@
-package com.liuhll.hl.vo;
+package com.liuhll.hl.common.vo;
 
 
-import com.liuhll.hl.enums.ResultCode;
+import com.liuhll.hl.common.enums.ResultCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
