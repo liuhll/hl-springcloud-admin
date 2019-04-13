@@ -20,7 +20,7 @@ spring:
       max-active: 4
       min-idle: 2
       initial-size: 2
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
 eureka:
   client:
     service-url:
