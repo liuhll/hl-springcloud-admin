@@ -31,3 +31,4 @@ swagger:
   description: 提供用户登录、身份认证与授权相关接口
   version: v1.0.0
   enable: true
+  controller-package-name: com.liuhll.hl.identity.controller

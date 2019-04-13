@@ -26,13 +26,15 @@ public class Swagger2Config {
 
     @Value("${swagger.enable}")
     private boolean enable;
+    @Value("${swagger.controller-package-name}")
+    private String controllerPackageName;
 
     @Bean
     public Docket getApis() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(getApiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.liuhll.hl.product.controller"))
+                .apis(RequestHandlerSelectors.basePackage(controllerPackageName))
                 .paths(PathSelectors.any())
                 .build()
                 .pathMapping("/")

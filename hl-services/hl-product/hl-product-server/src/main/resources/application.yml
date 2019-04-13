@@ -31,3 +31,4 @@ swagger:
   description: 提供产品相关服务接口
   version: v1.0.0
   enable: true
+  controller-package-name: com.liuhll.hl.product.controller
