@@ -1,6 +1,6 @@
 package com.liuhll.hl.product.domain.entity;
 
-import com.liuhll.hl.domain.auditing.FullAudited;
+import com.liuhll.hl.common.domain.auditing.FullAudited;
 import com.liuhll.hl.product.domain.models.CommonStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;

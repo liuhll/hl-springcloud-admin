@@ -12,6 +12,7 @@
     <artifactId>hl-services</artifactId>
     <name>hl-services</name>
     <description>manager hl services</description>
+
     <modules>
         <module>hl-product</module>
     </modules>
