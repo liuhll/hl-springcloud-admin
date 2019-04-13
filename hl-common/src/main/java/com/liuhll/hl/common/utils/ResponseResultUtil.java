@@ -25,5 +25,10 @@ public class ResponseResultUtil {
         result.setMessage(ex.getMessage());
         return result;
     }
-
+    public static <T> ResponseResult<T> error(ResultCode code,String errorMessage){
+        ResponseResult<T> result = new ResponseResult<>();
+        result.setCode(code);
+        result.setMessage(errorMessage);
+        return result;
+    }
 }
