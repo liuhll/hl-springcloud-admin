@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/v1")
 public class LoginController {
 
     @Autowired
@@ -17,7 +18,7 @@ public class LoginController {
         return authService.login(input.getUserName(), input.getPassword());
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/api/user/{id}")
     public String UserInfo(@PathVariable String id) {
         return "liuhll";
     }

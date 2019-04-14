@@ -2,7 +2,7 @@ package com.liuhll.hl.common.exception;
 
 import com.liuhll.hl.common.enums.ResultCode;
 
-public class HlException extends Exception {
+public class HlException extends RuntimeException {
 
     public HlException(String exceptionMessage, ResultCode errorCode){
         super(exceptionMessage);
