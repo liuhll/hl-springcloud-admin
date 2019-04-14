@@ -9,6 +9,7 @@ public enum ResultCode {
     UnAuthorized(2,"未授权"),
     BusinessError(3,"业务异常"),
     PlatformException(4,"框架异常"),
+    FriendlyTips(5,""),
     ;
 
     private int code;
