@@ -3,22 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>hl-springcloud</artifactId>
+        <artifactId>hl-services</artifactId>
         <groupId>com.liuhll.hl</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hl-services</artifactId>
-    <name>hl-services</name>
-    <description>manager hl services</description>
-
+    <artifactId>hl-organization</artifactId>
+    <name>hl-organization</name>
+    <description>hl organization app module</description>
     <modules>
-        <module>hl-product</module>
-        <module>hl-identity</module>
-        <module>hl-basicdata</module>
-        <module>hl-organization</module>
+        <module>hl-organization-server</module>
     </modules>
+    <version>${hl.vsersion}</version>
     <packaging>pom</packaging>
-
 </project>
