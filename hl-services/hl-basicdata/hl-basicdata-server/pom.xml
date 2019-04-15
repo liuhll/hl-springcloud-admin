@@ -11,14 +11,9 @@
 
     <artifactId>hl-basicdata-server</artifactId>
     <name>hl-basicdata-server</name>
-    <description>baisc data app</description>
+    <description>basic data app</description>
     <version>${hl.vsersion}</version>
     <dependencies>
-        <dependency>
-            <groupId>com.liuhll.hl</groupId>
-            <artifactId>hl-identity-common</artifactId>
-            <version>${hl.vsersion}</version>
-        </dependency>
         <dependency>
             <groupId>com.liuhll.hl</groupId>
             <artifactId>hl-common</artifactId>

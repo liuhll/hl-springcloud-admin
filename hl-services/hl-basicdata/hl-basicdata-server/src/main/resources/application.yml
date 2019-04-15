@@ -4,7 +4,7 @@ server:
     context-path: /basicdata
 spring:
   application:
-    name: hl-identity
+    name: hl-basicdata
   jpa:
     show-sql: true
     hibernate:
