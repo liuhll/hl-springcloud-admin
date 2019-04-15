@@ -19,7 +19,7 @@ import java.util.Map;
 @Component
 @Data
 @Slf4j
-public class JwtTokenUtil implements Serializable {
+public class JwtTokenProvider implements Serializable {
 
     private String secret;
 

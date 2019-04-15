@@ -2,7 +2,7 @@ package com.liuhll.hl.identity.domain.service.impl;
 
 import com.liuhll.hl.common.exception.UnAuthenticationException;
 import com.liuhll.hl.identity.domain.service.AuthService;
-import com.liuhll.hl.identity.jwt.JwtTokenUtil;
+import com.liuhll.hl.identity.jwt.JwtTokenProvider;
 import com.liuhll.hl.identity.jwt.JwtUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -10,7 +10,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,7 +21,7 @@ public class AuthServiceImpl implements AuthService {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private JwtTokenUtil jwtTokenUtil;
+    private JwtTokenProvider jwtTokenProvider;
 
 
     @Override
@@ -39,7 +38,7 @@ public class AuthServiceImpl implements AuthService {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         JwtUser jwtUser = (JwtUser) jwtUserDetailsService.loadUserByUsername(userName);
-        String token = jwtTokenUtil.generateToken(jwtUser);
+        String token = jwtTokenProvider.generateToken(jwtUser);
         return token;
     }
 }

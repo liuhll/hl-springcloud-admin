@@ -27,7 +27,7 @@ import java.io.IOException;
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
     @Autowired
-    private JwtTokenUtil jwtTokenUtil;
+    private JwtTokenProvider jwtTokenProvider;
 
     @Autowired
     private JwtUserDetailsServiceImpl jwtUserDetailsService;
@@ -37,15 +37,15 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
-        String jwtToken = jwtTokenUtil.resolveToken(request);
+        String jwtToken = jwtTokenProvider.resolveToken(request);
         try {
             if (jwtToken != null && StringUtils.isNotEmpty(jwtToken)) {
-                String username = jwtTokenUtil.getUsernameFromToken(jwtToken);
-                jwtTokenUtil.validateToken(jwtToken);//验证令牌
+                String username = jwtTokenProvider.getUsernameFromToken(jwtToken);
+                jwtTokenProvider.validateToken(jwtToken);//验证令牌
 
                 if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                     UserDetails userDetails = jwtUserDetailsService.loadUserByUsername(username);
-                    if (jwtTokenUtil.validateToken(jwtToken)) {
+                    if (jwtTokenProvider.validateToken(jwtToken)) {
                         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                         authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                         SecurityContextHolder.getContext().setAuthentication(authentication);
