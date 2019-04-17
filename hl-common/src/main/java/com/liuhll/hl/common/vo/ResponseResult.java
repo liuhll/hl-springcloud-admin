@@ -24,4 +24,5 @@ public class ResponseResult<T> implements Serializable {
         this.Data = data;
         this.message = code.toString();
     }
+
 }

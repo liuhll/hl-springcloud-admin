@@ -14,6 +14,7 @@
     <modules>
         <module>hl-identity-server</module>
         <module>hl-identity-common</module>
+        <module>hl-identity-client</module>
     </modules>
 
 </project>

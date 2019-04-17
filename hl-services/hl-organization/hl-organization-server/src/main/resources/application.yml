@@ -25,9 +25,31 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_SERVICE_URL:http://service1:8000/eureka}
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 1000 ##并发执行的最大线程数，默认10
+      maxQueueSize: 1000 ##BlockingQueue的最大队列数
+      queueSizeRejectionThreshold: 500 ##即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 110000
+
 swagger:
   title: 组织机构服务组件
   description: 提供组织机构服务相关结构
   version: v1.0.0
   enable: true
   controller-package-name: com.liuhll.hl.organization.controller
+
+auth:
+  service-id: hl-identity
+  client:
+    id: hl-organization
+    secret: 1234567
+  user:
+    token-header: Authorization

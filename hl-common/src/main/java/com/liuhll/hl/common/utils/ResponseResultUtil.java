@@ -19,14 +19,11 @@ public class ResponseResultUtil {
         return success(data,message);
     }
 
-    public static <T> ResponseResult<T> error(ResultCode code,Exception ex){
-        ResponseResult<T> result = new ResponseResult<>();
-        result.setCode(code);
-        result.setMessage(ex.getMessage());
-        return result;
+    public static ResponseResult<String> error(ResultCode code,Exception ex){
+        return error(code,ex.getMessage());
     }
-    public static <T> ResponseResult<T> error(ResultCode code,String errorMessage){
-        ResponseResult<T> result = new ResponseResult<>();
+    public static ResponseResult<String> error(ResultCode code,String errorMessage){
+        ResponseResult<String> result = new ResponseResult<>();
         result.setCode(code);
         result.setMessage(errorMessage);
         return result;

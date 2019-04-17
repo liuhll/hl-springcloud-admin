@@ -7,3 +7,11 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_SEVICE_URLS:http://service1:8000/eureka}
+zuul:
+  routes:
+    ignored-services: "*"
+    sensitive-headers:
+    hl-identity:
+      path: /identity/**
+      serviceId: hl-identity
+      strip-prefix: false

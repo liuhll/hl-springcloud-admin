@@ -1,5 +1,6 @@
 package com.liuhll.hl.identity.conf;
 
+
 import com.liuhll.hl.identity.domain.service.impl.JwtUserDetailsServiceImpl;
 import com.liuhll.hl.identity.jwt.JwtAuthenticationTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/identity").permitAll()
                 .antMatchers("/**/swagger*", "/**/swagger*/**", "/**/webjars/**", "/**/v2/api-docs", "/**/csrf").permitAll()
-                .antMatchers("/**/login").permitAll()
+                .antMatchers("/**/login","/**/client/jwtsecret").permitAll()
                 .and()
                 .authorizeRequests()
                 .anyRequest()
@@ -54,13 +55,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtUserDetailsServiceImpl userDetailsService;
 
-    @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
+    @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
-    @Bean
+
+    @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }

@@ -12,9 +12,9 @@
     <artifactId>hl-organization</artifactId>
     <name>hl-organization</name>
     <description>hl organization app module</description>
+    <packaging>pom</packaging>
     <modules>
         <module>hl-organization-server</module>
     </modules>
-    <version>${hl.vsersion}</version>
-    <packaging>pom</packaging>
+
 </project>

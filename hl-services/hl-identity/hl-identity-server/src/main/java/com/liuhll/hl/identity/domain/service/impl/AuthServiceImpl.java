@@ -1,9 +1,12 @@
 package com.liuhll.hl.identity.domain.service.impl;
 
 import com.liuhll.hl.common.exception.UnAuthenticationException;
+import com.liuhll.hl.identity.common.jwt.JwtUserClaims;
+import com.liuhll.hl.identity.conf.JwtConfig;
 import com.liuhll.hl.identity.domain.service.AuthService;
-import com.liuhll.hl.identity.jwt.JwtTokenProvider;
+import com.liuhll.hl.identity.common.jwt.JwtTokenProvider;
 import com.liuhll.hl.identity.jwt.JwtUser;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -23,6 +26,9 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     private JwtTokenProvider jwtTokenProvider;
 
+    @Autowired
+    private JwtConfig jwtConfig;
+
 
     @Override
     public String login(String userName, String password) throws UnAuthenticationException {
@@ -38,7 +44,9 @@ public class AuthServiceImpl implements AuthService {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         JwtUser jwtUser = (JwtUser) jwtUserDetailsService.loadUserByUsername(userName);
-        String token = jwtTokenProvider.generateToken(jwtUser);
+        JwtUserClaims jwtCalimsInfo = new JwtUserClaims();
+        BeanUtils.copyProperties(jwtUser,jwtCalimsInfo);
+        String token = jwtTokenProvider.generateToken(jwtCalimsInfo,jwtConfig.getExpiration(),jwtConfig.getSecret());
         return token;
     }
 }

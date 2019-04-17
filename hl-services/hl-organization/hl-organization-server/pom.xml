@@ -5,7 +5,7 @@
     <parent>
         <artifactId>hl-organization</artifactId>
         <groupId>com.liuhll.hl</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,6 +13,8 @@
     <name>hl-organization-server</name>
     <description>organization service app</description>
     <version>${hl.vsersion}</version>
+    <packaging>jar</packaging>
+
     <dependencies>
         <dependency>
             <groupId>com.liuhll.hl</groupId>
@@ -28,16 +30,9 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
 
-        <!--jwt-->
         <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>0.9.0</version>
-        </dependency>
-        <!--Spring Security-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <!-- Java Persistence API, ORM 规范 -->
@@ -59,5 +54,12 @@
             <version>${mysql.connector.version}</version>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.liuhll.hl</groupId>
+            <artifactId>hl-identity-client</artifactId>
+            <version>${hl.vsersion}</version>
+        </dependency>
+
     </dependencies>
 </project>
