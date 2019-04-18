@@ -5,6 +5,8 @@ server:
 spring:
   application:
     name: hl-organization
+  profiles:
+    active: ${HL_ENV:dev}
   jpa:
     show-sql: true
     hibernate:

@@ -1,0 +1,4 @@
+spring:
+  devtools:
+    restart:
+      additional-exclude: static/**,public/**
