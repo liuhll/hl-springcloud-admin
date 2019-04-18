@@ -33,12 +33,20 @@ public class HlContextSession {
         set(CommonConstants.CONTEXT_KEY_USERNAME,username);
     }
 
+    public static void setAuthToken(String token){
+        set(CommonConstants.CONTEXT_KEY_TOKEN,token);
+    }
+
     public static String getUserId(){
         return returnStringValue(get(CommonConstants.CONTEXT_KEY_USER_ID));
     }
 
     public static String getUserName(){
         return returnStringValue(get(CommonConstants.CONTEXT_KEY_USERNAME));
+    }
+
+    public static String getAuthToken(){
+        return returnStringValue(get(CommonConstants.CONTEXT_KEY_TOKEN));
     }
 
     private static String returnStringValue(Object value) {

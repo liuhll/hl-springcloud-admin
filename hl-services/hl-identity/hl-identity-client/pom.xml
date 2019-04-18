@@ -30,5 +30,9 @@
             <artifactId>spring-cloud-openfeign-core</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-httpclient</artifactId>
+        </dependency>
     </dependencies>
 </project>

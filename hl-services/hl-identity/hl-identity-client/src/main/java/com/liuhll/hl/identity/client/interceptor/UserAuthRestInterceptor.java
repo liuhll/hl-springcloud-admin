@@ -52,6 +52,7 @@ public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
         JwtUserClaims userClaims = jwtTokenProvider.getJwtUserClaims(token,userAuthConfig.getJwtSecret());
         HlContextSession.setUserId(userClaims.getUserid());
         HlContextSession.setUserName(userClaims.getUsername());
+        HlContextSession.setAuthToken(token);
         return super.preHandle(request,response,handler);
     }
 

@@ -10,6 +10,7 @@ public enum ResultCode {
     BusinessError(3,"业务异常"),
     PlatformException(4,"框架异常"),
     FriendlyTips(5,""),
+    ClentForbidden(6,"无权访问该应用")
     ;
 
     private int code;

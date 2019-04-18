@@ -1,5 +1,6 @@
 package com.liuhll.hl.organization.conf;
 
+import com.liuhll.hl.identity.client.interceptor.ServiceAuthRestInterceptor;
 import com.liuhll.hl.identity.client.interceptor.UserAuthRestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,9 +19,16 @@ public class WebConfiguration implements WebMvcConfigurer {
         return new UserAuthRestInterceptor();
     }
 
+    @Bean
+    ServiceAuthRestInterceptor getServiceAuthRestInterceptor(){
+        return new ServiceAuthRestInterceptor();
+    }
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(getUserAuthRestInterceptor()).
+                addPathPatterns(getIncludePathPatterns());
+        registry.addInterceptor(getServiceAuthRestInterceptor()).
                 addPathPatterns(getIncludePathPatterns());
     }
 
