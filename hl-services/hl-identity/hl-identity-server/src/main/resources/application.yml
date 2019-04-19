@@ -38,6 +38,7 @@ swagger:
 auth:
   whitelist:
     - /v1/login
+#    - /organization/v1/api/org
 
 jwt:
   secret: qY9Z3TMrSoqiolNQcgTYkkvCzN62ArNHL3XgtDww86X9WZGO6cAo7cz3yQX0qeJj

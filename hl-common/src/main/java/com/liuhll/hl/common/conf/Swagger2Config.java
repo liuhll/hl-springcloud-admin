@@ -1,6 +1,7 @@
 package com.liuhll.hl.common.conf;
 
 import com.google.common.collect.Lists;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,6 +40,9 @@ public class Swagger2Config {
     @Value("${jwt.header:Authorization}")
     private String authorizationHeader;
 
+    @Autowired
+    private SecurityWhitelistConfig whitelistConfig;
+
     @Bean
     public Docket getApis() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -65,7 +69,7 @@ public class Swagger2Config {
     private SecurityContext securityContext() {
         return SecurityContext.builder()
                 .securityReferences(defaultAuth())
-                .forPaths(PathSelectors.ant("/**/api/**"))//配置哪些url需要做oauth2认证
+                .forPaths(PathSelectors.ant("/**/api/**"))
                 .build();
     }
 

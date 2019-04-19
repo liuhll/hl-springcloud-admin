@@ -2,6 +2,7 @@ package com.liuhll.hl.identity.client.interceptor;
 
 import com.liuhll.hl.common.exception.UnAuthorizedException;
 import com.liuhll.hl.common.runtime.session.HlContextSession;
+import com.liuhll.hl.common.security.SecurityWhitelistHandler;
 import com.liuhll.hl.identity.client.annotation.IgnoreUserToken;
 import com.liuhll.hl.identity.client.conf.UserAuthConfig;
 import com.liuhll.hl.identity.common.jwt.JwtTokenProvider;
@@ -25,6 +26,9 @@ public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
     @Autowired
     private UserAuthConfig userAuthConfig;
 
+    @Autowired
+    private SecurityWhitelistHandler securityWhitelistHandler;
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HandlerMethod handlerMethod = (HandlerMethod) handler;
@@ -35,6 +39,10 @@ public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
         }
         if (annotation != null) {
             return super.preHandle(request, response, handler);
+        }
+        String webapi = request.getRequestURI();
+        if (securityWhitelistHandler.isPermitAuth(webapi)){
+            return super.preHandle(request,response,handler);
         }
         String token = jwtTokenProvider.resolveToken(request,userAuthConfig.getTokenHeader());
         if (StringUtils.isEmpty(token)) {

@@ -50,6 +50,8 @@ swagger:
 
 auth:
   service-id: hl-identity
+#  whitelist:
+#    - /organization/v1/api/org
   client:
     id: hl-organization
     secret: 1234567

@@ -2,6 +2,7 @@ package com.liuhll.hl.identity.client.interceptor;
 
 import com.liuhll.hl.common.enums.ResultCode;
 import com.liuhll.hl.common.exception.ClientForbiddenException;
+import com.liuhll.hl.common.security.SecurityWhitelistHandler;
 import com.liuhll.hl.common.vo.ResponseResult;
 import com.liuhll.hl.identity.client.annotation.IgnoreClientToken;
 import com.liuhll.hl.identity.client.conf.ServiceAuthConfig;
@@ -26,6 +27,9 @@ public class ServiceAuthRestInterceptor extends HandlerInterceptorAdapter {
     @Autowired
     private ServiceAuthClient serviceAuthClient;
 
+    @Autowired
+    private SecurityWhitelistHandler securityWhitelistHandler;
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HandlerMethod handlerMethod = (HandlerMethod) handler;
@@ -37,6 +41,11 @@ public class ServiceAuthRestInterceptor extends HandlerInterceptorAdapter {
         if (annotation != null) {
             return super.preHandle(request, response, handler);
         }
+        String webapi = request.getRequestURI();
+        if (securityWhitelistHandler.isPermitAuth(webapi)){
+            return super.preHandle(request,response,handler);
+        }
+
         List<String> allowedClient = serviceAuthClient.getAllowedClients(serviceAuthConfig.getClientId(),serviceAuthConfig.getClientSecret());
 
         if (allowedClient.stream().anyMatch(p->p.equals(serviceAuthConfig.getClientId()))){
