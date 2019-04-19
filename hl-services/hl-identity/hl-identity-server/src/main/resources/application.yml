@@ -35,6 +35,10 @@ swagger:
   enable: true
   controller-package-name: com.liuhll.hl.identity.controller
 
+auth:
+  whitelist:
+    - /v1/login
+
 jwt:
   secret: qY9Z3TMrSoqiolNQcgTYkkvCzN62ArNHL3XgtDww86X9WZGO6cAo7cz3yQX0qeJj
   expiration: 1000000

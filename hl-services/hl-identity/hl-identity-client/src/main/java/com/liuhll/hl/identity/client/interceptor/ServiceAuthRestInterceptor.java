@@ -26,12 +26,6 @@ public class ServiceAuthRestInterceptor extends HandlerInterceptorAdapter {
     @Autowired
     private ServiceAuthClient serviceAuthClient;
 
-    @Autowired
-    private UserAuthConfig userAuthConfig;
-
-    @Autowired
-    private JwtTokenProvider jwtTokenProvider;
-
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HandlerMethod handlerMethod = (HandlerMethod) handler;

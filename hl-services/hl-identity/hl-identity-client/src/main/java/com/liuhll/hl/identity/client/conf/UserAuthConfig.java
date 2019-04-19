@@ -9,6 +9,7 @@ public class UserAuthConfig {
     @Value("${auth.user.token-header}")
     private String tokenHeader;
 
+    @Value("${auth.user.jwt-secret}")
     private String jwtSecret;
 
 
