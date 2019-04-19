@@ -29,7 +29,7 @@ eureka:
       defaultZone: ${EUREKA_SERVICE_URL:http://service1:8000/eureka}
 
 swagger:
-  title: 身份认证与授权组件
+  title: hl-identity
   description: 提供用户登录、身份认证与授权相关接口
   version: v1.0.0
   enable: true

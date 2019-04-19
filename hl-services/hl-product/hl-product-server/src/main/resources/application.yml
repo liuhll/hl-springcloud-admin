@@ -29,7 +29,7 @@ eureka:
       defaultZone: ${EUREKA_SERVICE_URL:http://service1:8000/eureka}
 
 swagger:
-  title: 产品服务组件
+  title: hl-product
   description: 提供产品相关服务接口
   version: v1.0.0
   enable: true

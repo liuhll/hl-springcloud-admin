@@ -42,7 +42,7 @@ hystrix:
             timeoutInMilliseconds: 110000
 
 swagger:
-  title: 组织机构服务组件
+  title: hl-organization
   description: 提供组织机构服务相关结构
   version: v1.0.0
   enable: true
