@@ -1,9 +1,10 @@
 /*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2019/4/15 星期一 21:03:56                       */
+/* DB name:      hl_organization                                */
+/* Created on:     2019/4/21 星期日 1:15:16                        */
 /*==============================================================*/
 
-drop database if exists organizetion_db;
+CREATE DATABASE hl_organization DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE hl_organization;
 
 drop table if exists org_corporation;
 
@@ -16,11 +17,6 @@ drop table if exists org_dept_user;
 drop table if exists org_position;
 
 /*==============================================================*/
-/* create db                                      */
-/*==============================================================*/
-create database organizetion_db;
-
-/*==============================================================*/
 /* Table: org_corporation                                       */
 /*==============================================================*/
 create table org_corporation
@@ -29,7 +25,7 @@ create table org_corporation
    Code                 varchar(50) not null comment '唯一编码',
    Name                 varchar(50) not null comment '公司名称',
    ParentId             bigint comment '母公司Id',
-   Type                 char(10) comment '0.集团公司;1.单体公司',
+   Type                 int comment '0.集团公司;1.单体公司',
    Mold                 int not null comment '0.母公司;2.子公司3.控股公司',
    Address              varchar(200) not null comment '公司地址',
    Logo                 varchar(50) comment 'logo名称',
