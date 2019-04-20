@@ -39,5 +39,7 @@ secrets.yml
 .gradletasknamecache
 .sts4-cache
 .mysql
-**/.pdb
-**/.pjb
+**/*.pdb
+*.pdb
+**/*.pjb
+*.pjb
