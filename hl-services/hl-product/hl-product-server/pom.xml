@@ -13,7 +13,9 @@
     <description>hl product server app</description>
     <version>${hl.vsersion}</version>
     <packaging>jar</packaging>
-
+    <properties>
+        <build-hl-spring-jar>true</build-hl-spring-jar>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.liuhll.hl</groupId>
