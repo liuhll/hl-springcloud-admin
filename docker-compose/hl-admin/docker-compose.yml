@@ -1,0 +1,92 @@
+version: '3.7'
+
+services:
+  hladmin.eureka:
+    image: hladmin/eureka:${TAG:-latest}
+    build:
+      context: ../..
+      dockerfile: hl-eureka/Dockerfile
+      args:
+        JAR_FILE: hl-eureka/target/hl-eureka-${HL_VERSION}.jar
+        PORT: 8000
+        APP_NAME: hl-eureka-${HL_VERSION}.jar
+    networks:
+      - hl_service_net
+    ports:
+      - "8000:8000"
+
+  hladmin.gateway:
+    image: hladmin/gateway:${TAG:-latest}
+    build:
+      context: ../..
+      dockerfile: hl-gateway/Dockerfile
+      args:
+        JAR_FILE: hl-gateway/target/hl-gateway-${HL_VERSION}.jar
+        PORT: 8000
+        APP_NAME: hl-gateway-${HL_VERSION}.jar
+    networks:
+      - hl_service_net
+    ports:
+      - "8001:8000"
+
+  hladmin.basicdata:
+    image: hladmin/basicdata:${TAG:-latest}
+    build:
+      context: ../..
+      dockerfile: hl-services/hl-basicdata/hl-basicdata-server/Dockerfile
+      args:
+        JAR_FILE: hl-services/hl-basicdata/hl-basicdata-server/target/hl-basicdata-server-${HL_VERSION}.jar
+        PORT: 8080
+        APP_NAME: hl-basicdata-server-${HL_VERSION}.jar
+    networks:
+      - hl_service_net
+    ports:
+      - "8002:8080"
+
+  hladmin.identity:
+    image: hladmin/identity:${TAG:-latest}
+    build:
+      context: ../..
+      dockerfile: hl-services/hl-identity/hl-identity-server/Dockerfile
+      args:
+        JAR_FILE: hl-services/hl-identity/hl-identity-server/target/hl-identity-server-${HL_VERSION}.jar
+        PORT: 8080
+        APP_NAME: hl-identity-server-${HL_VERSION}.jar
+    networks:
+      - hl_service_net
+    ports:
+      - "8003:8080"
+
+  hladmin.organization:
+    image: hladmin/organization:${TAG:-latest}
+    build:
+      context: ../..
+      dockerfile: hl-services/hl-organization/hl-organization-server/Dockerfile
+      args:
+        JAR_FILE: hl-services/hl-organization/hl-organization-server/target/hl-organization-server-${HL_VERSION}.jar
+        PORT: 8080
+        APP_NAME: hl-organization-server-${HL_VERSION}.jar
+    networks:
+      - hl_service_net
+    ports:
+      - "8004:8080"
+
+  hladmin.product:
+    image: hladmin/product:${TAG:-latest}
+    build:
+      context: ../..
+      dockerfile: hl-services/hl-product/hl-product-server/Dockerfile
+      args:
+        JAR_FILE: hl-services/hl-product/hl-product-server/target/hl-product-server-${HL_VERSION}.jar
+        PORT: 8080
+        APP_NAME: hl-product-server-${HL_VERSION}.jar
+    networks:
+      - hl_service_net
+    ports:
+      - "8005:8080"
+
+
+networks:
+  hl_service_net:
+    external:
+      name: hl_spring_cloud_sample_network

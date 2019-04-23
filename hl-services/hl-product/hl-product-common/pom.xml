@@ -14,7 +14,9 @@
     <description>hl product app component</description>
     <version>${hl.vsersion}</version>
     <packaging>jar</packaging>
-
+    <properties>
+        <build-hl-package>true</build-hl-package>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.liuhll.hl</groupId>
@@ -22,7 +24,5 @@
             <version>${hl.vsersion}</version>
         </dependency>
     </dependencies>
-
-
 
 </project>

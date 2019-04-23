@@ -15,7 +15,7 @@ spring:
       hibernate.format_sql: true
     open-in-view: false
   datasource:
-    url: jdbc:mysql://127.0.0.1:13306/organizetion_db?autoReconnect=true
+    url: ${DB_CONN:jdbc:mysql://127.0.0.1:13306/hl_organizetion?autoReconnect=true}
     username: root
     password: qwe!P4ss
     tomcat:

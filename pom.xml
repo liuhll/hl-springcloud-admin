@@ -68,5 +68,51 @@
         </repository>
 
     </repositories>
+    <!--<profiles>-->
+        <!--<profile>-->
+            <!--<id>build-hl-jar</id>-->
+            <!--<activation>-->
+                <!--<activeByDefault>true</activeByDefault>-->
+                <!--<property>-->
+                    <!--<name>build-hl-package</name>-->
+                    <!--<value>true</value>-->
+                <!--</property>-->
+            <!--</activation>-->
+            <!--<build>-->
+                <!--<plugins>-->
+                    <!--<plugin>-->
+                        <!--<groupId>org.apache.maven.plugins</groupId>-->
+                        <!--<artifactId>maven-jar-plugin</artifactId>-->
+                        <!--<version>3.1.1</version>-->
+                        <!--<executions>-->
+                            <!--<execution>-->
+                                <!--<goals>-->
+                                    <!--<goal>test-jar</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+                        <!--</executions>-->
+                    <!--</plugin>-->
+                    <!--<plugin>-->
+                        <!--<groupId>org.apache.maven.plugins</groupId>-->
+                        <!--<artifactId>maven-dependency-plugin</artifactId>-->
+                        <!--<executions>-->
+                            <!--<execution>-->
+                                <!--<id>copy</id>-->
+                                <!--<phase>install</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>copy-dependencies</goal>-->
+                                <!--</goals>-->
+                                <!--<configuration>-->
+                                    <!--<outputDirectory>-->
+                                        <!--${project.build.directory}/lib-->
+                                    <!--</outputDirectory>-->
+                                <!--</configuration>-->
+                            <!--</execution>-->
+                        <!--</executions>-->
+                    <!--</plugin>-->
+                <!--</plugins>-->
 
+            <!--</build>-->
+        <!--</profile>-->
+    <!--</profiles>-->
 </project>

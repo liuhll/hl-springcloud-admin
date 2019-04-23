@@ -12,7 +12,7 @@
     <artifactId>hl-product-server</artifactId>
     <name>hl-product-server</name>
     <description>hl product server app</description>
-    <version>${ad.vsersion}</version>
+    <version>${hl.vsersion}</version>
     <packaging>jar</packaging>
 
     <dependencies>

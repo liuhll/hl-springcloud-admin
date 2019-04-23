@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  hladmin.basicdata:
+    environment:
+      EUREKA_SERVICE_URL: ${EUREKA_SERVICE_URL:-http://hladmin.eureka:8000/eureka}
+      DB_CONN: ${DB_CONN:-jdbc:mysql://mysql:3306/hl_basicdata?autoReconnect=true}
+
+  hladmin.identity:
+    environment:
+      EUREKA_SERVICE_URL: ${EUREKA_SERVICE_URL:-http://hladmin.eureka:8000/eureka}
+      DB_CONN: ${DB_CONN:-jdbc:mysql://mysql:3306/hl_identity?autoReconnect=true}
+
+  hladmin.organization:
+    environment:
+      EUREKA_SERVICE_URL: ${EUREKA_SERVICE_URL:-http://hladmin.eureka:8000/eureka}
+      DB_CONN: ${DB_CONN:-jdbc:mysql://mysql:3306/hl_organization?autoReconnect=true}
+
+  hladmin.product:
+    environment:
+      EUREKA_SERVICE_URL: ${EUREKA_SERVICE_URL:-http://hladmin.eureka:8000/eureka}
+      DB_CONN: ${DB_CONN:-jdbc:mysql://mysql:3306/hl_product?autoReconnect=true}

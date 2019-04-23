@@ -13,6 +13,11 @@
     <name>hl-basicdata-server</name>
     <description>basic data app</description>
     <version>${hl.vsersion}</version>
+
+    <properties>
+        <build-hl-package>true</build-hl-package>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.liuhll.hl</groupId>
@@ -47,4 +52,5 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
+
 </project>

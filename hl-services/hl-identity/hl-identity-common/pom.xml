@@ -14,6 +14,11 @@
     <description>hl identity app common component</description>
     <version>${hl.vsersion}</version>
     <packaging>jar</packaging>
+
+    <properties>
+        <build-hl-package>true</build-hl-package>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.liuhll.hl</groupId>
