@@ -5,7 +5,7 @@
     <parent>
         <artifactId>hl-identity</artifactId>
         <groupId>com.liuhll.hl</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${hl.version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,10 +14,6 @@
     <description>hl identity app common component</description>
     <version>${hl.vsersion}</version>
     <packaging>jar</packaging>
-
-    <properties>
-        <build-hl-package>true</build-hl-package>
-    </properties>
 
     <dependencies>
         <dependency>
