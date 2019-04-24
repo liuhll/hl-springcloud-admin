@@ -6,44 +6,44 @@
 CREATE DATABASE hl_identity DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE hl_identity;
 
-drop table if exists hl_employee;
+drop table if exists auth_employee;
 
-drop table if exists hl_file;
+drop table if exists auth_file;
 
-drop table if exists hl_function;
+drop table if exists auth_function;
 
-drop table if exists hl_menu;
+drop table if exists auth_menu;
 
-drop table if exists hl_menu_function;
+drop table if exists auth_org_role;
 
-drop table if exists hl_org_role;
+drop table if exists auth_permission;
 
-drop table if exists hl_permission;
+drop table if exists auth_permission_file;
 
-drop table if exists hl_permission_file;
+drop table if exists auth_permission_function;
 
-drop table if exists hl_permission_function;
+drop table if exists auth_role_permission;
 
-drop table if exists hl_permission_menu;
+drop table if exists auth_user;
 
-drop table if exists hl_role;
+drop table if exists auth_user_group;
 
-drop table if exists hl_role_permission;
+drop table if exists auth_user_role;
 
-drop table if exists hl_user;
+drop table if exists auth_user_usergroup;
 
-drop table if exists hl_user_group;
+drop table if exists auth_usergroup_role;
 
-drop table if exists hl_user_role;
+drop table if exists authl_menu_function;
 
-drop table if exists hl_user_usergroup;
+drop table if exists authl_permission_menu;
 
-drop table if exists hl_usergroup_role;
+drop table if exists authl_role;
 
 /*==============================================================*/
-/* Table: hl_employee                                           */
+/* Table: auth_employee                                         */
 /*==============================================================*/
-create table hl_employee
+create table auth_employee
 (
    Id                   bigint not null comment '主键',
    UserName             varchar(50) not null comment '用户名',
@@ -70,12 +70,12 @@ create table hl_employee
    primary key (Id)
 );
 
-alter table hl_employee comment '职员表';
+alter table auth_employee comment '职员表';
 
 /*==============================================================*/
-/* Table: hl_file                                               */
+/* Table: auth_file                                             */
 /*==============================================================*/
-create table hl_file
+create table auth_file
 (
    Id                   bigint not null comment '主键',
    Code                 varchar(50) not null comment '编码',
@@ -92,12 +92,12 @@ create table hl_file
    primary key (Id)
 );
 
-alter table hl_file comment '文件表';
+alter table auth_file comment '文件表';
 
 /*==============================================================*/
-/* Table: hl_function                                           */
+/* Table: auth_function                                         */
 /*==============================================================*/
-create table hl_function
+create table auth_function
 (
    Id                   bigint not null comment '主键',
    Code                 varchar(50) not null comment '编码',
@@ -115,12 +115,12 @@ create table hl_function
    primary key (Id)
 );
 
-alter table hl_function comment '功能操作表';
+alter table auth_function comment '功能操作表';
 
 /*==============================================================*/
-/* Table: hl_menu                                               */
+/* Table: auth_menu                                             */
 /*==============================================================*/
-create table hl_menu
+create table auth_menu
 (
    Id                   bigint not null comment '主键',
    Code                 varchar(50) not null comment '菜单编码',
@@ -142,29 +142,12 @@ create table hl_menu
    primary key (Id)
 );
 
-alter table hl_menu comment '菜单表';
+alter table auth_menu comment '菜单表';
 
 /*==============================================================*/
-/* Table: hl_menu_function                                      */
+/* Table: auth_org_role                                         */
 /*==============================================================*/
-create table hl_menu_function
-(
-   Id                   bigint not null comment '主键',
-   MenuId               bigint not null,
-   FunctionId           bigint not null,
-   CreateBy             bigint comment '创建人',
-   CreateTime           datetime comment '创建日期',
-   UpdateBy             bigint comment '修改人',
-   UpdateTime           datetime comment '修改日期',
-   primary key (Id)
-);
-
-alter table hl_menu_function comment '菜单功能关系表';
-
-/*==============================================================*/
-/* Table: hl_org_role                                           */
-/*==============================================================*/
-create table hl_org_role
+create table auth_org_role
 (
    Id                   bigint not null comment '主键',
    OrgId                bigint not null,
@@ -176,12 +159,12 @@ create table hl_org_role
    primary key (Id)
 );
 
-alter table hl_org_role comment '组织机构角色关系表';
+alter table auth_org_role comment '组织机构角色关系表';
 
 /*==============================================================*/
-/* Table: hl_permission                                         */
+/* Table: auth_permission                                       */
 /*==============================================================*/
-create table hl_permission
+create table auth_permission
 (
    Id                   bigint not null comment '主键',
    Code                 varchar(50) not null comment '权限编码',
@@ -197,12 +180,12 @@ create table hl_permission
    primary key (Id)
 );
 
-alter table hl_permission comment '权限表';
+alter table auth_permission comment '权限表';
 
 /*==============================================================*/
-/* Table: hl_permission_file                                    */
+/* Table: auth_permission_file                                  */
 /*==============================================================*/
-create table hl_permission_file
+create table auth_permission_file
 (
    Id                   bigint not null comment '主键',
    PermissionId         bigint not null,
@@ -214,12 +197,12 @@ create table hl_permission_file
    primary key (Id)
 );
 
-alter table hl_permission_file comment '权限文件关系表';
+alter table auth_permission_file comment '权限文件关系表';
 
 /*==============================================================*/
-/* Table: hl_permission_function                                */
+/* Table: auth_permission_function                              */
 /*==============================================================*/
-create table hl_permission_function
+create table auth_permission_function
 (
    Id                   bigint not null comment '主键',
    PermissionId         bigint not null,
@@ -231,49 +214,12 @@ create table hl_permission_function
    primary key (Id)
 );
 
-alter table hl_permission_function comment '权限菜单关系表';
+alter table auth_permission_function comment '权限菜单关系表';
 
 /*==============================================================*/
-/* Table: hl_permission_menu                                    */
+/* Table: auth_role_permission                                  */
 /*==============================================================*/
-create table hl_permission_menu
-(
-   Id                   bigint not null comment '主键',
-   PermissionId         bigint not null,
-   MenuId               bigint not null,
-   CreateBy             bigint comment '创建人',
-   CreateTime           datetime comment '创建日期',
-   UpdateBy             bigint comment '修改人',
-   UpdateTime           datetime comment '修改日期',
-   primary key (Id)
-);
-
-alter table hl_permission_menu comment '权限菜单关系表';
-
-/*==============================================================*/
-/* Table: hl_role                                               */
-/*==============================================================*/
-create table hl_role
-(
-   Id                   bigint not null comment '主键',
-   Code                 varchar(50) not null comment '角色编码',
-   Name                 varchar(50) not null comment '角色名称',
-   Memo                 varchar(100) comment '备注',
-   Status               int not null comment '状态',
-   CreateBy             bigint comment '创建人',
-   CreateTime           datetime comment '创建日期',
-   UpdateBy             bigint comment '修改人',
-   UpdateTime           datetime comment '修改日期',
-   IsDelete             int comment '软删除标识',
-   primary key (Id)
-);
-
-alter table hl_role comment '角色表';
-
-/*==============================================================*/
-/* Table: hl_role_permission                                    */
-/*==============================================================*/
-create table hl_role_permission
+create table auth_role_permission
 (
    Id                   bigint not null comment '主键',
    RoleId               bigint not null,
@@ -285,12 +231,12 @@ create table hl_role_permission
    primary key (Id)
 );
 
-alter table hl_role_permission comment '角色权限表';
+alter table auth_role_permission comment '角色权限表';
 
 /*==============================================================*/
-/* Table: hl_user                                               */
+/* Table: auth_user                                             */
 /*==============================================================*/
-create table hl_user
+create table auth_user
 (
    Id                   bigint not null comment '主键',
    EmployeeId           bigint not null comment '员工Id',
@@ -307,12 +253,12 @@ create table hl_user
    primary key (Id)
 );
 
-alter table hl_user comment '用户表';
+alter table auth_user comment '用户表';
 
 /*==============================================================*/
-/* Table: hl_user_group                                         */
+/* Table: auth_user_group                                       */
 /*==============================================================*/
-create table hl_user_group
+create table auth_user_group
 (
    Id                   bigint not null comment '主键',
    ParentId             varchar(22) not null comment '父用户组Id',
@@ -326,12 +272,12 @@ create table hl_user_group
    primary key (Id)
 );
 
-alter table hl_user_group comment '用户组表';
+alter table auth_user_group comment '用户组表';
 
 /*==============================================================*/
-/* Table: hl_user_role                                          */
+/* Table: auth_user_role                                        */
 /*==============================================================*/
-create table hl_user_role
+create table auth_user_role
 (
    Id                   bigint not null comment '主键',
    UserId               bigint not null,
@@ -343,12 +289,12 @@ create table hl_user_role
    primary key (Id)
 );
 
-alter table hl_user_role comment '用户角色关系表';
+alter table auth_user_role comment '用户角色关系表';
 
 /*==============================================================*/
-/* Table: hl_user_usergroup                                     */
+/* Table: auth_user_usergroup                                   */
 /*==============================================================*/
-create table hl_user_usergroup
+create table auth_user_usergroup
 (
    Id                   bigint not null comment '主键',
    UserId               bigint not null,
@@ -360,12 +306,12 @@ create table hl_user_usergroup
    primary key (Id)
 );
 
-alter table hl_user_usergroup comment '用户与用户关系表';
+alter table auth_user_usergroup comment '用户与用户关系表';
 
 /*==============================================================*/
-/* Table: hl_usergroup_role                                     */
+/* Table: auth_usergroup_role                                   */
 /*==============================================================*/
-create table hl_usergroup_role
+create table auth_usergroup_role
 (
    Id                   bigint not null comment '主键',
    UserGroupId          bigint not null,
@@ -377,5 +323,59 @@ create table hl_usergroup_role
    primary key (Id)
 );
 
-alter table hl_usergroup_role comment '用户组角色关系表';
+alter table auth_usergroup_role comment '用户组角色关系表';
+
+/*==============================================================*/
+/* Table: authl_menu_function                                   */
+/*==============================================================*/
+create table authl_menu_function
+(
+   Id                   bigint not null comment '主键',
+   MenuId               bigint not null,
+   FunctionId           bigint not null,
+   CreateBy             bigint comment '创建人',
+   CreateTime           datetime comment '创建日期',
+   UpdateBy             bigint comment '修改人',
+   UpdateTime           datetime comment '修改日期',
+   primary key (Id)
+);
+
+alter table authl_menu_function comment '菜单功能关系表';
+
+/*==============================================================*/
+/* Table: authl_permission_menu                                 */
+/*==============================================================*/
+create table authl_permission_menu
+(
+   Id                   bigint not null comment '主键',
+   PermissionId         bigint not null,
+   MenuId               bigint not null,
+   CreateBy             bigint comment '创建人',
+   CreateTime           datetime comment '创建日期',
+   UpdateBy             bigint comment '修改人',
+   UpdateTime           datetime comment '修改日期',
+   primary key (Id)
+);
+
+alter table authl_permission_menu comment '权限菜单关系表';
+
+/*==============================================================*/
+/* Table: authl_role                                            */
+/*==============================================================*/
+create table authl_role
+(
+   Id                   bigint not null comment '主键',
+   Code                 varchar(50) not null comment '角色编码',
+   Name                 varchar(50) not null comment '角色名称',
+   Memo                 varchar(100) comment '备注',
+   Status               int not null comment '状态',
+   CreateBy             bigint comment '创建人',
+   CreateTime           datetime comment '创建日期',
+   UpdateBy             bigint comment '修改人',
+   UpdateTime           datetime comment '修改日期',
+   IsDelete             int comment '软删除标识',
+   primary key (Id)
+);
+
+alter table authl_role comment '角色表';
 
