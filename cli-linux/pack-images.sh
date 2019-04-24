@@ -61,7 +61,7 @@ done
 hl_version=`cat ${workdir}/../Version | grep hl_version | awk -F'=' '{ print $2 }' | sed s/[[:space:]]//g`
 
 if [[ !"${hl_version}" ]]; then
-  hl_version `cat ${workdir}/../docker-compose/hl-admin/.env | grep HL_VERSION | awk -F'=' '{ print $2 }' | sed s/[[:space:]]//g`
+  hl_version=`cat ${workdir}/../docker-compose/hl-admin/.env | grep HL_VERSION | awk -F'=' '{ print $2 }' | sed s/[[:space:]]//g`
 fi
 echo "hladmin版本号为:${hl_version}"
 export HL_VERSION=${hl_version}
@@ -81,7 +81,7 @@ if [ $? -ne 0 ]; then
     exit 3
 fi
 
-f [[ $push_images ]]; then
+if [[ $push_images ]]; then
     echo "#################### Pushing images to registry ####################"
     image_fqdn=""
     if [[ "${docker_project:-}" ]]; then
