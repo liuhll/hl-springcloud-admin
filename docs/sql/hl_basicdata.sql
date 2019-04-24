@@ -26,7 +26,7 @@ create table bd_dictionary
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间'
+   DeleteTime         datetime comment '删除时间'
 );
 
 alter table bd_dictionary comment '字典表';

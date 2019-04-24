@@ -7,6 +7,6 @@ public interface IDeletionAudited extends  ISoftDelete  {
     long getDeleteUserId();
     void setDeleteUserId(long deleteUserId);
 
-    Date getDeletionTime();
-    void setDeletionTime(Date deletetionTime);
+    Date getDeleteTime();
+    void setDeleteTime(Date deletetionTime);
 }

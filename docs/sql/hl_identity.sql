@@ -68,7 +68,7 @@ create table auth_employee
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间',
+   DeleteTime         datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -92,7 +92,7 @@ create table auth_file
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间',
+   DeleteTime         datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -117,7 +117,7 @@ create table auth_function
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间',
+   DeleteTime         datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -146,7 +146,7 @@ create table auth_menu
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间',
+   DeleteTime         datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -186,7 +186,7 @@ create table auth_permission
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间',
+   DeleteTime         datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -261,7 +261,7 @@ create table auth_user
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间',
+   DeleteTime         datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -282,7 +282,7 @@ create table auth_user_group
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间',
+   DeleteTime         datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -389,7 +389,7 @@ create table authl_role
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间',
+   DeleteTime         datetime comment '删除时间',
    primary key (Id)
 );
 

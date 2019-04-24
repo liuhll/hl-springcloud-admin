@@ -41,7 +41,7 @@ create table org_corporation
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间',
+   DeleteTime         datetime comment '删除时间',
    primary key (Id),
    key AK_Key_1 (Id)
 );
@@ -68,7 +68,7 @@ create table org_department
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间',
+   DeleteTime         datetime comment '删除时间',
    primary key (Id),
    key AK_Key_1 (Id)
 );
@@ -132,7 +132,7 @@ create table org_position
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
    DeleteUserId         bigint comment '删除用户',
-   DeletionTime         datetime comment '删除时间',
+   DeleteTime         datetime comment '删除时间',
    primary key (Id),
    key AK_Key_1 (Id)
 );

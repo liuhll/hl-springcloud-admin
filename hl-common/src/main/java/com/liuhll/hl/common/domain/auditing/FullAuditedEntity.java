@@ -11,5 +11,5 @@ public class FullAuditedEntity extends AuditedEntity implements IDeletionAudited
 
     private long deleteUserId;
 
-    private Date deletionTime;
+    private Date DeleteTime;
 }
