@@ -11,7 +11,6 @@ before_install:
   - sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
   - mvn clean package "-Dmaven.test.skip=true"
   - sudo chmod +x cli-linux/pack-images.sh
-  - source ./docker-compose/hl-admin/.env
   - sudo docker login -u ${DOCKER_USER} -p ${DOCKER_PWD}  
 script:
   - sudo cli-linux/pack-images.sh --clear-images --skip-build
