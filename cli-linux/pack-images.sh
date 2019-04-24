@@ -25,7 +25,7 @@ END
 }
 
 image_tag=$(date '+%Y%m%d%H%M')
-skip_build=''
+build='yes'
 container_registry=''
 build_images='yes'
 push_images='yes'
@@ -42,7 +42,7 @@ while [[ $# -gt 0 ]]; do
         image_tag="$2"
         shift 2 ;;
     --skip-build )
-        skip_build='yes'; shift 2;;
+        build=''; shift 2;;
     -p | --docker-project )
        docker_project="$2"; shift 2;;
     --skip-image-push )
@@ -58,7 +58,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ !"${skip_build}" ]]; then
+if [[ ${build} ]]; then
 echo "#################### Building HlAdmin Package ####################"
 mvn clean package "-Dmaven.test.skip=true"
 fi
