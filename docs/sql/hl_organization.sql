@@ -40,6 +40,8 @@ create table org_corporation
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
+   DeleteUserId         bigint comment '删除用户',
+   DeletionTime         datetime comment '删除时间',
    primary key (Id),
    key AK_Key_1 (Id)
 );
@@ -65,6 +67,8 @@ create table org_department
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
+   DeleteUserId         bigint comment '删除用户',
+   DeletionTime         datetime comment '删除时间',
    primary key (Id),
    key AK_Key_1 (Id)
 );
@@ -127,6 +131,8 @@ create table org_position
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
    IsDelete             int comment '软删除标识',
+   DeleteUserId         bigint comment '删除用户',
+   DeletionTime         datetime comment '删除时间',
    primary key (Id),
    key AK_Key_1 (Id)
 );
