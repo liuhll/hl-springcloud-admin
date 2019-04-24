@@ -29,7 +29,7 @@ skip_build=''
 container_registry=''
 build_images='yes'
 push_images='yes'
-docker_project='hladmin'
+docker_project='hlservice'
 clear_images=''
 
 workdir=$(cd $(dirname $0); pwd)
