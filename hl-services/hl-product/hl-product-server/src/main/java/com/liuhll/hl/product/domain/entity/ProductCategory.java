@@ -1,6 +1,6 @@
 package com.liuhll.hl.product.domain.entity;
 
-import com.liuhll.hl.common.domain.auditing.FullAudited;
+import com.liuhll.hl.common.domain.auditing.AuditedEntity;
 import com.liuhll.hl.product.domain.models.CommonStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "product_category")
-public class ProductCategory extends FullAudited {
+public class ProductCategory extends AuditedEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

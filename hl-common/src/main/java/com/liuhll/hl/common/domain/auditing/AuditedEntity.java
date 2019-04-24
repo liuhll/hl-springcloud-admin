@@ -7,7 +7,7 @@ import javax.persistence.Column;
 import java.util.Date;
 
 @Data
-public abstract class FullAudited extends CreationAudited {
+public abstract class AuditedEntity extends CreationAudited {
     @Basic
     @Column(name = "update_by")
     private Long updateBy;

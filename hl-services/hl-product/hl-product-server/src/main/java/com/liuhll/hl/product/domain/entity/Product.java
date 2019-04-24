@@ -1,6 +1,6 @@
 package com.liuhll.hl.product.domain.entity;
 
-import com.liuhll.hl.common.domain.auditing.FullAudited;
+import com.liuhll.hl.common.domain.auditing.AuditedEntity;
 import com.liuhll.hl.product.domain.models.CommonStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Entity
 @Table(name = "product")
-public class Product  extends FullAudited {
+public class Product  extends AuditedEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
