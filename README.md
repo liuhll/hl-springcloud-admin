@@ -1,5 +1,6 @@
 # 基于SpringCloud实现的管理系统
 
+[![Build Status](https://api.travis-ci.com/liuhll/hl-springcloud-admin.svg?branch=master)](https://travis-ci.com/liuhll/hl-springcloud-admin) 
 [![LICENSE](https://img.shields.io/github/license/liuhll/hl-springcloud-admin.svg?style=flat-square)](https://raw.githubusercontent.com/liuhll/hl-springcloud-admin/master/LICENSE)
 
 ## 项目简介
