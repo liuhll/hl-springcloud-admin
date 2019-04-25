@@ -7,12 +7,21 @@ import javax.persistence.Column;
 import java.util.Date;
 
 @Data
-public abstract class AuditedEntity extends CreationAudited {
+public abstract class AuditedEntity extends CreationAudited implements IModificationAudited {
     @Basic
-    @Column(name = "update_by")
-    private Long updateBy;
+    @Column(name = "CreateBy")
+    protected Long createBy;
 
     @Basic
-    @Column(name = "update_time")
-    private Date updateTime = new Date();
+    @Column(name = "CreateTime")
+    protected Date createTime = new Date();
+
+    @Basic
+    @Column(name = "UpdateBy")
+    protected Long updateBy;
+
+    @Basic
+    @Column(name = "UpdateTime")
+    protected Date updateTime = new Date();
+
 }

@@ -1,4 +1,4 @@
-package com.liuhll.hl.common.domain.Models;
+package com.liuhll.hl.common.domain.models;
 
 public enum Status {
     Valid,

@@ -1,6 +1,6 @@
 package com.liuhll.hl.identity.domain.entity;
 
-import com.liuhll.hl.common.domain.Models.Status;
+import com.liuhll.hl.common.domain.models.Status;
 import com.liuhll.hl.common.domain.auditing.FullAuditedEntity;
 import com.liuhll.hl.identity.domain.Models.PoliticalStatus;
 

@@ -7,13 +7,13 @@ import javax.persistence.Column;
 import java.util.Date;
 
 @Data
-public abstract class CreationAudited {
+public abstract class CreationAudited implements ICreationAudited {
 
     @Basic
-    @Column(name = "create_by")
-    private Long createBy;
+    @Column(name = "CreateBy")
+    protected Long createBy;
 
     @Basic
-    @Column(name = "create_time")
-    private Date createTime = new Date();
+    @Column(name = "CreateTime")
+    protected Date createTime = new Date();
 }

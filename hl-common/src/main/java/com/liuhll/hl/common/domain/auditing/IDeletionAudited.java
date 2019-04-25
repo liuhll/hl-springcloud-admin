@@ -4,9 +4,9 @@ import java.util.Date;
 
 
 public interface IDeletionAudited extends  ISoftDelete  {
-    long getDeleteUserId();
-    void setDeleteUserId(long deleteUserId);
+    long getDeleteBy();
+    void setDeleteBy(long deleteBy);
 
     Date getDeleteTime();
-    void setDeleteTime(Date deletetionTime);
+    void setDeleteTime(Date deleteTime);
 }

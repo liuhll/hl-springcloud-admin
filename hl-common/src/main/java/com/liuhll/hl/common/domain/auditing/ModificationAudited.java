@@ -7,13 +7,13 @@ import javax.persistence.Column;
 import java.util.Date;
 
 @Data
-public abstract class ModificationAudited {
+public abstract class ModificationAudited  implements IModificationAudited{
 
     @Basic
-    @Column(name = "update_by")
+    @Column(name = "updateBy")
     private Long updateBy;
 
     @Basic
-    @Column(name = "update_time")
+    @Column(name = "updateTime")
     private Date updateTime = new Date();
 }
