@@ -4488,8 +4488,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o33">
 <a:ObjectID>9AC1CBAB-8D63-456B-A983-97DA6C9986FF</a:ObjectID>
-<a:Name>IsDelete</a:Name>
-<a:Code>IsDelete</a:Code>
+<a:Name>IsDeleted</a:Name>
+<a:Code>IsDeleted</a:Code>
 <a:CreationDate>1555327982</a:CreationDate>
 <a:Creator>LiuHongliang</a:Creator>
 <a:ModificationDate>1555330423</a:ModificationDate>
@@ -4499,8 +4499,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o34">
 <a:ObjectID>5B2500F6-6F05-490A-A92A-F455C02CC3A9</a:ObjectID>
-<a:Name>DeleteUserId</a:Name>
-<a:Code>DeleteUserId</a:Code>
+<a:Name>DeleteBy</a:Name>
+<a:Code>DeleteBy</a:Code>
 <a:CreationDate>1556121331</a:CreationDate>
 <a:Creator>LiuHongliang</a:Creator>
 <a:ModificationDate>1556121696</a:ModificationDate>
@@ -4715,8 +4715,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o51">
 <a:ObjectID>46C6CC8B-BE8A-43B5-9E86-B85A3A89C719</a:ObjectID>
-<a:Name>IsDelete</a:Name>
-<a:Code>IsDelete</a:Code>
+<a:Name>IsDeleted</a:Name>
+<a:Code>IsDeleted</a:Code>
 <a:CreationDate>1555327982</a:CreationDate>
 <a:Creator>LiuHongliang</a:Creator>
 <a:ModificationDate>1555330423</a:ModificationDate>
@@ -4726,8 +4726,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o52">
 <a:ObjectID>506DF3EC-3671-4783-A4D8-486224406DE4</a:ObjectID>
-<a:Name>DeleteUserId</a:Name>
-<a:Code>DeleteUserId</a:Code>
+<a:Name>DeleteBy</a:Name>
+<a:Code>DeleteBy</a:Code>
 <a:CreationDate>1556121331</a:CreationDate>
 <a:Creator>LiuHongliang</a:Creator>
 <a:ModificationDate>1556121703</a:ModificationDate>
@@ -4930,8 +4930,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o68">
 <a:ObjectID>F371F5CA-E84F-4E09-AD30-6E86A8B21A22</a:ObjectID>
-<a:Name>IsDelete</a:Name>
-<a:Code>IsDelete</a:Code>
+<a:Name>IsDeleted</a:Name>
+<a:Code>IsDeleted</a:Code>
 <a:CreationDate>1555327982</a:CreationDate>
 <a:Creator>LiuHongliang</a:Creator>
 <a:ModificationDate>1555330896</a:ModificationDate>
@@ -4941,8 +4941,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o69">
 <a:ObjectID>73FC45A2-9301-49FA-AFFE-FEBEB5A47A8B</a:ObjectID>
-<a:Name>DeleteUserId</a:Name>
-<a:Code>DeleteUserId</a:Code>
+<a:Name>DeleteBy</a:Name>
+<a:Code>DeleteBy</a:Code>
 <a:CreationDate>1556121331</a:CreationDate>
 <a:Creator>LiuHongliang</a:Creator>
 <a:ModificationDate>1556121708</a:ModificationDate>

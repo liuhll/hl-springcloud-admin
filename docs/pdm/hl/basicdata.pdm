@@ -4340,8 +4340,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o18">
 <a:ObjectID>3E186B75-7466-4FD5-BED9-923E998F46F1</a:ObjectID>
-<a:Name>IsDelete</a:Name>
-<a:Code>IsDelete</a:Code>
+<a:Name>IsDeleted</a:Name>
+<a:Code>IsDeleted</a:Code>
 <a:CreationDate>1555327982</a:CreationDate>
 <a:Creator>LiuHongliang</a:Creator>
 <a:ModificationDate>1555330452</a:ModificationDate>
@@ -4351,8 +4351,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o19">
 <a:ObjectID>D2F103EC-08FE-4679-A45D-0FBB9C6688FA</a:ObjectID>
-<a:Name>DeleteUserId</a:Name>
-<a:Code>DeleteUserId</a:Code>
+<a:Name>DeleteBy</a:Name>
+<a:Code>DeleteBy</a:Code>
 <a:CreationDate>1556121331</a:CreationDate>
 <a:Creator>LiuHongliang</a:Creator>
 <a:ModificationDate>1556121666</a:ModificationDate>
