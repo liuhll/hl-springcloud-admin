@@ -5,7 +5,7 @@ import com.liuhll.hl.common.runtime.session.HlContextSession;
 import com.liuhll.hl.common.security.SecurityWhitelistHandler;
 import com.liuhll.hl.identity.client.annotation.IgnoreUserToken;
 import com.liuhll.hl.identity.client.conf.UserAuthConfig;
-import com.liuhll.hl.identity.common.jwt.JwtTokenProvider;
+import com.liuhll.hl.identity.common.jwt.IJwtTokenProvider;
 import com.liuhll.hl.identity.common.jwt.JwtUserClaims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
 
     @Autowired
-    private JwtTokenProvider jwtTokenProvider;
+    private IJwtTokenProvider jwtTokenProvider;
 
     @Autowired
     private UserAuthConfig userAuthConfig;

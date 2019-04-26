@@ -1,7 +1,7 @@
-package com.liuhll.hl.identity.domain.service.impl;
+package com.liuhll.hl.identity.service.impl;
 
 import com.liuhll.hl.identity.domain.entity.Role;
-import com.liuhll.hl.identity.domain.service.RoleService;
+import com.liuhll.hl.identity.service.IRoleService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Service
-public class RoleServiceImpl implements RoleService {
+public class RoleService implements IRoleService {
 
     @Override
     public Collection<Role> getRolesByUserId(Long userId) {

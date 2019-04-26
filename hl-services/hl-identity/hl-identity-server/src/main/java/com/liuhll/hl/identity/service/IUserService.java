@@ -1,7 +1,7 @@
-package com.liuhll.hl.identity.domain.service;
+package com.liuhll.hl.identity.service;
 
 import com.liuhll.hl.identity.domain.entity.UserInfo;
 
-public interface UserService {
+public interface IUserService {
     UserInfo findUserInfoByName(String userName);
 }

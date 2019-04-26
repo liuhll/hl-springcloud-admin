@@ -4,9 +4,9 @@ import java.util.Date;
 
 public interface ICreationAudited {
 
-    long getCreateBy();
+    Long getCreateBy();
 
-    void setCreateBy(long createBy);
+    void setCreateBy(Long createBy);
 
     Date getCreateTime();
 

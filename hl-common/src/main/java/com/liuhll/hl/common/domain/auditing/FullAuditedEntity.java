@@ -1,6 +1,7 @@
 package com.liuhll.hl.common.domain.auditing;
 
 import lombok.Data;
+import tk.mybatis.mapper.annotation.LogicDelete;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -26,12 +27,13 @@ public abstract class FullAuditedEntity extends AuditedEntity implements IDeleti
     protected Date updateTime = new Date();
 
     @Basic
+    @LogicDelete
     @Column(name = "IsDeleted")
-    protected int isDeleted;
+    protected Integer isDeleted;
 
     @Basic
     @Column(name = "DeleteBy")
-    protected long deleteBy;
+    protected Long deleteBy;
 
     @Basic
     @Column(name = "DeleteTime")

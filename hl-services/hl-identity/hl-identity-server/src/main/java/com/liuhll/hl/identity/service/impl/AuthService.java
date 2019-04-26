@@ -1,10 +1,10 @@
-package com.liuhll.hl.identity.domain.service.impl;
+package com.liuhll.hl.identity.service.impl;
 
 import com.liuhll.hl.common.exception.UnAuthenticationException;
 import com.liuhll.hl.identity.common.jwt.JwtUserClaims;
 import com.liuhll.hl.identity.conf.JwtConfig;
-import com.liuhll.hl.identity.domain.service.AuthService;
-import com.liuhll.hl.identity.common.jwt.JwtTokenProvider;
+import com.liuhll.hl.identity.service.IAuthService;
+import com.liuhll.hl.identity.common.jwt.IJwtTokenProvider;
 import com.liuhll.hl.identity.jwt.JwtUser;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +16,15 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuthServiceImpl implements AuthService {
+public class AuthService implements IAuthService {
     @Autowired
-    private JwtUserDetailsServiceImpl jwtUserDetailsService;
+    private JwtUserDetailsService jwtUserDetailsService;
 
     @Autowired
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private JwtTokenProvider jwtTokenProvider;
+    private IJwtTokenProvider jwtTokenProvider;
 
     @Autowired
     private JwtConfig jwtConfig;

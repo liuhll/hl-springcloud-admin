@@ -1,6 +1,6 @@
 package com.liuhll.hl.identity.client;
 
-import com.liuhll.hl.identity.client.conf.AutoConfiguration;
+import com.liuhll.hl.identity.client.conf.ServiceAuthConfiguration;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;
@@ -10,6 +10,6 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-@Import(AutoConfiguration.class)
-public @interface EnableHlIdentityClient {
+@Import(ServiceAuthConfiguration.class)
+public @interface EnableServiceAuthClient {
 }

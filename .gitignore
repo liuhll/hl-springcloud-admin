@@ -44,3 +44,4 @@ secrets.yml
 **/*.pjb
 *.pjb
 *.versionsBackup
+**/*.log
