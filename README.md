@@ -44,7 +44,7 @@ docker-compose -f ./docker-compose/hl-admin/docker-compose.yml up -d
 | 微服务名称 | 说明 |  端口号 | 维护人  | 新增日期 | 备注  |
 |:---------|:------|:-------|:------|:-------|:---------|
 | hl-basicdata-server | 基础数据服务组件 | 8002 | * | * | * |
-| hl-identity-server | 身份认证与授权服务组件 | 8003 | * | * | * |
+| hl-auth-server | 身份认证与授权服务组件 | 8003 | * | * | * |
 | hl-organization-server | 组织机构服务组件 | 8004 | * | * | * |
 | hl-product-server | 产品服务组件 | 8005 | * | * | * |
 | hl-eureka | 服务注册中心组件 | 8000 | * | * | * |
