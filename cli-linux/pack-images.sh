@@ -106,10 +106,14 @@ fi
 if [[ $clear_images ]]; then
   echo "#################### clear local images ####################"
   docker rmi -f $(docker images|grep $image_tag|awk '{print $3}')
+  # Remove temporary images
+  dangling_img=$(docker images -qf "dangling=true")
+  if [[ ${dangling_img} ]]; then
+      docker rmi -f  ${dangling_img}
+  fi
 fi
 
-# Remove temporary images
-docker rmi -f $(docker images -qf "dangling=true")     
+
 
 if [ $? -ne 0 ]; then
     echo "删除所有未使用镜像和悬空的镜像失败..."
