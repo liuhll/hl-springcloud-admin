@@ -43,15 +43,15 @@ services:
     ports:
       - "8002:8080"
 
-  hladmin.identity:
-    image: hladmin/identity:${TAG:-latest}
+  hladmin.auth:
+    image: hladmin/auth:${TAG:-latest}
     build:
       context: ../..
-      dockerfile: hl-services/hl-identity/hl-identity-server/Dockerfile
+      dockerfile: hl-services/hl-auth/hl-auth-server/Dockerfile
       args:
-        JAR_FILE: hl-services/hl-identity/hl-identity-server/target/hl-identity-server-${HL_VERSION}.jar
+        JAR_FILE: hl-services/hl-auth/hl-auth-server/target/hl-auth-server-${HL_VERSION}.jar
         PORT: 8080
-        APP_NAME: hl-identity-server-${HL_VERSION}.jar
+        APP_NAME: hl-auth-server-${HL_VERSION}.jar
     networks:
       - hl_service_net
     ports:

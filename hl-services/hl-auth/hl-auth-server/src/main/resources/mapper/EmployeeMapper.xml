@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuhll.hl.auth.mapper.EmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.liuhll.hl.auth.domain.entity.Employee">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="Id" jdbcType="BIGINT" property="id" />
+    <result column="UserName" jdbcType="VARCHAR" property="username" />
+    <result column="ChineseName" jdbcType="VARCHAR" property="chinesename" />
+    <result column="Email" jdbcType="VARCHAR" property="email" />
+    <result column="Phone" jdbcType="VARCHAR" property="phone" />
+    <result column="Gender" jdbcType="INTEGER" property="gender" />
+    <result column="Birth" jdbcType="DATE" property="birth" />
+    <result column="NativePlace" jdbcType="VARCHAR" property="nativeplace" />
+    <result column="Address" jdbcType="VARCHAR" property="address" />
+    <result column="Folk" jdbcType="VARCHAR" property="folk" />
+    <result column="PoliticalStatus" jdbcType="INTEGER" property="politicalstatus" />
+    <result column="GraduateInstitutions" jdbcType="VARCHAR" property="graduateinstitutions" />
+    <result column="Education" jdbcType="VARCHAR" property="education" />
+    <result column="Major" jdbcType="VARCHAR" property="major" />
+    <result column="Resume" jdbcType="VARCHAR" property="resume" />
+    <result column="Memo" jdbcType="VARCHAR" property="memo" />
+    <result column="Status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+</mapper>

@@ -33,7 +33,7 @@ swagger:
   controller-package-name: com.liuhll.hl.basicdata.controller
 
 auth:
-  service-id: hl-identity
+  service-id: hl-auth
   client:
     id: hl-basicdata
     secret: 1234567

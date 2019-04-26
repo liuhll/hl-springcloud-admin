@@ -12,6 +12,6 @@ zuul:
     ignored-services: "*"
     sensitive-headers:
     hl-identity:
-      path: /identity/**
-      serviceId: hl-identity
+      path: /auth/**
+      serviceId: hl-auth
       strip-prefix: false

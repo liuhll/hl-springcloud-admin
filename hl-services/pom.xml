@@ -15,7 +15,7 @@
     <version>${hl.version}</version>
     <modules>
         <module>hl-product</module>
-        <module>hl-identity</module>
+        <module>hl-auth</module>
         <module>hl-basicdata</module>
         <module>hl-organization</module>
     </modules>

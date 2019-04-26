@@ -49,7 +49,7 @@ swagger:
   controller-package-name: com.liuhll.hl.organization.controller
 
 auth:
-  service-id: hl-identity
+  service-id: hl-auth
 #  whitelist:
 #    - /organization/v1/api/org
   client:

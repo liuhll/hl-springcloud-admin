@@ -55,7 +55,7 @@
 
         <dependency>
             <groupId>com.liuhll.hl</groupId>
-            <artifactId>hl-identity-client</artifactId>
+            <artifactId>hl-auth-client</artifactId>
             <version>${hl.vsersion}</version>
         </dependency>
 
