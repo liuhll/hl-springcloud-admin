@@ -12,6 +12,8 @@ public class ServiceAuthConfig {
     @Value("${auth.client.secret}")
     private String clientSecret;
 
+    @Value("${auth.token-header}")
+    private String tokenHeader;
 
     @Value("${spring.application.name}")
     private String applicationName;

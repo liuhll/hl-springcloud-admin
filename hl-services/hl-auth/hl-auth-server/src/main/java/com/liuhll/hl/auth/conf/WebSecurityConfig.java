@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
-                .antMatchers("/auth").permitAll()
+//                .antMatchers("/auth").permitAll()
                 .antMatchers("/**/swagger*", "/**/swagger*/**", "/**/webjars/**", "/**/v2/api-docs", "/**/csrf").permitAll()
                 .antMatchers(whitelistConfig.getWhitelist().toArray(new String[whitelistConfig.getWhitelist().size()])).permitAll()
                 .and()

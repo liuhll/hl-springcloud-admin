@@ -15,14 +15,25 @@ spring:
       hibernate.format_sql: true
     open-in-view: false
   datasource:
-    url: ${DB_CONN:jdbc:mysql://127.0.0.1:13306/hl_organizetion?autoReconnect=true}
+    url: ${DB_CONN:jdbc:mysql://127.0.0.1:13306/hl_organization?autoReconnect=true&useUnicode=true&characterEncoding=UTF8}
     username: root
     password: qwe!P4ss
-    tomcat:
-      max-active: 4
-      min-idle: 2
-      initial-size: 2
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
 eureka:
   client:
     service-url:
@@ -50,11 +61,9 @@ swagger:
 
 auth:
   service-id: hl-auth
+  token-header: Authorization
 #  whitelist:
 #    - /organization/v1/api/org
   client:
     id: hl-organization
-    secret: 1234567
-  user:
-    token-header: Authorization
-    jwt-secret: qY9Z3TMrSoqiolNQcgTYkkvCzN62ArNHL3XgtDww86X9WZGO6cAo7cz3yQX0qeJj
+    secret: 123456

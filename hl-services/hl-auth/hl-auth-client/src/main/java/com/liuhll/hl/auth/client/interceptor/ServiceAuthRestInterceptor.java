@@ -1,10 +1,13 @@
 package com.liuhll.hl.auth.client.interceptor;
 
+import com.liuhll.hl.common.enums.ResultCode;
 import com.liuhll.hl.common.exception.ClientForbiddenException;
-import com.liuhll.hl.common.security.SecurityWhitelistHandler;
+import com.liuhll.hl.common.exception.HlException;
+import com.liuhll.hl.common.security.ISecurityWhitelistHandler;
 import com.liuhll.hl.auth.client.annotation.IgnoreClientToken;
 import com.liuhll.hl.auth.client.conf.ServiceAuthConfig;
 import com.liuhll.hl.auth.client.feign.ServiceAuthClient;
+import com.liuhll.hl.common.vo.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
@@ -24,7 +27,7 @@ public class ServiceAuthRestInterceptor extends HandlerInterceptorAdapter {
     private ServiceAuthClient serviceAuthClient;
 
     @Autowired
-    private SecurityWhitelistHandler securityWhitelistHandler;
+    private ISecurityWhitelistHandler securityWhitelistHandler;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -42,9 +45,8 @@ public class ServiceAuthRestInterceptor extends HandlerInterceptorAdapter {
             return super.preHandle(request,response,handler);
         }
 
-        List<String> allowedClient = serviceAuthClient.getAllowedClients(serviceAuthConfig.getClientId(),serviceAuthConfig.getClientSecret());
-
-        if (allowedClient.stream().anyMatch(p->p.equals(serviceAuthConfig.getClientId()))){
+        List<String> allowedClients = serviceAuthClient.getAllowedClients(serviceAuthConfig.getClientId(),serviceAuthConfig.getClientSecret());
+        if (allowedClients.stream().anyMatch(p->p.equals(serviceAuthConfig.getClientId()))){
             return super.preHandle(request,response,handler);
         }
 

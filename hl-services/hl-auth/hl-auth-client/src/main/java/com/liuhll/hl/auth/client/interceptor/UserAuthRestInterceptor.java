@@ -1,12 +1,16 @@
 package com.liuhll.hl.auth.client.interceptor;
 
+import com.liuhll.hl.auth.client.conf.ServiceAuthConfig;
+import com.liuhll.hl.auth.client.feign.ServiceAuthClient;
+import com.liuhll.hl.common.enums.ResultCode;
+import com.liuhll.hl.common.exception.HlException;
 import com.liuhll.hl.common.exception.UnAuthorizedException;
 import com.liuhll.hl.common.runtime.session.HlContextSession;
-import com.liuhll.hl.common.security.SecurityWhitelistHandler;
+import com.liuhll.hl.common.security.ISecurityWhitelistHandler;
 import com.liuhll.hl.auth.client.annotation.IgnoreUserToken;
-import com.liuhll.hl.auth.client.conf.UserAuthConfig;
 import com.liuhll.hl.auth.common.jwt.IJwtTokenProvider;
 import com.liuhll.hl.auth.common.jwt.JwtUserClaims;
+import com.liuhll.hl.common.vo.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -24,10 +28,13 @@ public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
     private IJwtTokenProvider jwtTokenProvider;
 
     @Autowired
-    private UserAuthConfig userAuthConfig;
+    private ServiceAuthConfig serviceAuthConfig;
 
     @Autowired
-    private SecurityWhitelistHandler securityWhitelistHandler;
+    private ISecurityWhitelistHandler securityWhitelistHandler;
+
+    @Autowired
+    private ServiceAuthClient serviceAuthClient;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -44,11 +51,11 @@ public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
         if (securityWhitelistHandler.isPermitAuth(webapi)){
             return super.preHandle(request,response,handler);
         }
-        String token = jwtTokenProvider.resolveToken(request,userAuthConfig.getTokenHeader());
+        String token = jwtTokenProvider.resolveToken(request,serviceAuthConfig.getTokenHeader());
         if (StringUtils.isEmpty(token)) {
             if (request.getCookies() != null) {
                 for (Cookie cookie : request.getCookies()) {
-                    if (cookie.getName().equals(userAuthConfig.getTokenHeader())) {
+                    if (cookie.getName().equals(serviceAuthConfig.getTokenHeader())) {
                         token = cookie.getValue();
                     }
                 }
@@ -57,12 +64,19 @@ public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
         if (StringUtils.isEmpty(token)){
             throw new UnAuthorizedException("您还没有登录系统");
         }
-        JwtUserClaims userClaims = jwtTokenProvider.getJwtUserClaims(token,userAuthConfig.getJwtSecret());
+        ResponseResult<String> getJwtSecretResult = serviceAuthClient.getJwtSecret(serviceAuthConfig.getClientId(),serviceAuthConfig.getClientSecret());
+        if (getJwtSecretResult.getCode() != ResultCode.Ok){
+            throw new HlException(getJwtSecretResult.getMessage(),getJwtSecretResult.getCode());
+        }
+
+        JwtUserClaims userClaims = jwtTokenProvider.getJwtUserClaims(token,getJwtSecretResult.getData());
         HlContextSession.setUserId(userClaims.getUserid());
         HlContextSession.setUserName(userClaims.getUsername());
         HlContextSession.setAuthToken(token);
         return super.preHandle(request,response,handler);
     }
+
+
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {

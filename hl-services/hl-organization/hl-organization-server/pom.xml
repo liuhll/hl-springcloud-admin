@@ -52,7 +52,17 @@
             <version>${mysql.connector.version}</version>
             <scope>runtime</scope>
         </dependency>
-
+        <!-- 数据库驱动 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.16</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.16</version>
+        </dependency>
         <dependency>
             <groupId>com.liuhll.hl</groupId>
             <artifactId>hl-auth-client</artifactId>

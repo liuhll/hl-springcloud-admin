@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringCloudApplication
 @ComponentScan(value = {"com.liuhll.hl"})
 @EnableHlAuthClient
-@EnableFeignClients({"com.liuhll.hl.auth.client.feign"})
 public class OrganizationApplication {
     public static void main(String[] args) {
         SpringApplication.run(OrganizationApplication.class,args);

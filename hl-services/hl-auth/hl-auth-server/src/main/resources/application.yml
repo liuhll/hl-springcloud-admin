@@ -49,15 +49,13 @@ swagger:
 auth:
   whitelist:
     - /v1/login
+    - /v1/service/allowedclients
+    - /v1/service/jwtsecret
   service-id: hl-auth
-  #  whitelist:
-  #    - /organization/v1/api/org
   client:
     id: hl-auth
     secret: 1234567
-  user:
-    token-header: Authorization
-    jwt-secret: qY9Z3TMrSoqiolNQcgTYkkvCzN62ArNHL3XgtDww86X9WZGO6cAo7cz3yQX0qeJj
+  token-header: Authorization
 
 mybatis:
   type-aliases-package: com.liuhll.hl.auth.domain.entity
@@ -74,5 +72,4 @@ mapper:
 jwt:
   secret: qY9Z3TMrSoqiolNQcgTYkkvCzN62ArNHL3XgtDww86X9WZGO6cAo7cz3yQX0qeJj
   expiration: 1000000
-  header: Authorization
 

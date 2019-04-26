@@ -5,6 +5,6 @@ import com.liuhll.hl.common.enums.ResultCode;
 public class ClientForbiddenException extends HlException {
 
     public ClientForbiddenException(String exceptionMessage) {
-        super(exceptionMessage, ResultCode.BusinessError);
+        super(exceptionMessage, ResultCode.ClentForbidden);
     }
 }

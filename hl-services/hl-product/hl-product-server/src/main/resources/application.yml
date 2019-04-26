@@ -40,6 +40,4 @@ auth:
   client:
     id: hl-product
     secret: 1234567
-  user:
-    token-header: Authorization
-    jwt-secret: qY9Z3TMrSoqiolNQcgTYkkvCzN62ArNHL3XgtDww86X9WZGO6cAo7cz3yQX0qeJj
+  token-header: Authorization

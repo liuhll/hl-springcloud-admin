@@ -1,7 +1,7 @@
 package com.liuhll.hl.auth.client.interceptor;
 
+import com.liuhll.hl.auth.client.conf.ServiceAuthConfig;
 import com.liuhll.hl.common.runtime.session.HlContextSession;
-import com.liuhll.hl.auth.client.conf.UserAuthConfig;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +13,13 @@ public class HttpClientTokenInterceptor implements RequestInterceptor {
 
     @Autowired
     @Lazy
-    private UserAuthConfig userAuthConfig;
+    private ServiceAuthConfig serviceAuthConfig;
 
 
     @Override
     public void apply(RequestTemplate requestTemplate) {
         if (!StringUtils.isEmpty(HlContextSession.getAuthToken())){
-            requestTemplate.header(userAuthConfig.getTokenHeader(),HlContextSession.getAuthToken());
+            requestTemplate.header(serviceAuthConfig.getTokenHeader(),HlContextSession.getAuthToken());
         }
     }
 }

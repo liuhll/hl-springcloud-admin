@@ -35,7 +35,7 @@ public class WebConfiguration implements WebMvcConfigurer {
         ArrayList<String> list = new ArrayList<>();
         String[] urls = {
                 "**/api/**",
-                "/v1/**",
+                "**/v1/**",
         };
         Collections.addAll(list, urls);
         return list;

@@ -33,7 +33,7 @@
         </dependency>
         <dependency>
             <groupId>com.liuhll.hl</groupId>
-            <artifactId>hl-identity-common</artifactId>
+            <artifactId>hl-auth-common</artifactId>
             <version>${hl.vsersion}</version>
         </dependency>
         <dependency>
