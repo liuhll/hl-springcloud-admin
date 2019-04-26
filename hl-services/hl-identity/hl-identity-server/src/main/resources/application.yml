@@ -15,12 +15,12 @@ spring:
 #      hibernate.format_sql: true
 #    open-in-view: false
   datasource:
-    url: ${DB_CONN:jdbc:mysql://127.0.0.1:13306/hl_identity?autoReconnect=true}
+    url: ${DB_CONN:jdbc:mysql://127.0.0.1:13306/hl_identity?autoReconnect=true&useUnicode=true&characterEncoding=UTF8}
     username: root
     password: qwe!P4ss
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     filters: stat
     maxActive: 20
     initialSize: 1
@@ -49,9 +49,30 @@ swagger:
 auth:
   whitelist:
     - /v1/login
-#    - /organization/v1/api/org
+  service-id: hl-identity
+  #  whitelist:
+  #    - /organization/v1/api/org
+  client:
+    id: hl-identity
+    secret: 1234567
+  user:
+    token-header: Authorization
+    jwt-secret: qY9Z3TMrSoqiolNQcgTYkkvCzN62ArNHL3XgtDww86X9WZGO6cAo7cz3yQX0qeJj
+
+mybatis:
+  type-aliases-package: com.liuhll.hl.identity.domain.entity
+  mapperLocations: classpath:mapper/*.xml
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+mapper:
+  not-empty: false
+  identity: MYSQL
 
 jwt:
   secret: qY9Z3TMrSoqiolNQcgTYkkvCzN62ArNHL3XgtDww86X9WZGO6cAo7cz3yQX0qeJj
   expiration: 1000000
   header: Authorization
+

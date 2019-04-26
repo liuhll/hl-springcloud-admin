@@ -4,9 +4,9 @@ import com.alibaba.fastjson.JSON;
 import com.liuhll.hl.common.enums.ResultCode;
 import com.liuhll.hl.common.utils.ResponseResultUtil;
 import com.liuhll.hl.common.vo.ResponseResult;
-import com.liuhll.hl.identity.common.jwt.JwtTokenProvider;
+import com.liuhll.hl.identity.common.jwt.IJwtTokenProvider;
 import com.liuhll.hl.identity.conf.JwtConfig;
-import com.liuhll.hl.identity.domain.service.impl.JwtUserDetailsServiceImpl;
+import com.liuhll.hl.identity.service.impl.JwtUserDetailsService;
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -29,10 +29,10 @@ import java.io.IOException;
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
     @Autowired
-    private JwtTokenProvider jwtTokenProvider;
+    private IJwtTokenProvider jwtTokenProvider;
 
     @Autowired
-    private JwtUserDetailsServiceImpl jwtUserDetailsService;
+    private JwtUserDetailsService jwtUserDetailsService;
 
     @Autowired
     private JwtConfig jwtConfig;
@@ -58,7 +58,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
                 }
             } else {
                 String path = request.getRequestURI();
-                if (!path.contains("swagger") && !path.contains("v2/api-docs") && !path.contains("login") && !path.contains("webjar") && !path.contains("client")){
+                if (!path.contains("swagger") && !path.contains("v2/api-docs") && !path.contains("identity") && !path.contains("webjar") && !path.contains("client")){
                     ResponseResult<String> result = ResponseResultUtil.error(ResultCode.UnAuthentication, "您还没有登录系统,请先登录系统");
                     writeResponseData(response, result);
                     return;

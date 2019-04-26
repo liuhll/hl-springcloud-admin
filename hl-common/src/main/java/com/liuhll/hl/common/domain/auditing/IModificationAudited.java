@@ -4,11 +4,11 @@ import java.util.Date;
 
 public interface IModificationAudited {
 
-    long getUpdateBy();
+    Long getUpdateBy();
 
-    void setUpdateBy(long updateBy);
+    void setUpdateBy(Long update);
 
     Date getUpdateTime();
 
-    void setUpdateTime();
+    void setUpdateTime(Date updateTime);
 }

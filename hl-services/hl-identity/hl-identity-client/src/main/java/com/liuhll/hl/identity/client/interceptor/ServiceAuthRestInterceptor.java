@@ -1,14 +1,10 @@
 package com.liuhll.hl.identity.client.interceptor;
 
-import com.liuhll.hl.common.enums.ResultCode;
 import com.liuhll.hl.common.exception.ClientForbiddenException;
 import com.liuhll.hl.common.security.SecurityWhitelistHandler;
-import com.liuhll.hl.common.vo.ResponseResult;
 import com.liuhll.hl.identity.client.annotation.IgnoreClientToken;
 import com.liuhll.hl.identity.client.conf.ServiceAuthConfig;
-import com.liuhll.hl.identity.client.conf.UserAuthConfig;
 import com.liuhll.hl.identity.client.feign.ServiceAuthClient;
-import com.liuhll.hl.identity.common.jwt.JwtTokenProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;

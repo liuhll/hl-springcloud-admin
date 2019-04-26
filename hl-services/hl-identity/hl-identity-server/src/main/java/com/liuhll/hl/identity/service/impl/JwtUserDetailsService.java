@@ -1,9 +1,9 @@
-package com.liuhll.hl.identity.domain.service.impl;
+package com.liuhll.hl.identity.service.impl;
 
 import com.liuhll.hl.identity.domain.entity.Role;
 import com.liuhll.hl.identity.domain.entity.UserInfo;
-import com.liuhll.hl.identity.domain.service.RoleService;
-import com.liuhll.hl.identity.domain.service.UserService;
+import com.liuhll.hl.identity.service.IRoleService;
+import com.liuhll.hl.identity.service.IUserService;
 import com.liuhll.hl.identity.jwt.JwtUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,12 +16,12 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 @Service
-public class JwtUserDetailsServiceImpl implements UserDetailsService {
+public class JwtUserDetailsService implements UserDetailsService {
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     @Autowired
-    private RoleService roleService;
+    private IRoleService roleService;
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {

@@ -4,18 +4,20 @@ import java.util.List;
 
 public interface IService<T> {
 
-    T selectById(Object id);
-
     List<T> selectAll();
+
+    T selectByKey(Object key);
 
     int save(T entity);
 
-    void deleteById(Object id);
+    int delete(Object key);
 
     int batchDelete(List<String> list, String property, Class<T> clazz);
 
-    int updateAll(T entity);
+    int update(T entity);
 
     int updateNotNull(T entity);
+
+    List<T> selectByExample(Object example);
 
 }
