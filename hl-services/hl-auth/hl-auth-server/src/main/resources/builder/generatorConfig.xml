@@ -19,7 +19,7 @@
 
         <!--数据源配置-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:13306/hl_identity?autoReconnect=true"
+                        connectionURL="jdbc:mysql://127.0.0.1:13306/hl_auth?autoReconnect=true"
                         userId="root"
                         password="qwe!P4ss">
             <!-- 这里面可以设置property属性，每一个property属性都设置到配置的Driver上 -->

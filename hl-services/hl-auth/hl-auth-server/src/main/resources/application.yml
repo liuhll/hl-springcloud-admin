@@ -15,7 +15,7 @@ spring:
 #      hibernate.format_sql: true
 #    open-in-view: false
   datasource:
-    url: ${DB_CONN:jdbc:mysql://127.0.0.1:13306/hl_identity?autoReconnect=true&useUnicode=true&characterEncoding=UTF8}
+    url: ${DB_CONN:jdbc:mysql://127.0.0.1:13306/hl_auth?autoReconnect=true&useUnicode=true&characterEncoding=UTF8}
     username: root
     password: qwe!P4ss
     # 使用druid数据源
