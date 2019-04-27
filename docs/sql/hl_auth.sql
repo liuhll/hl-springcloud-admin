@@ -4,7 +4,7 @@
 /*==============================================================*/
 
 CREATE DATABASE hl_auth DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE hl_identity;
+USE hl_auth;
 
 
 drop table if exists auth_employee;
