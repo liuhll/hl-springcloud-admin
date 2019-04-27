@@ -21,7 +21,7 @@ drop table if exists org_position;
 /*==============================================================*/
 create table org_corporation
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    Code                 varchar(50) not null comment '唯一编码',
    Name                 varchar(50) not null comment '公司名称',
    ParentId             bigint comment '母公司Id',
@@ -39,9 +39,9 @@ create table org_corporation
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
    primary key (Id),
    key AK_Key_1 (Id)
 );
@@ -53,7 +53,7 @@ alter table org_corporation comment '公司信息表';
 /*==============================================================*/
 create table org_department
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    Code                 varchar(50) not null comment '唯一编码',
    Name                 varchar(50) not null comment '部门名称',
    ParentId             bigint not null comment '上级部门Id',
@@ -66,9 +66,9 @@ create table org_department
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
    primary key (Id),
    key AK_Key_1 (Id)
 );
@@ -80,7 +80,7 @@ alter table org_department comment '部门表';
 /*==============================================================*/
 create table org_dept_position
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    DeptId               bigint not null comment '部门Id',
    PositionId           bigint not null comment '职位Id',
    CreateBy             bigint comment '创建人',
@@ -98,7 +98,7 @@ alter table org_dept_position comment '部门岗位关系表';
 /*==============================================================*/
 create table org_dept_user
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    DeptId               bigint not null comment '部门Id',
    UserId               bigint not null comment '用户Id',
    PositionId           bigint not null comment '职位Id',
@@ -118,7 +118,7 @@ alter table org_dept_user comment '部门用户关系表';
 /*==============================================================*/
 create table org_position
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    Code                 varchar(50) not null comment '唯一编码',
    ParentId             char(10) comment '上级职位Id',
    Name                 varchar(50) not null comment '职位名称',
@@ -130,9 +130,9 @@ create table org_position
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
    primary key (Id),
    key AK_Key_1 (Id)
 );

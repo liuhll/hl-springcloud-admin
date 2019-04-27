@@ -6,6 +6,7 @@
 CREATE DATABASE hl_identity DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE hl_identity;
 
+
 drop table if exists auth_employee;
 
 drop table if exists auth_file;
@@ -14,6 +15,8 @@ drop table if exists auth_function;
 
 drop table if exists auth_menu;
 
+drop table if exists auth_menu_function;
+
 drop table if exists auth_org_role;
 
 drop table if exists auth_permission;
@@ -21,6 +24,10 @@ drop table if exists auth_permission;
 drop table if exists auth_permission_file;
 
 drop table if exists auth_permission_function;
+
+drop table if exists auth_permission_menu;
+
+drop table if exists auth_role;
 
 drop table if exists auth_role_permission;
 
@@ -34,18 +41,12 @@ drop table if exists auth_user_usergroup;
 
 drop table if exists auth_usergroup_role;
 
-drop table if exists authl_menu_function;
-
-drop table if exists authl_permission_menu;
-
-drop table if exists authl_role;
-
 /*==============================================================*/
 /* Table: auth_employee                                         */
 /*==============================================================*/
 create table auth_employee
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    UserName             varchar(50) not null comment '用户名',
    ChineseName          varchar(50) not null comment '中文名',
    Email                varchar(50) not null comment '电子邮件',
@@ -66,9 +67,9 @@ create table auth_employee
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -79,7 +80,7 @@ alter table auth_employee comment '职员表';
 /*==============================================================*/
 create table auth_file
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    Code                 varchar(50) not null comment '编码',
    Name                 varchar(50) not null comment '名称',
    FIleName             varchar(50) not null,
@@ -90,9 +91,9 @@ create table auth_file
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -103,7 +104,7 @@ alter table auth_file comment '文件表';
 /*==============================================================*/
 create table auth_function
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    Code                 varchar(50) not null comment '编码',
    Name                 varchar(50) not null comment '名称',
    WebApi               int not null comment 'webapi',
@@ -115,9 +116,9 @@ create table auth_function
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -128,7 +129,7 @@ alter table auth_function comment '功能操作表';
 /*==============================================================*/
 create table auth_menu
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    Code                 varchar(50) not null comment '菜单编码',
    Name                 varchar(50) not null comment '菜单名称',
    UrlPath              int not null comment '菜单URL',
@@ -144,20 +145,37 @@ create table auth_menu
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
    primary key (Id)
 );
 
 alter table auth_menu comment '菜单表';
 
 /*==============================================================*/
+/* Table: auth_menu_function                                    */
+/*==============================================================*/
+create table auth_menu_function
+(
+   Id                   bigint not null auto_increment comment '主键',
+   MenuId               bigint not null,
+   FunctionId           bigint not null,
+   CreateBy             bigint comment '创建人',
+   CreateTime           datetime comment '创建日期',
+   UpdateBy             bigint comment '修改人',
+   UpdateTime           datetime comment '修改日期',
+   primary key (Id)
+);
+
+alter table auth_menu_function comment '菜单功能关系表';
+
+/*==============================================================*/
 /* Table: auth_org_role                                         */
 /*==============================================================*/
 create table auth_org_role
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    OrgId                bigint not null,
    RoleId               bigint not null,
    CreateBy             bigint comment '创建人',
@@ -174,7 +192,7 @@ alter table auth_org_role comment '组织机构角色关系表';
 /*==============================================================*/
 create table auth_permission
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    Code                 varchar(50) not null comment '权限编码',
    Name                 varchar(50) not null comment '权限名称',
    Mold                 int comment '权限类型 1.菜单  2. 操作 3. 页面元素 4. 文件',
@@ -184,9 +202,9 @@ create table auth_permission
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -197,7 +215,7 @@ alter table auth_permission comment '权限表';
 /*==============================================================*/
 create table auth_permission_file
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    PermissionId         bigint not null,
    FileId               bigint not null,
    CreateBy             bigint comment '创建人',
@@ -214,7 +232,7 @@ alter table auth_permission_file comment '权限文件关系表';
 /*==============================================================*/
 create table auth_permission_function
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    PermissionId         bigint not null,
    FunctionId           bigint not null,
    CreateBy             bigint comment '创建人',
@@ -227,11 +245,50 @@ create table auth_permission_function
 alter table auth_permission_function comment '权限菜单关系表';
 
 /*==============================================================*/
+/* Table: auth_permission_menu                                  */
+/*==============================================================*/
+create table auth_permission_menu
+(
+   Id                   bigint not null auto_increment comment '主键',
+   PermissionId         bigint not null,
+   MenuId               bigint not null,
+   CreateBy             bigint comment '创建人',
+   CreateTime           datetime comment '创建日期',
+   UpdateBy             bigint comment '修改人',
+   UpdateTime           datetime comment '修改日期',
+   primary key (Id)
+);
+
+alter table auth_permission_menu comment '权限菜单关系表';
+
+/*==============================================================*/
+/* Table: auth_role                                             */
+/*==============================================================*/
+create table auth_role
+(
+   Id                   bigint not null auto_increment comment '主键',
+   Code                 varchar(50) not null comment '角色编码',
+   Name                 varchar(50) not null comment '角色名称',
+   Memo                 varchar(100) comment '备注',
+   Status               int not null comment '状态',
+   CreateBy             bigint comment '创建人',
+   CreateTime           datetime comment '创建日期',
+   UpdateBy             bigint comment '修改人',
+   UpdateTime           datetime comment '修改日期',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
+   primary key (Id)
+);
+
+alter table auth_role comment '角色表';
+
+/*==============================================================*/
 /* Table: auth_role_permission                                  */
 /*==============================================================*/
 create table auth_role_permission
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    RoleId               bigint not null,
    PerssionId           char(10) not null,
    CreateBy             bigint comment '创建人',
@@ -248,7 +305,7 @@ alter table auth_role_permission comment '角色权限表';
 /*==============================================================*/
 create table auth_user
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    EmployeeId           bigint not null comment '员工Id',
    Email                varchar(50) not null comment '电子邮件',
    Phone                varchar(22) not null comment '联系电话',
@@ -259,9 +316,9 @@ create table auth_user
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -272,7 +329,7 @@ alter table auth_user comment '用户表';
 /*==============================================================*/
 create table auth_user_group
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    ParentId             varchar(22) not null comment '父用户组Id',
    GroupName            varchar(50) not null comment '用户组名称',
    Status               int not null comment '状态',
@@ -280,9 +337,9 @@ create table auth_user_group
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
    primary key (Id)
 );
 
@@ -293,7 +350,7 @@ alter table auth_user_group comment '用户组表';
 /*==============================================================*/
 create table auth_user_role
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    UserId               bigint not null,
    RoleId               bigint not null,
    CreateBy             bigint comment '创建人',
@@ -310,7 +367,7 @@ alter table auth_user_role comment '用户角色关系表';
 /*==============================================================*/
 create table auth_user_usergroup
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    UserId               bigint not null,
    UserGroupId          bigint not null,
    CreateBy             bigint comment '创建人',
@@ -327,7 +384,7 @@ alter table auth_user_usergroup comment '用户与用户关系表';
 /*==============================================================*/
 create table auth_usergroup_role
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    UserGroupId          bigint not null,
    RoleId               bigint not null,
    CreateBy             bigint comment '创建人',
@@ -338,60 +395,3 @@ create table auth_usergroup_role
 );
 
 alter table auth_usergroup_role comment '用户组角色关系表';
-
-/*==============================================================*/
-/* Table: authl_menu_function                                   */
-/*==============================================================*/
-create table authl_menu_function
-(
-   Id                   bigint not null comment '主键',
-   MenuId               bigint not null,
-   FunctionId           bigint not null,
-   CreateBy             bigint comment '创建人',
-   CreateTime           datetime comment '创建日期',
-   UpdateBy             bigint comment '修改人',
-   UpdateTime           datetime comment '修改日期',
-   primary key (Id)
-);
-
-alter table authl_menu_function comment '菜单功能关系表';
-
-/*==============================================================*/
-/* Table: authl_permission_menu                                 */
-/*==============================================================*/
-create table authl_permission_menu
-(
-   Id                   bigint not null comment '主键',
-   PermissionId         bigint not null,
-   MenuId               bigint not null,
-   CreateBy             bigint comment '创建人',
-   CreateTime           datetime comment '创建日期',
-   UpdateBy             bigint comment '修改人',
-   UpdateTime           datetime comment '修改日期',
-   primary key (Id)
-);
-
-alter table authl_permission_menu comment '权限菜单关系表';
-
-/*==============================================================*/
-/* Table: authl_role                                            */
-/*==============================================================*/
-create table authl_role
-(
-   Id                   bigint not null comment '主键',
-   Code                 varchar(50) not null comment '角色编码',
-   Name                 varchar(50) not null comment '角色名称',
-   Memo                 varchar(100) comment '备注',
-   Status               int not null comment '状态',
-   CreateBy             bigint comment '创建人',
-   CreateTime           datetime comment '创建日期',
-   UpdateBy             bigint comment '修改人',
-   UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间',
-   primary key (Id)
-);
-
-alter table authl_role comment '角色表';
-

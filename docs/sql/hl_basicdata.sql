@@ -6,6 +6,10 @@
 CREATE DATABASE hl_basicdata DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE hl_basicdata;
 
+
+alter table bd_dictionary
+   drop primary key;
+
 drop table if exists bd_dictionary;
 
 /*==============================================================*/
@@ -13,7 +17,7 @@ drop table if exists bd_dictionary;
 /*==============================================================*/
 create table bd_dictionary
 (
-   Id                   bigint not null comment '主键',
+   Id                   bigint not null auto_increment comment '主键',
    Code                 varchar(50) not null comment '唯一编码',
    Name                 varchar(50) not null comment '名称',
    ParentId             bigint not null comment '父级Id',
@@ -24,9 +28,9 @@ create table bd_dictionary
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
    UpdateTime           datetime comment '修改日期',
-   IsDeleted             int comment '软删除标识',
-   DeleteBy         bigint comment '删除用户',
-   DeleteTime         datetime comment '删除时间'
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间'
 );
 
 alter table bd_dictionary comment '字典表';
@@ -36,3 +40,5 @@ alter table bd_dictionary
 
 alter table bd_dictionary
    add primary key (Id);
+
+
