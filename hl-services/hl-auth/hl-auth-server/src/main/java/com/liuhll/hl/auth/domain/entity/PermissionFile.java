@@ -3,8 +3,8 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.AuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_user_role")
-public class UserRole extends AuditedEntity {
+@Table(name = "auth_permission_file")
+public class PermissionFile extends AuditedEntity {
     /**
      * 主键
      */
@@ -13,11 +13,11 @@ public class UserRole extends AuditedEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
-    @Column(name = "UserId")
-    private Long userid;
+    @Column(name = "PermissionId")
+    private Long permissionid;
 
-    @Column(name = "RoleId")
-    private Long roleid;
+    @Column(name = "FileId")
+    private Long fileid;
 
     /**
      * 获取主键
@@ -38,30 +38,30 @@ public class UserRole extends AuditedEntity {
     }
 
     /**
-     * @return UserId
+     * @return PermissionId
      */
-    public Long getUserid() {
-        return userid;
+    public Long getPermissionid() {
+        return permissionid;
     }
 
     /**
-     * @param userid
+     * @param permissionid
      */
-    public void setUserid(Long userid) {
-        this.userid = userid;
+    public void setPermissionid(Long permissionid) {
+        this.permissionid = permissionid;
     }
 
     /**
-     * @return RoleId
+     * @return FileId
      */
-    public Long getRoleid() {
-        return roleid;
+    public Long getFileid() {
+        return fileid;
     }
 
     /**
-     * @param roleid
+     * @param fileid
      */
-    public void setRoleid(Long roleid) {
-        this.roleid = roleid;
+    public void setFileid(Long fileid) {
+        this.fileid = fileid;
     }
 }

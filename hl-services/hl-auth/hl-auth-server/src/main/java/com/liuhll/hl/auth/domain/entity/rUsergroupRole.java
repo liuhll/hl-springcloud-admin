@@ -3,8 +3,8 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.AuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_user_role")
-public class UserRole extends AuditedEntity {
+@Table(name = "auth_usergroup_role")
+public class rUsergroupRole extends AuditedEntity {
     /**
      * 主键
      */
@@ -13,8 +13,8 @@ public class UserRole extends AuditedEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
-    @Column(name = "UserId")
-    private Long userid;
+    @Column(name = "UserGroupId")
+    private Long usergroupid;
 
     @Column(name = "RoleId")
     private Long roleid;
@@ -38,17 +38,17 @@ public class UserRole extends AuditedEntity {
     }
 
     /**
-     * @return UserId
+     * @return UserGroupId
      */
-    public Long getUserid() {
-        return userid;
+    public Long getUsergroupid() {
+        return usergroupid;
     }
 
     /**
-     * @param userid
+     * @param usergroupid
      */
-    public void setUserid(Long userid) {
-        this.userid = userid;
+    public void setUsergroupid(Long usergroupid) {
+        this.usergroupid = usergroupid;
     }
 
     /**

@@ -3,8 +3,8 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.AuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_user_role")
-public class UserRole extends AuditedEntity {
+@Table(name = "auth_user_usergroup")
+public class UserUsergroup extends AuditedEntity {
     /**
      * 主键
      */
@@ -16,8 +16,8 @@ public class UserRole extends AuditedEntity {
     @Column(name = "UserId")
     private Long userid;
 
-    @Column(name = "RoleId")
-    private Long roleid;
+    @Column(name = "UserGroupId")
+    private Long usergroupid;
 
     /**
      * 获取主键
@@ -52,16 +52,16 @@ public class UserRole extends AuditedEntity {
     }
 
     /**
-     * @return RoleId
+     * @return UserGroupId
      */
-    public Long getRoleid() {
-        return roleid;
+    public Long getUsergroupid() {
+        return usergroupid;
     }
 
     /**
-     * @param roleid
+     * @param usergroupid
      */
-    public void setRoleid(Long roleid) {
-        this.roleid = roleid;
+    public void setUsergroupid(Long usergroupid) {
+        this.usergroupid = usergroupid;
     }
 }

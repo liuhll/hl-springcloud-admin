@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuhll.hl.auth.mapper.PermissionMapper">
+  <resultMap id="BaseResultMap" type="com.liuhll.hl.auth.domain.entity.Permission">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="Id" jdbcType="BIGINT" property="id" />
+    <result column="Code" jdbcType="VARCHAR" property="code" />
+    <result column="Name" jdbcType="VARCHAR" property="name" />
+    <result column="Mold" jdbcType="INTEGER" property="mold" />
+    <result column="Memo" jdbcType="VARCHAR" property="memo" />
+    <result column="Status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+</mapper>

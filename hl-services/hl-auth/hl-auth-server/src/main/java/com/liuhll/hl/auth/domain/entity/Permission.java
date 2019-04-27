@@ -3,8 +3,8 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.FullAuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_role")
-public class Role extends FullAuditedEntity {
+@Table(name = "auth_permission")
+public class Permission extends FullAuditedEntity {
     /**
      * 主键
      */
@@ -14,16 +14,22 @@ public class Role extends FullAuditedEntity {
     private Long id;
 
     /**
-     * 角色编码
+     * 权限编码
      */
     @Column(name = "Code")
     private String code;
 
     /**
-     * 角色名称
+     * 权限名称
      */
     @Column(name = "Name")
     private String name;
+
+    /**
+     * 权限类型 1.菜单  2. 操作 3. 页面元素 4. 文件
+     */
+    @Column(name = "Mold")
+    private Integer mold;
 
     /**
      * 备注
@@ -56,39 +62,57 @@ public class Role extends FullAuditedEntity {
     }
 
     /**
-     * 获取角色编码
+     * 获取权限编码
      *
-     * @return Code - 角色编码
+     * @return Code - 权限编码
      */
     public String getCode() {
         return code;
     }
 
     /**
-     * 设置角色编码
+     * 设置权限编码
      *
-     * @param code 角色编码
+     * @param code 权限编码
      */
     public void setCode(String code) {
         this.code = code == null ? null : code.trim();
     }
 
     /**
-     * 获取角色名称
+     * 获取权限名称
      *
-     * @return Name - 角色名称
+     * @return Name - 权限名称
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置角色名称
+     * 设置权限名称
      *
-     * @param name 角色名称
+     * @param name 权限名称
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    /**
+     * 获取权限类型 1.菜单  2. 操作 3. 页面元素 4. 文件
+     *
+     * @return Mold - 权限类型 1.菜单  2. 操作 3. 页面元素 4. 文件
+     */
+    public Integer getMold() {
+        return mold;
+    }
+
+    /**
+     * 设置权限类型 1.菜单  2. 操作 3. 页面元素 4. 文件
+     *
+     * @param mold 权限类型 1.菜单  2. 操作 3. 页面元素 4. 文件
+     */
+    public void setMold(Integer mold) {
+        this.mold = mold;
     }
 
     /**

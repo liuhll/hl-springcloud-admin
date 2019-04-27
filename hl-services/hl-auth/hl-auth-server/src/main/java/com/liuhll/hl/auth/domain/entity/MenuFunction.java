@@ -3,8 +3,8 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.AuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_user_role")
-public class UserRole extends AuditedEntity {
+@Table(name = "auth_menu_function")
+public class MenuFunction extends AuditedEntity {
     /**
      * 主键
      */
@@ -13,11 +13,11 @@ public class UserRole extends AuditedEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
-    @Column(name = "UserId")
-    private Long userid;
+    @Column(name = "MenuId")
+    private Long menuid;
 
-    @Column(name = "RoleId")
-    private Long roleid;
+    @Column(name = "FunctionId")
+    private Long functionid;
 
     /**
      * 获取主键
@@ -38,30 +38,30 @@ public class UserRole extends AuditedEntity {
     }
 
     /**
-     * @return UserId
+     * @return MenuId
      */
-    public Long getUserid() {
-        return userid;
+    public Long getMenuid() {
+        return menuid;
     }
 
     /**
-     * @param userid
+     * @param menuid
      */
-    public void setUserid(Long userid) {
-        this.userid = userid;
+    public void setMenuid(Long menuid) {
+        this.menuid = menuid;
     }
 
     /**
-     * @return RoleId
+     * @return FunctionId
      */
-    public Long getRoleid() {
-        return roleid;
+    public Long getFunctionid() {
+        return functionid;
     }
 
     /**
-     * @param roleid
+     * @param functionid
      */
-    public void setRoleid(Long roleid) {
-        this.roleid = roleid;
+    public void setFunctionid(Long functionid) {
+        this.functionid = functionid;
     }
 }

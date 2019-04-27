@@ -3,8 +3,8 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.FullAuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_role")
-public class Role extends FullAuditedEntity {
+@Table(name = "auth_file")
+public class File extends FullAuditedEntity {
     /**
      * 主键
      */
@@ -14,16 +14,22 @@ public class Role extends FullAuditedEntity {
     private Long id;
 
     /**
-     * 角色编码
+     * 编码
      */
     @Column(name = "Code")
     private String code;
 
     /**
-     * 角色名称
+     * 名称
      */
     @Column(name = "Name")
     private String name;
+
+    @Column(name = "FIleName")
+    private String filename;
+
+    @Column(name = "FilePath")
+    private String filepath;
 
     /**
      * 备注
@@ -56,39 +62,67 @@ public class Role extends FullAuditedEntity {
     }
 
     /**
-     * 获取角色编码
+     * 获取编码
      *
-     * @return Code - 角色编码
+     * @return Code - 编码
      */
     public String getCode() {
         return code;
     }
 
     /**
-     * 设置角色编码
+     * 设置编码
      *
-     * @param code 角色编码
+     * @param code 编码
      */
     public void setCode(String code) {
         this.code = code == null ? null : code.trim();
     }
 
     /**
-     * 获取角色名称
+     * 获取名称
      *
-     * @return Name - 角色名称
+     * @return Name - 名称
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置角色名称
+     * 设置名称
      *
-     * @param name 角色名称
+     * @param name 名称
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    /**
+     * @return FIleName
+     */
+    public String getFilename() {
+        return filename;
+    }
+
+    /**
+     * @param filename
+     */
+    public void setFilename(String filename) {
+        this.filename = filename == null ? null : filename.trim();
+    }
+
+    /**
+     * @return FilePath
+     */
+    public String getFilepath() {
+        return filepath;
+    }
+
+    /**
+     * @param filepath
+     */
+    public void setFilepath(String filepath) {
+        this.filepath = filepath == null ? null : filepath.trim();
     }
 
     /**
