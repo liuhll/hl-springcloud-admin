@@ -14,7 +14,7 @@ public class RoleService implements IRoleService {
     @Override
     public Collection<Role> getRolesByUserId(Long userId) {
         List<Role>  roles = new ArrayList<>();
-        roles.add(new Role((new Integer(1).longValue()),"admin","管理员"));
+       // roles.add(new Role((new Integer(1).longValue()),"admin","管理员"));
         return roles;
     }
 }
