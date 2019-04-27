@@ -1,4 +1,4 @@
-package com.liuhll.hl.common.security;
+package com.liuhll.hl.auth.client.security;
 
 import com.liuhll.hl.common.conf.SecurityWhitelistConfig;
 import org.springframework.beans.factory.annotation.Autowired;

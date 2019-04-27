@@ -1,11 +1,11 @@
 package com.liuhll.hl.auth.jwt;
 
 import com.alibaba.fastjson.JSON;
+import com.liuhll.hl.auth.client.conf.JwtConfig;
 import com.liuhll.hl.common.enums.ResultCode;
 import com.liuhll.hl.common.utils.ResponseResultUtil;
 import com.liuhll.hl.common.vo.ResponseResult;
 import com.liuhll.hl.auth.common.jwt.IJwtTokenProvider;
-import com.liuhll.hl.auth.conf.JwtConfig;
 import com.liuhll.hl.auth.service.impl.JwtUserDetailsService;
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.extern.slf4j.Slf4j;
@@ -35,22 +35,22 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     private JwtUserDetailsService jwtUserDetailsService;
 
     @Autowired
-    private JwtConfig jwtConfig;
+    private JwtConfig authJwtConfig;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
-        String jwtToken = jwtTokenProvider.resolveToken(request,jwtConfig.getHeader());
+        String jwtToken = jwtTokenProvider.resolveToken(request,authJwtConfig.getHeader());
 
         try {
             if (jwtToken != null && StringUtils.isNotEmpty(jwtToken)) {
-                String username = jwtTokenProvider.getUsernameFromToken(jwtToken,jwtConfig.getSecret());
-                jwtTokenProvider.validateToken(jwtToken,jwtConfig.getSecret());//验证令牌
+                String username = jwtTokenProvider.getUsernameFromToken(jwtToken,authJwtConfig.getSecret());
+                jwtTokenProvider.validateToken(jwtToken,authJwtConfig.getSecret());//验证令牌
 
                 if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                     UserDetails userDetails = jwtUserDetailsService.loadUserByUsername(username);
-                    if (jwtTokenProvider.validateToken(jwtToken,jwtConfig.getSecret())) {
+                    if (jwtTokenProvider.validateToken(jwtToken,authJwtConfig.getSecret())) {
                         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                         authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                         SecurityContextHolder.getContext().setAuthentication(authentication);

@@ -1,9 +1,9 @@
 package com.liuhll.hl.auth.controller;
 
 import com.liuhll.hl.auth.client.annotation.IgnoreUserToken;
+import com.liuhll.hl.auth.client.conf.JwtConfig;
 import com.liuhll.hl.auth.service.IAuthClientService;
 import com.liuhll.hl.common.annotation.IgnoreResponseAdvice;
-import com.liuhll.hl.auth.conf.JwtConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

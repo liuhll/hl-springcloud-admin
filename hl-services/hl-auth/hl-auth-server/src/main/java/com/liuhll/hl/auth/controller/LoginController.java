@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController {
 
     @Autowired
-    private IAuthService IAuthService;
+    private IAuthService authService;
 
     @PostMapping("/login")
     @IgnoreUserToken
     public String Login(@RequestBody LoginInput input) throws UnAuthenticationException {
-        return IAuthService.login(input.getUserName(), input.getPassword());
+        return authService.login(input.getUserName(), input.getPassword());
     }
 
     @GetMapping("/api/user/{id}")

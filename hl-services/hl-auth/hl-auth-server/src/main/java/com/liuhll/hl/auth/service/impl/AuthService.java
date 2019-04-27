@@ -1,8 +1,8 @@
 package com.liuhll.hl.auth.service.impl;
 
+import com.liuhll.hl.auth.client.conf.JwtConfig;
 import com.liuhll.hl.common.exception.UnAuthenticationException;
 import com.liuhll.hl.auth.common.jwt.JwtUserClaims;
-import com.liuhll.hl.auth.conf.JwtConfig;
 import com.liuhll.hl.auth.service.IAuthService;
 import com.liuhll.hl.auth.common.jwt.IJwtTokenProvider;
 import com.liuhll.hl.auth.jwt.JwtUser;
@@ -27,7 +27,7 @@ public class AuthService implements IAuthService {
     private IJwtTokenProvider jwtTokenProvider;
 
     @Autowired
-    private JwtConfig jwtConfig;
+    private JwtConfig authJwtConfig;
 
 
     @Override
@@ -46,7 +46,7 @@ public class AuthService implements IAuthService {
         JwtUser jwtUser = (JwtUser) jwtUserDetailsService.loadUserByUsername(userName);
         JwtUserClaims jwtCalimsInfo = new JwtUserClaims();
         BeanUtils.copyProperties(jwtUser,jwtCalimsInfo);
-        String token = jwtTokenProvider.generateToken(jwtCalimsInfo,jwtConfig.getExpiration(),jwtConfig.getSecret());
+        String token = jwtTokenProvider.generateToken(jwtCalimsInfo,authJwtConfig.getExpiration(),authJwtConfig.getSecret());
         return token;
     }
 }
