@@ -1,9 +1,9 @@
 /*==============================================================*/
-/* DB name:      hl_identity                                */
+/* DB name:      hl_auth                            */
 /* Created on:     2019/4/21 星期日 1:15:16                        */
 /*==============================================================*/
 
-CREATE DATABASE hl_identity DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE hl_auth DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE hl_identity;
 
 
