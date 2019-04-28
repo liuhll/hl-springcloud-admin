@@ -21,7 +21,7 @@ public class UserController {
     public String addEmployee(@RequestBody @Validated EmployeeInput input){
         Employee employee = new Employee();
         BeanUtils.copyProperties(input,employee);
-        employeeService.save(employee);
+        employeeService.saveEmployee(employee);
         return "新增员工成功";
     }
 
