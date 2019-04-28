@@ -100,7 +100,7 @@
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
-        <table tableName="auth_user" domainObjectName="User">
+        <table tableName="auth_user" domainObjectName="UserInfo">
             <property name="rootClass" value="com.liuhll.hl.common.domain.auditing.FullAuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
