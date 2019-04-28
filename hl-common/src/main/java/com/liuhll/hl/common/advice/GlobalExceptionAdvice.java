@@ -5,10 +5,16 @@ import com.liuhll.hl.common.exception.HlException;
 import com.liuhll.hl.common.exception.UserFriendlyException;
 import com.liuhll.hl.common.utils.ResponseResultUtil;
 import com.liuhll.hl.common.vo.ResponseResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Dictionary;
+import java.util.Hashtable;
+import java.util.List;
 
 @RestControllerAdvice
 public class GlobalExceptionAdvice {
@@ -32,5 +38,18 @@ public class GlobalExceptionAdvice {
                                                      Exception ex) {
         ResponseResult<String> response = ResponseResultUtil.error(ResultCode.PlatformException,ex);
         return response;
+    }
+
+    @ExceptionHandler(value = MethodArgumentNotValidException.class)
+    public ResponseResult<Object> handlerValidException(HttpServletRequest req,Exception ex){
+        Dictionary<String,String> errors = new Hashtable<>();
+        List<ObjectError> objectErrors = ((MethodArgumentNotValidException) ex).getBindingResult().getAllErrors();
+        for (ObjectError error : objectErrors){
+
+            errors.put(((FieldError) error).getField(),error.getDefaultMessage());
+        }
+        ResponseResult<Object>  response = ResponseResultUtil.unValid(errors);
+        return response;
+
     }
 }

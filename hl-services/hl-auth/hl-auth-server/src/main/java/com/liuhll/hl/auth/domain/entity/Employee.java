@@ -1,8 +1,15 @@
 package com.liuhll.hl.auth.domain.entity;
 
+import com.liuhll.hl.auth.domain.models.Gender;
+import com.liuhll.hl.auth.domain.models.PoliticalStatus;
+import com.liuhll.hl.auth.typehandler.GenderTypeHandler;
+import com.liuhll.hl.auth.typehandler.PoliticalStatusTypeHandler;
 import com.liuhll.hl.common.domain.auditing.FullAuditedEntity;
-import java.util.Date;
+import org.apache.ibatis.type.JdbcType;
+import tk.mybatis.mapper.annotation.ColumnType;
+
 import javax.persistence.*;
+import java.util.Date;
 
 @Table(name = "auth_employee")
 public class Employee extends FullAuditedEntity {
@@ -42,7 +49,9 @@ public class Employee extends FullAuditedEntity {
      * 性别
      */
     @Column(name = "Gender")
-    private Integer gender;
+    @ColumnType(jdbcType = JdbcType.INTEGER,
+    typeHandler = GenderTypeHandler.class)
+    private Gender gender;
 
     /**
      * 生日
@@ -71,8 +80,10 @@ public class Employee extends FullAuditedEntity {
     /**
      * 政治面貌
      */
+    @ColumnType(jdbcType = JdbcType.INTEGER,
+            typeHandler = PoliticalStatusTypeHandler.class)
     @Column(name = "PoliticalStatus")
-    private Integer politicalstatus;
+    private PoliticalStatus politicalstatus;
 
     /**
      * 毕业院校
@@ -205,7 +216,7 @@ public class Employee extends FullAuditedEntity {
      *
      * @return Gender - 性别
      */
-    public Integer getGender() {
+    public Gender getGender() {
         return gender;
     }
 
@@ -214,7 +225,7 @@ public class Employee extends FullAuditedEntity {
      *
      * @param gender 性别
      */
-    public void setGender(Integer gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
@@ -295,7 +306,7 @@ public class Employee extends FullAuditedEntity {
      *
      * @return PoliticalStatus - 政治面貌
      */
-    public Integer getPoliticalstatus() {
+    public PoliticalStatus getPoliticalstatus() {
         return politicalstatus;
     }
 
@@ -304,7 +315,7 @@ public class Employee extends FullAuditedEntity {
      *
      * @param politicalstatus 政治面貌
      */
-    public void setPoliticalstatus(Integer politicalstatus) {
+    public void setPoliticalstatus(PoliticalStatus politicalstatus) {
         this.politicalstatus = politicalstatus;
     }
 

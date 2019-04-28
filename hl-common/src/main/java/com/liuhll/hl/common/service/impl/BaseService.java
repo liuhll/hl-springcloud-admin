@@ -86,4 +86,6 @@ public abstract class BaseService<M extends Mapper<T>, T>  implements IService<T
     public List<T> selectByExample(Object example) {
         return mapper.selectByExample(example);
     }
+
+
 }

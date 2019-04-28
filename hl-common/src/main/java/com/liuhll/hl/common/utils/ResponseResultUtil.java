@@ -28,4 +28,11 @@ public class ResponseResultUtil {
         result.setMessage(errorMessage);
         return result;
     }
+
+    public static ResponseResult<Object> unValid(Object validError){
+        ResponseResult<Object> result = new ResponseResult<>();
+        result.setCode(ResultCode.UnValid);
+        result.setValidError(validError);
+        return result;
+    }
 }

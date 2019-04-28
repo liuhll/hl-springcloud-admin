@@ -23,6 +23,9 @@ public class ResponseResult<T> implements Serializable {
     @JsonProperty
     private T data;
 
+    @JsonProperty
+    private T validError;
+
     public ResponseResult(ResultCode code,T data){
         this.code = code;
         this.data = data;

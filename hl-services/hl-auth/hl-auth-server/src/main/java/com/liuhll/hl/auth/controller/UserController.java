@@ -5,6 +5,7 @@ import com.liuhll.hl.auth.service.impl.EmployeeService;
 import com.liuhll.hl.auth.vo.EmployeeInput;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class UserController {
     private EmployeeService employeeService;
 
     @PostMapping()
-    public String addEmployee(@RequestBody EmployeeInput input){
+    public String addEmployee(@RequestBody @Validated EmployeeInput input){
         Employee employee = new Employee();
         BeanUtils.copyProperties(input,employee);
         employeeService.save(employee);

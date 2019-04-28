@@ -12,6 +12,7 @@ public enum ResultCode {
     FriendlyTips(5,""),
     ClentForbidden(6,"无权访问该应用"),
     NonExistentClent(7,"不存在该应用"),
+    UnValid(8,"验证未通过")
     ;
 
     private int code;
