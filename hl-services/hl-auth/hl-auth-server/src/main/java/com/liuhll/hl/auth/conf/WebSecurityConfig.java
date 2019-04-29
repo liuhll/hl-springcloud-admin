@@ -60,14 +60,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtUserDetailsService userDetailsService;
 
-    @Bean
+    @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
 
-    @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
+    @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }

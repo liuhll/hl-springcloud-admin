@@ -120,7 +120,7 @@
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
-        <table tableName="auth_usergroup_role" domainObjectName="rUsergroupRole">
+        <table tableName="auth_usergroup_role" domainObjectName="UsergroupRole">
             <property name="rootClass" value="com.liuhll.hl.common.domain.auditing.AuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.liuhll.hl.auth.mapper.rUsergroupRoleMapper">
-  <resultMap id="BaseResultMap" type="com.liuhll.hl.auth.domain.entity.rUsergroupRole">
+<mapper namespace="com.liuhll.hl.auth.mapper.UsergroupRoleMapper">
+  <resultMap id="BaseResultMap" type="com.liuhll.hl.auth.domain.entity.UsergroupRole">
     <!--
       WARNING - @mbg.generated
     -->

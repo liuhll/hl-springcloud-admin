@@ -4,7 +4,7 @@ import com.liuhll.hl.common.domain.auditing.AuditedEntity;
 import javax.persistence.*;
 
 @Table(name = "auth_usergroup_role")
-public class rUsergroupRole extends AuditedEntity {
+public class UsergroupRole extends AuditedEntity {
     /**
      * 主键
      */
