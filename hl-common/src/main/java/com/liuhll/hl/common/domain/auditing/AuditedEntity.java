@@ -14,7 +14,7 @@ public abstract class AuditedEntity extends CreationAudited implements IModifica
 
     @Basic
     @Column(name = "CreateTime")
-    protected Date createTime = new Date();
+    protected Date createTime;
 
     @Basic
     @Column(name = "UpdateBy")
@@ -22,6 +22,6 @@ public abstract class AuditedEntity extends CreationAudited implements IModifica
 
     @Basic
     @Column(name = "UpdateTime")
-    protected Date updateTime = new Date();
+    protected Date updateTime;
 
 }

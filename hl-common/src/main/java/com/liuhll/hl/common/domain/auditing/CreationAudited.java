@@ -15,5 +15,5 @@ public abstract class CreationAudited implements ICreationAudited {
 
     @Basic
     @Column(name = "CreateTime")
-    protected Date createTime = new Date();
+    protected Date createTime;
 }

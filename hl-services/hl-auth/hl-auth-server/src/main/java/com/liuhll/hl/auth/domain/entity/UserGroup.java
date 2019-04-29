@@ -3,32 +3,32 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.AuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_user_group")
+@Table(name = "`auth_user_group`")
 public class UserGroup extends AuditedEntity {
     /**
      * 主键
      */
     @Id
-    @Column(name = "Id")
+    @Column(name = "`Id`")
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
      * 父用户组Id
      */
-    @Column(name = "ParentId")
+    @Column(name = "`ParentId`")
     private String parentid;
 
     /**
      * 用户组名称
      */
-    @Column(name = "GroupName")
+    @Column(name = "`GroupName`")
     private String groupname;
 
     /**
      * 状态
      */
-    @Column(name = "Status")
+    @Column(name = "`Status`")
     private Integer status;
 
     /**

@@ -3,20 +3,20 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.AuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_org_role")
+@Table(name = "`auth_org_role`")
 public class OrgRole extends AuditedEntity {
     /**
      * 主键
      */
     @Id
-    @Column(name = "Id")
+    @Column(name = "`Id`")
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
-    @Column(name = "OrgId")
+    @Column(name = "`OrgId`")
     private Long orgid;
 
-    @Column(name = "RoleId")
+    @Column(name = "`RoleId`")
     private Long roleid;
 
     /**

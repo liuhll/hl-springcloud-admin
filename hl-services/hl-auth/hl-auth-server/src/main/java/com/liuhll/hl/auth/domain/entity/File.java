@@ -3,44 +3,44 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.FullAuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_file")
+@Table(name = "`auth_file`")
 public class File extends FullAuditedEntity {
     /**
      * 主键
      */
     @Id
-    @Column(name = "Id")
+    @Column(name = "`Id`")
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
      * 编码
      */
-    @Column(name = "Code")
+    @Column(name = "`Code`")
     private String code;
 
     /**
      * 名称
      */
-    @Column(name = "Name")
+    @Column(name = "`Name`")
     private String name;
 
-    @Column(name = "FIleName")
+    @Column(name = "`FIleName`")
     private String filename;
 
-    @Column(name = "FilePath")
+    @Column(name = "`FilePath`")
     private String filepath;
 
     /**
      * 备注
      */
-    @Column(name = "Memo")
+    @Column(name = "`Memo`")
     private String memo;
 
     /**
      * 状态
      */
-    @Column(name = "Status")
+    @Column(name = "`Status`")
     private Integer status;
 
     /**

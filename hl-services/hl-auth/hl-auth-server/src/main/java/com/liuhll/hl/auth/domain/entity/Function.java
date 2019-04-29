@@ -3,56 +3,56 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.FullAuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_function")
+@Table(name = "`auth_function`")
 public class Function extends FullAuditedEntity {
     /**
      * 主键
      */
     @Id
-    @Column(name = "Id")
+    @Column(name = "`Id`")
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
      * 编码
      */
-    @Column(name = "Code")
+    @Column(name = "`Code`")
     private String code;
 
     /**
      * 名称
      */
-    @Column(name = "Name")
+    @Column(name = "`Name`")
     private String name;
 
     /**
      * webapi
      */
-    @Column(name = "WebApi")
+    @Column(name = "`WebApi`")
     private Integer webapi;
 
     /**
      * 状态
      */
-    @Column(name = "Status")
+    @Column(name = "`Status`")
     private Integer status;
 
     /**
      * 请求方法
      */
-    @Column(name = "Method")
+    @Column(name = "`Method`")
     private Integer method;
 
     /**
      * 父Id
      */
-    @Column(name = "ParentId")
+    @Column(name = "`ParentId`")
     private Long parentid;
 
     /**
      * 备注
      */
-    @Column(name = "Memo")
+    @Column(name = "`Memo`")
     private String memo;
 
     /**

@@ -3,50 +3,50 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.FullAuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_user")
+@Table(name = "`auth_user`")
 public class UserInfo extends FullAuditedEntity {
     /**
      * 主键
      */
     @Id
-    @Column(name = "Id")
+    @Column(name = "`Id`")
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
      * 员工Id
      */
-    @Column(name = "EmployeeId")
+    @Column(name = "`EmployeeId`")
     private Long employeeid;
 
     /**
      * 电子邮件
      */
-    @Column(name = "Email")
+    @Column(name = "`Email`")
     private String email;
 
     /**
      * 联系电话
      */
-    @Column(name = "Phone")
+    @Column(name = "`Phone`")
     private String phone;
 
     /**
      * 用户名
      */
-    @Column(name = "UserName")
+    @Column(name = "`UserName`")
     private String username;
 
     /**
      * 密码
      */
-    @Column(name = "Password")
+    @Column(name = "`Password`")
     private String password;
 
     /**
      * 状态
      */
-    @Column(name = "Status")
+    @Column(name = "`Status`")
     private Integer status;
 
     /**

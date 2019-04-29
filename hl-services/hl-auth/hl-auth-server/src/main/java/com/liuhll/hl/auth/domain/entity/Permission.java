@@ -3,44 +3,44 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.FullAuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_permission")
+@Table(name = "`auth_permission`")
 public class Permission extends FullAuditedEntity {
     /**
      * 主键
      */
     @Id
-    @Column(name = "Id")
+    @Column(name = "`Id`")
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
      * 权限编码
      */
-    @Column(name = "Code")
+    @Column(name = "`Code`")
     private String code;
 
     /**
      * 权限名称
      */
-    @Column(name = "Name")
+    @Column(name = "`Name`")
     private String name;
 
     /**
      * 权限类型 1.菜单  2. 操作 3. 页面元素 4. 文件
      */
-    @Column(name = "Mold")
+    @Column(name = "`Mold`")
     private Integer mold;
 
     /**
      * 备注
      */
-    @Column(name = "Memo")
+    @Column(name = "`Memo`")
     private String memo;
 
     /**
      * 状态
      */
-    @Column(name = "Status")
+    @Column(name = "`Status`")
     private Integer status;
 
     /**

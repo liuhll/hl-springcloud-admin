@@ -3,80 +3,80 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.FullAuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_menu")
+@Table(name = "`auth_menu`")
 public class Menu extends FullAuditedEntity {
     /**
      * 主键
      */
     @Id
-    @Column(name = "Id")
+    @Column(name = "`Id`")
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
      * 菜单编码
      */
-    @Column(name = "Code")
+    @Column(name = "`Code`")
     private String code;
 
     /**
      * 菜单名称
      */
-    @Column(name = "Name")
+    @Column(name = "`Name`")
     private String name;
 
     /**
      * 菜单URL
      */
-    @Column(name = "UrlPath")
+    @Column(name = "`UrlPath`")
     private Integer urlpath;
 
     /**
      * 父Id
      */
-    @Column(name = "ParentId")
+    @Column(name = "`ParentId`")
     private Long parentid;
 
     /**
      * 层级
      */
-    @Column(name = "Level")
+    @Column(name = "`Level`")
     private Integer level;
 
     /**
      * 菜单类型
      */
-    @Column(name = "Mold")
+    @Column(name = "`Mold`")
     private Integer mold;
 
     /**
      * icon图标
      */
-    @Column(name = "Icon")
+    @Column(name = "`Icon`")
     private String icon;
 
     /**
      * 前端组件
      */
-    @Column(name = "FrontEndComponent")
+    @Column(name = "`FrontEndComponent`")
     private String frontendcomponent;
 
     /**
      * 排序
      */
-    @Column(name = "Sort")
+    @Column(name = "`Sort`")
     private Integer sort;
 
     /**
      * 备注
      */
-    @Column(name = "Memo")
+    @Column(name = "`Memo`")
     private String memo;
 
     /**
      * 状态
      */
-    @Column(name = "Status")
+    @Column(name = "`Status`")
     private Integer status;
 
     /**

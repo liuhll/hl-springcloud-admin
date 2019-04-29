@@ -11,44 +11,44 @@ import tk.mybatis.mapper.annotation.ColumnType;
 import javax.persistence.*;
 import java.util.Date;
 
-@Table(name = "auth_employee")
+@Table(name = "`auth_employee`")
 public class Employee extends FullAuditedEntity {
     /**
      * 主键
      */
     @Id
-    @Column(name = "Id")
+    @Column(name = "`Id`")
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
     /**
      * 用户名
      */
-    @Column(name = "UserName")
+    @Column(name = "`UserName`")
     private String username;
 
     /**
      * 中文名
      */
-    @Column(name = "ChineseName")
+    @Column(name = "`ChineseName`")
     private String chinesename;
 
     /**
      * 电子邮件
      */
-    @Column(name = "Email")
+    @Column(name = "`Email`")
     private String email;
 
     /**
      * 联系电话
      */
-    @Column(name = "Phone")
+    @Column(name = "`Phone`")
     private String phone;
 
     /**
      * 性别
      */
-    @Column(name = "Gender")
+    @Column(name = "`Gender`")
     @ColumnType(jdbcType = JdbcType.INTEGER,
     typeHandler = GenderTypeHandler.class)
     private Gender gender;
@@ -56,69 +56,69 @@ public class Employee extends FullAuditedEntity {
     /**
      * 生日
      */
-    @Column(name = "Birth")
+    @Column(name = "`Birth`")
     private Date birth;
 
     /**
      * 籍贯
      */
-    @Column(name = "NativePlace")
+    @Column(name = "`NativePlace`")
     private String nativeplace;
 
     /**
      * 住址
      */
-    @Column(name = "Address")
+    @Column(name = "`Address`")
     private String address;
 
     /**
      * 民族
      */
-    @Column(name = "Folk")
+    @Column(name = "`Folk`")
     private String folk;
 
     /**
      * 政治面貌
      */
+    @Column(name = "`PoliticalStatus`")
     @ColumnType(jdbcType = JdbcType.INTEGER,
             typeHandler = PoliticalStatusTypeHandler.class)
-    @Column(name = "PoliticalStatus")
     private PoliticalStatus politicalstatus;
 
     /**
      * 毕业院校
      */
-    @Column(name = "GraduateInstitutions")
+    @Column(name = "`GraduateInstitutions`")
     private String graduateinstitutions;
 
     /**
      * 学历
      */
-    @Column(name = "Education")
+    @Column(name = "`Education`")
     private String education;
 
     /**
      * 专业
      */
-    @Column(name = "Major")
+    @Column(name = "`Major`")
     private String major;
 
     /**
      * 简历
      */
-    @Column(name = "Resume")
+    @Column(name = "`Resume`")
     private String resume;
 
     /**
      * 备注
      */
-    @Column(name = "Memo")
+    @Column(name = "`Memo`")
     private String memo;
 
     /**
      * 状态
      */
-    @Column(name = "Status")
+    @Column(name = "`Status`")
     private Integer status;
 
     /**

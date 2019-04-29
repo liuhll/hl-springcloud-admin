@@ -3,20 +3,20 @@ package com.liuhll.hl.auth.domain.entity;
 import com.liuhll.hl.common.domain.auditing.AuditedEntity;
 import javax.persistence.*;
 
-@Table(name = "auth_permission_menu")
+@Table(name = "`auth_permission_menu`")
 public class PermissionMenu extends AuditedEntity {
     /**
      * 主键
      */
     @Id
-    @Column(name = "Id")
+    @Column(name = "`Id`")
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
     private Long id;
 
-    @Column(name = "PermissionId")
+    @Column(name = "`PermissionId`")
     private Long permissionid;
 
-    @Column(name = "MenuId")
+    @Column(name = "`MenuId`")
     private Long menuid;
 
     /**

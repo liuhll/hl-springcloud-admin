@@ -15,5 +15,5 @@ public abstract class ModificationAudited  implements IModificationAudited{
 
     @Basic
     @Column(name = "updateTime")
-    private Date updateTime = new Date();
+    private Date updateTime;
 }
