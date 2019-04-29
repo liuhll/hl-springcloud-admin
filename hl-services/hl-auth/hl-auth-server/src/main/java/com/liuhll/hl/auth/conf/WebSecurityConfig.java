@@ -1,9 +1,10 @@
 package com.liuhll.hl.auth.conf;
 
 
-import com.liuhll.hl.common.conf.SecurityWhitelistConfig;
-import com.liuhll.hl.auth.service.impl.JwtUserDetailsService;
 import com.liuhll.hl.auth.jwt.JwtAuthenticationTokenFilter;
+import com.liuhll.hl.auth.service.impl.JwtUserDetailsService;
+import com.liuhll.hl.auth.utils.PasswordGenerator;
+import com.liuhll.hl.common.conf.SecurityWhitelistConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,13 +28,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(this.userDetailsService).passwordEncoder(passwordEncoder())
-                .and()
-                .inMemoryAuthentication()
-                .withUser("liuhl")
-                .password(passwordEncoder().encode("liuhl"))
-                .roles("admin")
-
+                .userDetailsService(this.userDetailsService)
+                .passwordEncoder(passwordEncoder())
         ;
     }
 
@@ -54,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
                 .addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class)
         ;
- //       http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
+        //       http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Autowired
@@ -70,6 +66,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public PasswordGenerator passwordGenerator() {
+        return new PasswordGenerator.PasswordGeneratorBuilder()
+                .useDigits(true)
+                .useLower(true)
+                .useUpper(true)
+                .build();
     }
 
     @Autowired

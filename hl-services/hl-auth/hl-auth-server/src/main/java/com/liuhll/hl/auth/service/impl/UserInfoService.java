@@ -4,17 +4,20 @@ import com.liuhll.hl.auth.domain.entity.UserInfo;
 import com.liuhll.hl.auth.mapper.UserInfoMapper;
 import com.liuhll.hl.common.service.impl.BaseService;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.util.Sqls;
 
 @Service
 public class UserInfoService extends BaseService<UserInfoMapper,UserInfo> {
 
 
-    public UserInfo selectUserByName(String userName){
-
-        UserInfo userInfo = new UserInfo();
-        userInfo.setId(Long.valueOf(1));
-        userInfo.setUsername(userName);
-        userInfo.setPassword("123qwe");
-        return userInfo;
+    public UserInfo selectUserByAccount(String account){
+        Example example = Example.builder(UserInfo.class)
+                .where(Sqls.custom()
+                        .orEqualTo("username",account)
+                        .orEqualTo("email",account)
+                        .orEqualTo("phone",account))
+                .build();
+        return mapper.selectOneByExample(example);
     }
 }

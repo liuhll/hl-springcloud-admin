@@ -7,13 +7,14 @@ import lombok.Data;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 @Data
 public class EmployeeInput {
 
     @NotBlank(message = "用户名不允许为空")
-//    @Pattern(regexp = "^[a-zA-Z0-9_-]{4,16}$",message = "用户名格式不正确")
+    @Pattern(regexp = "^[a-zA-Z0-9_-]{4,16}$",message = "用户名格式不正确")
     private String username;
 
     @NotBlank(message = "姓名不允许为空")
@@ -24,7 +25,7 @@ public class EmployeeInput {
     private String email;
 
     @NotBlank(message = "用户名不允许为空")
-//    @Pattern(regexp = "^(?:+?86)?1(?:3d{3}|5[^4D]d{2}|8d{3}|7(?:[01356789]d{2}|4(?:0d|1[0-2]|9d))|9[189]d{2}|6[567]d{2}|4(?:[14]0d{3}|[68]d{4}|[579]d{2}))d{6}$",message = "收集号码格式不正确")
+    @Pattern(regexp = "^[1](([3][0-9])|([4][5-9])|([5][0-3,5-9])|([6][5,6])|([7][0-8])|([8][0-9])|([9][1,8,9]))[0-9]{8}$",message = "手机号码格式不正确")
     private String phone;
 
     @NotNull(message = "性别不允许为空")

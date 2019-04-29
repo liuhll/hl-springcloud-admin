@@ -4,6 +4,7 @@ import com.liuhll.hl.auth.domain.entity.Role;
 import com.liuhll.hl.auth.domain.entity.UserInfo;
 import com.liuhll.hl.auth.jwt.JwtUser;
 import com.liuhll.hl.auth.service.IRoleService;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,10 +24,11 @@ public class JwtUserDetailsService implements UserDetailsService {
     private IRoleService roleService;
 
     @Override
-    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        UserInfo userInfo = userService.selectUserByName(userName);
+    @SneakyThrows
+    public UserDetails loadUserByUsername(String account) {
+        UserInfo userInfo = userService.selectUserByAccount(account);
         if (userInfo == null){
-            throw new UsernameNotFoundException("未查到到用户用户");
+            throw new UsernameNotFoundException("不存在该用户,请检查账号");
         }
         Collection<Role> roles = roleService.getRolesByUserId(userInfo.getId());
         Collection<SimpleGrantedAuthority> authorities = roles.stream().map(role->new SimpleGrantedAuthority(role.getCode())).collect(Collectors.toList());
