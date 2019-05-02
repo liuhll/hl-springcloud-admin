@@ -1,5 +1,6 @@
 package com.liuhll.hl.auth.controller;
 
+import com.liuhll.hl.auth.client.annotation.IgnoreUserToken;
 import com.liuhll.hl.auth.domain.entity.Employee;
 import com.liuhll.hl.auth.service.impl.EmployeeService;
 import com.liuhll.hl.auth.vo.EmployeeInput;
@@ -18,6 +19,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping()
+    @IgnoreUserToken
     public String addEmployee(@RequestBody @Validated EmployeeInput input){
         Employee employee = new Employee();
         BeanUtils.copyProperties(input,employee);

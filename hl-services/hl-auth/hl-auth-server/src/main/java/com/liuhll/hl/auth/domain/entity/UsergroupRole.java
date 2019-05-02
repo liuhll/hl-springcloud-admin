@@ -1,6 +1,8 @@
 package com.liuhll.hl.auth.domain.entity;
 
-import com.liuhll.hl.common.domain.auditing.AuditedEntity;
+
+import com.liuhll.hl.common.core.domain.auditing.AuditedEntity;
+
 import javax.persistence.*;
 
 @Table(name = "`auth_usergroup_role`")

@@ -2,13 +2,14 @@ package com.liuhll.hl.auth.client.interceptor;
 
 import com.liuhll.hl.auth.client.conf.ServiceAuthConfig;
 import com.liuhll.hl.auth.client.feign.ServiceAuthClient;
-import com.liuhll.hl.auth.common.jwt.IJwtTokenProvider;
-import com.liuhll.hl.auth.common.jwt.JwtUserClaims;
+import com.liuhll.hl.common.auth.jwt.IJwtTokenProvider;
+import com.liuhll.hl.common.auth.jwt.JwtUserClaims;
+import com.liuhll.hl.common.auth.runtime.session.HlContextSession;
 import com.liuhll.hl.common.enums.ResultCode;
 import com.liuhll.hl.common.exception.HlException;
 import com.liuhll.hl.common.exception.UnAuthorizedException;
-import com.liuhll.hl.common.runtime.session.HlContextSession;
 import com.liuhll.hl.common.vo.ResponseResult;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -30,7 +31,8 @@ public class UserAuthRestInterceptor extends HlHandlerInterceptorAdapter {
     private ServiceAuthClient serviceAuthClient;
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    @SneakyThrows
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         if (super.preHlHandle(request,response,handler,IgnoreTokenType.User)){
             return super.preHandle(request,response,handler);
         }
@@ -62,7 +64,8 @@ public class UserAuthRestInterceptor extends HlHandlerInterceptorAdapter {
 
 
     @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+    @SneakyThrows
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
         HlContextSession.remove();
         super.afterCompletion(request, response, handler, ex);
     }

@@ -4,7 +4,7 @@ package com.liuhll.hl.auth.conf;
 import com.liuhll.hl.auth.jwt.JwtAuthenticationTokenFilter;
 import com.liuhll.hl.auth.service.impl.JwtUserDetailsService;
 import com.liuhll.hl.auth.utils.PasswordGenerator;
-import com.liuhll.hl.common.conf.SecurityWhitelistConfig;
+import com.liuhll.hl.common.auth.conf.SecurityWhitelistConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -28,12 +28,12 @@
     <dependencies>
         <dependency>
             <groupId>com.liuhll.hl</groupId>
-            <artifactId>hl-common</artifactId>
+            <artifactId>hl-common-core</artifactId>
             <version>${hl.vsersion}</version>
         </dependency>
         <dependency>
             <groupId>com.liuhll.hl</groupId>
-            <artifactId>hl-auth-common</artifactId>
+            <artifactId>hl-common-domain</artifactId>
             <version>${hl.vsersion}</version>
         </dependency>
         <dependency>

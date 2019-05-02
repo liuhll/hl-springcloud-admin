@@ -11,10 +11,10 @@
     <artifactId>hl-common</artifactId>
     <name>hl-common</name>
     <description>hl common module</description>
-    <version>${hl.vsersion}</version>
+    <!--<version>${hl.vsersion}</version>-->
     <modules>
         <module>hl-common-core</module>
-        <module>hl-common-auth</module>
+        <module>hl-common-domain</module>
     </modules>
     <packaging>pom</packaging>
 

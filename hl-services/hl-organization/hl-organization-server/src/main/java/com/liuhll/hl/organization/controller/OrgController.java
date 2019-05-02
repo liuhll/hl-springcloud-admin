@@ -1,6 +1,6 @@
 package com.liuhll.hl.organization.controller;
 
-import com.liuhll.hl.common.runtime.session.HlContextSession;
+import com.liuhll.hl.common.auth.runtime.session.HlContextSession;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,6 +1,7 @@
 package com.liuhll.hl.auth.domain.entity;
 
-import com.liuhll.hl.common.domain.auditing.FullAuditedEntity;
+import com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity;
+
 import javax.persistence.*;
 
 @Table(name = "`auth_user`")

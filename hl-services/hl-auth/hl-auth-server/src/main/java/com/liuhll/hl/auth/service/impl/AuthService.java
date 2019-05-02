@@ -1,8 +1,8 @@
 package com.liuhll.hl.auth.service.impl;
 
 import com.liuhll.hl.auth.client.conf.JwtConfig;
-import com.liuhll.hl.auth.common.jwt.IJwtTokenProvider;
-import com.liuhll.hl.auth.common.jwt.JwtUserClaims;
+import com.liuhll.hl.common.auth.jwt.IJwtTokenProvider;
+import com.liuhll.hl.common.auth.jwt.JwtUserClaims;
 import com.liuhll.hl.auth.jwt.JwtUser;
 import com.liuhll.hl.auth.service.IAuthService;
 import com.liuhll.hl.common.exception.UnAuthenticationException;

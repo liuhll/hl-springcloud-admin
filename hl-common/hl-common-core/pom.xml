@@ -10,8 +10,26 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>hl-common-core</artifactId>
-
+    <name>hl-common-auth</name>
+    <description>hl common auth</description>
+    <version>${hl.vsersion}</version>
+    <packaging>jar</packaging>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+        </dependency>
+        <!--jwt-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.0</version>
+        </dependency>
+
         <!--swagger2 api docs-->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -24,20 +42,6 @@
             <version>${swagger.version}</version>
         </dependency>
 
-        <!-- 通用mapper -->
-        <dependency>
-            <groupId>tk.mybatis</groupId>
-            <artifactId>mapper-spring-boot-starter</artifactId>
-            <version>2.1.5</version>
-        </dependency>
-
-        <!-- 通用分页 -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>5.0.3</version>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -46,11 +50,6 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.31</version>
-        </dependency>
-        <dependency>
-            <groupId>com.liuhll.hl</groupId>
-            <artifactId>hl-common-auth</artifactId>
-            <version>${hl.vsersion}</version>
         </dependency>
     </dependencies>
 

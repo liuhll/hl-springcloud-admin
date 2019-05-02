@@ -2,7 +2,7 @@ package com.liuhll.hl.auth.jwt;
 
 import com.alibaba.fastjson.JSON;
 import com.liuhll.hl.auth.client.conf.JwtConfig;
-import com.liuhll.hl.auth.common.jwt.IJwtTokenProvider;
+import com.liuhll.hl.common.auth.jwt.IJwtTokenProvider;
 import com.liuhll.hl.auth.service.impl.JwtUserDetailsService;
 import com.liuhll.hl.common.enums.ResultCode;
 import com.liuhll.hl.common.utils.ResponseResultUtil;

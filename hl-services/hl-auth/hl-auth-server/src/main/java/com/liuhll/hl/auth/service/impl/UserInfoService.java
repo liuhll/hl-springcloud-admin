@@ -2,7 +2,7 @@ package com.liuhll.hl.auth.service.impl;
 
 import com.liuhll.hl.auth.domain.entity.UserInfo;
 import com.liuhll.hl.auth.mapper.UserInfoMapper;
-import com.liuhll.hl.common.service.impl.BaseService;
+import com.liuhll.hl.common.core.service.impl.BaseService;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.util.Sqls;

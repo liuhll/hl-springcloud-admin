@@ -4,7 +4,7 @@ import com.liuhll.hl.auth.domain.models.Gender;
 import com.liuhll.hl.auth.domain.models.PoliticalStatus;
 import com.liuhll.hl.auth.typehandler.GenderTypeHandler;
 import com.liuhll.hl.auth.typehandler.PoliticalStatusTypeHandler;
-import com.liuhll.hl.common.domain.auditing.FullAuditedEntity;
+import com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity;
 import org.apache.ibatis.type.JdbcType;
 import tk.mybatis.mapper.annotation.ColumnType;
 
