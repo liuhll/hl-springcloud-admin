@@ -15,3 +15,12 @@ zuul:
       path: /auth/**
       serviceId: hl-auth
       strip-prefix: false
+
+auth:
+  service-id: hl-auth
+  token-header: Authorization
+  #  whitelist:
+  #    - /organization/v1/api/org
+  client:
+    id: hl-gateway
+    secret: 123456
