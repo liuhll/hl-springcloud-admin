@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuhll.hl.auth.mapper.ServiceComponentMapper">
+  <resultMap id="BaseResultMap" type="com.liuhll.hl.auth.domain.entity.ServiceComponent">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="Id" jdbcType="BIGINT" property="id" />
+    <result column="ServiceId" jdbcType="VARCHAR" property="serviceid" />
+    <result column="Name" jdbcType="VARCHAR" property="name" />
+    <result column="Secret" jdbcType="INTEGER" property="secret" />
+    <result column="Status" jdbcType="INTEGER" property="status" />
+    <result column="Memo" jdbcType="VARCHAR" property="memo" />
+  </resultMap>
+</mapper>

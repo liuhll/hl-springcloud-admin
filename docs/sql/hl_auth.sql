@@ -41,6 +41,8 @@ drop table if exists auth_user_usergroup;
 
 drop table if exists auth_usergroup_role;
 
+drop table if exists auth_service_component;
+
 /*==============================================================*/
 /* Table: auth_employee                                         */
 /*==============================================================*/
@@ -395,3 +397,26 @@ create table auth_usergroup_role
 );
 
 alter table auth_usergroup_role comment '用户组角色关系表';
+
+/*==============================================================*/
+/* Table: auth_service_component                                          */
+/*==============================================================*/
+create table auth_service_component
+(
+   Id                   bigint not null auto_increment comment '主键',
+   ServiceId            varchar(50) not null comment '服务id',
+   Name                 varchar(50) not null comment '名称',
+   Secret               varchar(100) not null comment '服务密钥',
+   Status               int not null comment '状态',
+   Memo                 varchar(100) comment '备注',
+   CreateBy             bigint comment '创建人',
+   CreateTime           datetime comment '创建日期',
+   UpdateBy             bigint comment '修改人',
+   UpdateTime           datetime comment '修改日期',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
+   primary key (Id)
+);
+
+alter table auth_service comment '服务组件列表';

@@ -44,7 +44,7 @@ public class OnlyUserHlAuthRestIntterceptor extends HlHandlerInterceptorAdapter 
         }
 
         if (StringUtils.isEmpty(token)){
-            throw new UnAuthorizedException("您还没有登录系统111");
+            throw new UnAuthorizedException("您还没有登录系统");
         }
 
         String secret = authJwtConfig.getSecret();

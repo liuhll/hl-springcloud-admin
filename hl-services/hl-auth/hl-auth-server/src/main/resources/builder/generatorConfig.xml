@@ -48,87 +48,92 @@
         <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}"
                              type="XMLMAPPER"/>
         <table tableName="auth_employee" domainObjectName="Employee">
-            <property name="rootClass" value="FullAuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_file" domainObjectName="File">
-            <property name="rootClass" value="FullAuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_function" domainObjectName="Function">
-            <property name="rootClass" value="FullAuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_menu" domainObjectName="Menu">
-            <property name="rootClass" value="FullAuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_menu_function" domainObjectName="MenuFunction">
-            <property name="rootClass" value="AuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.AuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_org_role" domainObjectName="OrgRole">
-            <property name="rootClass" value="AuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.AuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_permission" domainObjectName="Permission">
-            <property name="rootClass" value="FullAuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_permission_file" domainObjectName="PermissionFile">
-            <property name="rootClass" value="AuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.AuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_permission_function" domainObjectName="PermissionFunction">
-            <property name="rootClass" value="AuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.AuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_permission_menu" domainObjectName="PermissionMenu">
-            <property name="rootClass" value="AuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.AuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_role" domainObjectName="Role">
-            <property name="rootClass" value="FullAuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_role_permission" domainObjectName="RolePermission">
-            <property name="rootClass" value="AuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.AuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_user" domainObjectName="UserInfo">
-            <property name="rootClass" value="FullAuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_user_group" domainObjectName="UserGroup">
-            <property name="rootClass" value="AuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.AuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_user_role" domainObjectName="UserRole">
-            <property name="rootClass" value="AuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.AuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_user_usergroup" domainObjectName="UserUsergroup">
-            <property name="rootClass" value="AuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.AuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="auth_usergroup_role" domainObjectName="UsergroupRole">
-            <property name="rootClass" value="AuditedEntity"/>
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.AuditedEntity"/>
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+            <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
+        </table>
+        <table tableName="auth_service_component" domainObjectName="ServiceComponent">
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>

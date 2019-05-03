@@ -1,10 +1,20 @@
 package com.liuhll.hl.auth.domain.entity;
 
 import com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity;
+import com.liuhll.hl.common.core.domain.models.Status;
+import com.liuhll.hl.common.core.typehandler.StatusTypeHandler;
+import org.apache.ibatis.type.JdbcType;
+import tk.mybatis.mapper.annotation.ColumnType;
+
 import javax.persistence.*;
 
-@Table(name = "`auth_function`")
-public class Function extends FullAuditedEntity {
+@Table(name = "`auth_service_component`")
+public class ServiceComponent extends FullAuditedEntity {
+
+    public ServiceComponent(){
+        this.status = Status.Valid;
+    }
+
     /**
      * 主键
      */
@@ -14,10 +24,10 @@ public class Function extends FullAuditedEntity {
     private Long id;
 
     /**
-     * 编码
+     * 服务id
      */
-    @Column(name = "`Code`")
-    private String code;
+    @Column(name = "`ServiceId`")
+    private String serviceid;
 
     /**
      * 名称
@@ -26,28 +36,17 @@ public class Function extends FullAuditedEntity {
     private String name;
 
     /**
-     * webapi
+     * 服务密钥
      */
-    @Column(name = "`WebApi`")
-    private Integer webapi;
+    @Column(name = "`Secret`")
+    private String secret;
 
     /**
      * 状态
      */
     @Column(name = "`Status`")
-    private Integer status;
-
-    /**
-     * 请求方法
-     */
-    @Column(name = "`Method`")
-    private Integer method;
-
-    /**
-     * 父Id
-     */
-    @Column(name = "`ParentId`")
-    private Long parentid;
+    @ColumnType(jdbcType = JdbcType.INTEGER,typeHandler = StatusTypeHandler.class)
+    private Status status;
 
     /**
      * 备注
@@ -74,21 +73,21 @@ public class Function extends FullAuditedEntity {
     }
 
     /**
-     * 获取编码
+     * 获取服务id
      *
-     * @return Code - 编码
+     * @return ServiceId - 服务id
      */
-    public String getCode() {
-        return code;
+    public String getServiceid() {
+        return serviceid;
     }
 
     /**
-     * 设置编码
+     * 设置服务id
      *
-     * @param code 编码
+     * @param serviceid 服务id
      */
-    public void setCode(String code) {
-        this.code = code == null ? null : code.trim();
+    public void setServiceid(String serviceid) {
+        this.serviceid = serviceid == null ? null : serviceid.trim();
     }
 
     /**
@@ -110,21 +109,21 @@ public class Function extends FullAuditedEntity {
     }
 
     /**
-     * 获取webapi
+     * 获取服务密钥
      *
-     * @return WebApi - webapi
+     * @return Secret - 服务密钥
      */
-    public Integer getWebapi() {
-        return webapi;
+    public String getSecret() {
+        return secret;
     }
 
     /**
-     * 设置webapi
+     * 设置服务密钥
      *
-     * @param webapi webapi
+     * @param secret 服务密钥
      */
-    public void setWebapi(Integer webapi) {
-        this.webapi = webapi;
+    public void setSecret(String secret) {
+        this.secret = secret;
     }
 
     /**
@@ -132,7 +131,7 @@ public class Function extends FullAuditedEntity {
      *
      * @return Status - 状态
      */
-    public Integer getStatus() {
+    public Status getStatus() {
         return status;
     }
 
@@ -141,44 +140,8 @@ public class Function extends FullAuditedEntity {
      *
      * @param status 状态
      */
-    public void setStatus(Integer status) {
+    public void setStatus(Status status) {
         this.status = status;
-    }
-
-    /**
-     * 获取请求方法
-     *
-     * @return Method - 请求方法
-     */
-    public Integer getMethod() {
-        return method;
-    }
-
-    /**
-     * 设置请求方法
-     *
-     * @param method 请求方法
-     */
-    public void setMethod(Integer method) {
-        this.method = method;
-    }
-
-    /**
-     * 获取父Id
-     *
-     * @return ParentId - 父Id
-     */
-    public Long getParentid() {
-        return parentid;
-    }
-
-    /**
-     * 设置父Id
-     *
-     * @param parentid 父Id
-     */
-    public void setParentid(Long parentid) {
-        this.parentid = parentid;
     }
 
     /**

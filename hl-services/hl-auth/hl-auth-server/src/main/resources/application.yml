@@ -72,6 +72,7 @@ mapper:
 jwt:
   secret: qY9Z3TMrSoqiolNQcgTYkkvCzN62ArNHL3XgtDww86X9WZGO6cAo7cz3yQX0qeJj
   expiration: 1000000
+  header: token
 
 ribbon:
   ReadTimeout: 60000

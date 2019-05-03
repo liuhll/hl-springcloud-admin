@@ -2,14 +2,9 @@ package com.liuhll.hl.auth.domain.entity;
 
 import com.liuhll.hl.auth.domain.models.Gender;
 import com.liuhll.hl.auth.domain.models.PoliticalStatus;
-import com.liuhll.hl.auth.typehandler.GenderTypeHandler;
-import com.liuhll.hl.auth.typehandler.PoliticalStatusTypeHandler;
 import com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity;
-import org.apache.ibatis.type.JdbcType;
-import tk.mybatis.mapper.annotation.ColumnType;
-
-import javax.persistence.*;
 import java.util.Date;
+import javax.persistence.*;
 
 @Table(name = "`auth_employee`")
 public class Employee extends FullAuditedEntity {
@@ -49,8 +44,6 @@ public class Employee extends FullAuditedEntity {
      * 性别
      */
     @Column(name = "`Gender`")
-    @ColumnType(jdbcType = JdbcType.INTEGER,
-    typeHandler = GenderTypeHandler.class)
     private Gender gender;
 
     /**
@@ -81,8 +74,6 @@ public class Employee extends FullAuditedEntity {
      * 政治面貌
      */
     @Column(name = "`PoliticalStatus`")
-    @ColumnType(jdbcType = JdbcType.INTEGER,
-            typeHandler = PoliticalStatusTypeHandler.class)
     private PoliticalStatus politicalstatus;
 
     /**
