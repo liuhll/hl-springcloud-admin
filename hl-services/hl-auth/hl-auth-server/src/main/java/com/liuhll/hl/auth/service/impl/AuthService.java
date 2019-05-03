@@ -16,6 +16,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -32,11 +33,12 @@ public class AuthService implements IAuthService {
     @Autowired
     private JwtConfig authJwtConfig;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     @SneakyThrows
     public String login(String userName, String password) {
-
 
         Authentication upToken = new UsernamePasswordAuthenticationToken(userName, password);
         Authentication authentication = null;

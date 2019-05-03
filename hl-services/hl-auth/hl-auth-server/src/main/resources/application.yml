@@ -55,7 +55,7 @@ auth:
   client:
     id: hl-auth
     secret: 1234567
-  token-header: Authorization
+  token-header: token
 
 mybatis:
   type-aliases-package: com.liuhll.hl.auth.domain.entity

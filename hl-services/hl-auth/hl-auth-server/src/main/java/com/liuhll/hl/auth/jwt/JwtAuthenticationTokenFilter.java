@@ -2,6 +2,8 @@ package com.liuhll.hl.auth.jwt;
 
 import com.alibaba.fastjson.JSON;
 import com.liuhll.hl.auth.client.conf.JwtConfig;
+import com.liuhll.hl.auth.client.security.ISecurityWhitelistHandler;
+import com.liuhll.hl.common.auth.conf.SecurityWhitelistConfig;
 import com.liuhll.hl.common.auth.jwt.IJwtTokenProvider;
 import com.liuhll.hl.auth.service.impl.JwtUserDetailsService;
 import com.liuhll.hl.common.enums.ResultCode;
@@ -37,15 +39,19 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     @Autowired
     private JwtConfig authJwtConfig;
 
+    @Autowired
+    private ISecurityWhitelistHandler securityWhitelistHandler;
+
+
     @Override
     @SneakyThrows
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) {
         String jwtToken = jwtTokenProvider.resolveToken(request,authJwtConfig.getHeader());
-
+        String path = request.getRequestURI();
         try {
-            if (jwtToken != null && StringUtils.isNotEmpty(jwtToken)) {
+            if (jwtToken != null && StringUtils.isNotEmpty(jwtToken) && !securityWhitelistHandler.isPermitAuth(path)) {
                 String username = jwtTokenProvider.getUsernameFromToken(jwtToken,authJwtConfig.getSecret());
                 jwtTokenProvider.validateToken(jwtToken,authJwtConfig.getSecret());//验证令牌
 
@@ -58,7 +64,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
                     }
                 }
             } else {
-                String path = request.getRequestURI();
+
                 if (!path.contains("swagger") && !path.contains("v2/api-docs") && !path.contains("auth") && !path.contains("webjar") && !path.contains("client")){
                     ResponseResult<String> result = ResponseResultUtil.error(ResultCode.UnAuthentication, "您还没有登录系统,请先登录系统");
                     writeResponseData(response, result);

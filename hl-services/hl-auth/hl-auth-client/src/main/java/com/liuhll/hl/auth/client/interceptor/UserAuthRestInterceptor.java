@@ -47,7 +47,7 @@ public class UserAuthRestInterceptor extends HlHandlerInterceptorAdapter {
             }
         }
         if (StringUtils.isEmpty(token)){
-            throw new UnAuthorizedException("您还没有登录系统");
+            throw new UnAuthorizedException("您还没有登录系统222");
         }
         ResponseResult<String> getJwtSecretResult = serviceAuthClient.getJwtSecret(serviceAuthConfig.getClientId(),serviceAuthConfig.getClientSecret());
         if (getJwtSecretResult.getCode() != ResultCode.Ok){

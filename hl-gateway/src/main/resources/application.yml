@@ -10,15 +10,14 @@ eureka:
 zuul:
   routes:
     ignored-services: "*"
-    sensitive-headers:
+    sensitive-headers: Cookie,Set-Cookie
     hl-auth:
       path: /auth/**
       serviceId: hl-auth
       strip-prefix: false
-
 auth:
   service-id: hl-auth
-  token-header: Authorization
+  token-header: token
   #  whitelist:
   #    - /organization/v1/api/org
   client:

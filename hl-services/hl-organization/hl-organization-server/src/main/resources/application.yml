@@ -61,7 +61,7 @@ swagger:
 
 auth:
   service-id: hl-auth
-  token-header: Authorization
+  token-header: token
 #  whitelist:
 #    - /organization/v1/api/org
   client:

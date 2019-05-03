@@ -79,6 +79,9 @@ public class JwtTokenProvider implements IJwtTokenProvider {
 
     public String resolveToken(HttpServletRequest request,String header){
         String bearerToken = request.getHeader(header);
+        if (bearerToken == null){
+            bearerToken = request.getHeader(header.toLowerCase());
+        }
         if (bearerToken != null) {
             if (bearerToken.startsWith("Bearer ")){
                 return bearerToken.substring(7);

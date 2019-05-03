@@ -38,7 +38,10 @@ public abstract class BaseService<M extends Mapper<T>, T>  implements IService<T
             ((ISoftDelete)entity).setIsDeleted(CommonConstants.UN_DELETE_FLAGE);
         }
         if (entity instanceof ICreationAudited){
-            ((ICreationAudited)entity).setCreateBy(Long.parseLong(HlContextSession.getUserId()));
+            if (HlContextSession.getUserId() != null){
+                ((ICreationAudited)entity).setCreateBy(Long.parseLong(HlContextSession.getUserId()));
+            }
+
             ((ICreationAudited)entity).setCreateTime(new Date());
         }
         return mapper.insert(entity);
@@ -67,7 +70,10 @@ public abstract class BaseService<M extends Mapper<T>, T>  implements IService<T
     @Override
     public int update(T entity) {
         if (entity instanceof IModificationAudited){
-            ((IModificationAudited)entity).setUpdateBy(Long.parseLong(HlContextSession.getUserId()));
+            if (HlContextSession.getUserId() != null){
+                ((IModificationAudited)entity).setUpdateBy(Long.parseLong(HlContextSession.getUserId()));
+            }
+
             ((IModificationAudited)entity).setUpdateTime(new Date());
         }
         return mapper.updateByPrimaryKey(entity);
