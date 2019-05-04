@@ -1,4 +1,4 @@
-package com.liuhll.hl.auth.vo;
+package com.liuhll.hl.auth.vo.servicecomponentvo;
 
 import lombok.Data;
 
