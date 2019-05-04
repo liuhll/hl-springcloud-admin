@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuhll.hl.basicdata.mapper.SystemconfMapper">
+  <resultMap id="BaseResultMap" type="com.liuhll.hl.basicdata.domain.entity.Systemconf">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="Id" jdbcType="BIGINT" property="id" />
+    <result column="ConfigName" jdbcType="VARCHAR" property="configname" />
+    <result column="ConfigValue" jdbcType="VARCHAR" property="configvalue" />
+    <result column="Memo" jdbcType="VARCHAR" property="memo" />
+    <result column="Seq" jdbcType="INTEGER" property="seq" />
+  </resultMap>
+</mapper>

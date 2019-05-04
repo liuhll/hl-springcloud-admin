@@ -7,6 +7,7 @@ CREATE DATABASE hl_basicdata DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_gener
 USE hl_basicdata;
 
 drop table if exists bd_dictionary;
+drop table if exists bd_systemconf;
 
 /*==============================================================*/
 /* Table: bd_dictionary                                         */
@@ -31,4 +32,27 @@ create table bd_dictionary
 );
 
 alter table bd_dictionary comment '字典表';
+
+/*==============================================================*/
+/* Table: bd_systemconf                                         */
+/*==============================================================*/
+create table bd_systemconf
+(
+   Id                   bigint not null auto_increment comment '主键',
+   ConfigName           varchar(50) not null comment '配置名称',
+   ConfigValue          varchar(50) not null comment '配置值',
+   Memo                 varchar(100) comment '备注',
+   Seq                  int not null comment '序号',
+   IsSysPreSet          int not null comment '0. 否 1.是',
+   CreateBy             bigint comment '创建人',
+   CreateTime           datetime comment '创建日期',
+   UpdateBy             bigint comment '修改人',
+   UpdateTime           datetime comment '修改日期',
+   IsDeleted            int comment '软删除标识',
+   DeleteBy             bigint comment '删除用户',
+   DeleteTime           datetime comment '删除时间',
+   primary key (Id)
+);
+
+alter table bd_systemconf comment 'bd_systemconf';
 

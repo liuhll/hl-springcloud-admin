@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuhll.hl.basicdata.mapper.HlDictionaryMapper">
+  <resultMap id="BaseResultMap" type="com.liuhll.hl.basicdata.domain.entity.HlDictionary">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="Id" jdbcType="BIGINT" property="id" />
+    <result column="Code" jdbcType="VARCHAR" property="code" />
+    <result column="Name" jdbcType="VARCHAR" property="name" />
+    <result column="Value" jdbcType="VARCHAR" property="value" />
+    <result column="ParentId" jdbcType="BIGINT" property="parentid" />
+    <result column="Seq" jdbcType="INTEGER" property="seq" />
+    <result column="TypeName" jdbcType="VARCHAR" property="typename" />
+    <result column="HasChild" jdbcType="INTEGER" property="haschild" />
+  </resultMap>
+</mapper>

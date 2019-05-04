@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!--处理sql中的`符号-->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper,tk.mybatis.mapper.common.IdsMapper,tk.mybatis.mapper.common.MySqlMapper"/>
+            <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+            <property name="caseSensitive" value="true"/>
+            <property name="caseSensitive" value="true"/>
+            <property name="forceAnnotation" value="true"/>
+            <property name="beginningDelimiter" value="`"/>
+            <property name="endingDelimiter" value="`"/>
+            <!--配置是否启用lombok, 支持如下6种注解-->
+            <!--当配置 Data 后，Getter Setter ToString EqualsAndHashCode 会被忽略-->
+            <property name="lombok" value="Getter,Setter,Data,ToString,Accessors,EqualsAndHashCode"/>
+        </plugin>
+        <commentGenerator>
+            <!-- 去除自动生成的注释 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--数据源配置-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:13306/hl_basicdata?autoReconnect=true"
+                        userId="root"
+                        password="qwe!P4ss">
+            <!-- 这里面可以设置property属性，每一个property属性都设置到配置的Driver上 -->
+        </jdbcConnection>
+
+        <!--model包路径-->
+        <javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}">
+            <!--<property name="rootClass" value="AuditedEntity"/>-->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+
+
+        <!--mapper.xml包路径-->
+        <sqlMapGenerator targetPackage="${targetXMLPackage}" targetProject="${targetResourcesProject}">
+        </sqlMapGenerator>
+
+        <!--mapper包路径-->
+        <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}"
+                             type="XMLMAPPER"/>
+        <table tableName="bd_dictionary" domainObjectName="HlDictionary">
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+            <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
+        </table>
+        <table tableName="bd_systemconf" domainObjectName="Systemconf">
+            <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+            <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
