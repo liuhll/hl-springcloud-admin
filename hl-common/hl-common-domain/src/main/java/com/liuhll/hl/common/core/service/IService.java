@@ -8,6 +8,10 @@ public interface IService<T> {
 
     T selectByKey(Object key);
 
+    T seleceOne(T query);
+
+    List<T> selectByQuery(T query);
+
     int save(T entity);
 
     int delete(Object key);

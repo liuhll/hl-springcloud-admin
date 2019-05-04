@@ -33,6 +33,17 @@ public abstract class BaseService<M extends Mapper<T>, T>  implements IService<T
     }
 
     @Override
+    public T seleceOne(T query) {
+
+        return mapper.selectOne(query);
+    }
+
+    @Override
+    public List<T> selectByQuery(T query){
+        return mapper.select(query);
+    }
+
+    @Override
     public int save(T entity) {
         if (entity instanceof ISoftDelete){
             ((ISoftDelete)entity).setIsDeleted(CommonConstants.UN_DELETE_FLAGE);
