@@ -39,7 +39,7 @@ public class Swagger2Config {
     @Value("${swagger.controller-package-name:\"\"}")
     private String controllerPackageName;
 
-    @Value("${jwt.header:Authorization}")
+    @Value("${jwt.header:token}")
     private String authorizationHeader;
 
     @Autowired

@@ -35,7 +35,7 @@ public class ServiceComponentService extends BaseService<ServiceComponentMapper,
             throw new ClientAuthException("AppId为" + clientId + "的应用被冻结");
         }
 
-        if (passwordEncoder.matches(passwordEncoder.encode(clientSecret),selectServiceComponent.getSecret())){
+        if (!passwordEncoder.matches(clientSecret,selectServiceComponent.getSecret())){
             throw new ClientForbiddenException("应用密钥错误");
         }
     }

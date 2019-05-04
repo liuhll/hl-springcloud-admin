@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/dict")
+@RequestMapping("/v1/api/dict")
 public class DictionaryController {
 
     @PostMapping

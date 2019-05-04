@@ -34,8 +34,14 @@ swagger:
 
 auth:
   service-id: hl-auth
+  token-header: token
   client:
     id: hl-basicdata
-    secret: 1234567
-  user:
-    token-header: token
+    secret: 123qwe
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 160000000
+        readTimeout: 160000000
+
