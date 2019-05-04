@@ -42,6 +42,11 @@
             <version>${hl.vsersion}</version>
         </dependency>
         <dependency>
+            <groupId>com.liuhll.hl</groupId>
+            <artifactId>hl-basicdata-common</artifactId>
+            <version>${hl.vsersion}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>

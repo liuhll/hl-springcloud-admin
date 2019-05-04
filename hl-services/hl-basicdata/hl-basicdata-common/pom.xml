@@ -3,19 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>hl-services</artifactId>
+        <artifactId>hl-basicdata</artifactId>
         <groupId>com.liuhll.hl</groupId>
         <version>${hl.version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hl-basicdata</artifactId>
-    <name>hl-basicdata</name>
-    <description>hl basic data module</description>
-    <modules>
-        <module>hl-basicdata-server</module>
-        <module>hl-basicdata-common</module>
-    </modules>
-    <packaging>pom</packaging>
-
+    <artifactId>hl-basicdata-common</artifactId>
+    <name>hl-basicdata-common</name>
+    <description>hl basicdata common</description>
+    <packaging>jar</packaging>
+    <version>${hl.vsersion}</version>
 </project>
