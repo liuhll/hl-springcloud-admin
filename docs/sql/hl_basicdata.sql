@@ -43,7 +43,7 @@ create table bd_systemconf
    ConfigValue          varchar(50) not null comment '配置值',
    Memo                 varchar(100) comment '备注',
    Seq                  int not null comment '序号',
-   IsSysPreSet          int not null comment '0. 否 1.是',
+   SysPreSet          int not null comment '0. 否 1.是',
    CreateBy             bigint comment '创建人',
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',

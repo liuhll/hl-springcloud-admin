@@ -13,5 +13,6 @@
     <result column="Seq" jdbcType="INTEGER" property="seq" />
     <result column="TypeName" jdbcType="VARCHAR" property="typename" />
     <result column="HasChild" jdbcType="INTEGER" property="haschild" />
+    <result column="SysPreSet" jdbcType="INTEGER" property="syspreset" />
   </resultMap>
 </mapper>
