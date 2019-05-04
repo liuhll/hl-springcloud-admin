@@ -14,16 +14,16 @@ public class HlDictService extends BaseService<HlDictionaryMapper, HlDictionary>
 
     public void saveDict(CreateDictInput input){
 
-        if (input.getParentid() != 0){
-            HlDictionary parentDict = mapper.selectByPrimaryKey(input.getParentid());
+        if (input.getParentId() != 0){
+            HlDictionary parentDict = mapper.selectByPrimaryKey(input.getParentId());
             if (parentDict == null){
-                throw new BussinessException("不存在ParentId为".concat(input.getParentid().toString()).concat("字典记录"));
+                throw new BussinessException("不存在ParentId为".concat(input.getParentId().toString()).concat("字典记录"));
             }
-            if (parentDict.getHaschild() == 0){
-                throw new BussinessException("ParentId为" + input.getParentid() + "字典值的记录不允许是子类型");
+            if (parentDict.getHasChild() == 0){
+                throw new BussinessException("ParentId为" + input.getParentId() + "字典值的记录不允许是子类型");
             }
-            if (StringUtils.isEmpty(input.getTypename())){
-                input.setTypename(parentDict.getTypename());
+            if (StringUtils.isEmpty(input.getTypeName())){
+                input.setTypeName(parentDict.getTypeName());
             }
         }
         HlDictionary query = new HlDictionary();

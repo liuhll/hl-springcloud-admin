@@ -11,7 +11,6 @@
             <property name="mappers" value="tk.mybatis.mapper.common.Mapper,tk.mybatis.mapper.common.IdsMapper,tk.mybatis.mapper.common.MySqlMapper"/>
             <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
             <property name="caseSensitive" value="true"/>
-            <property name="caseSensitive" value="true"/>
             <property name="forceAnnotation" value="true"/>
             <property name="beginningDelimiter" value="`"/>
             <property name="endingDelimiter" value="`"/>
@@ -49,11 +48,13 @@
                              type="XMLMAPPER"/>
         <table tableName="bd_dictionary" domainObjectName="HlDictionary">
             <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
+            <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>
         <table tableName="bd_systemconf" domainObjectName="Systemconf">
             <property name="rootClass" value="com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity"/>
+            <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="mysql" identity="false"/>
             <ignoreColumnsByRegex pattern="(?i)create.*|(?i)update.*|(?i)delete.*|(?i)is.*"/>
         </table>

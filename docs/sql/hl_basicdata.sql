@@ -19,6 +19,7 @@ create table bd_dictionary
    Name                 varchar(50) not null comment '名称',
    ParentId             bigint not null comment '父级Id',
    Seq                  int not null comment '序号',
+   SysPreSet          int not null comment '0. 否 1.是',
    TypeName             varchar(50) not null comment '分类名称',
    HasChild             int not null comment '0.没有 1.有',
    CreateBy             bigint comment '创建人',

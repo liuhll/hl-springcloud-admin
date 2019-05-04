@@ -9,10 +9,10 @@
     <result column="Code" jdbcType="VARCHAR" property="code" />
     <result column="Name" jdbcType="VARCHAR" property="name" />
     <result column="Value" jdbcType="VARCHAR" property="value" />
-    <result column="ParentId" jdbcType="BIGINT" property="parentid" />
+    <result column="ParentId" jdbcType="BIGINT" property="parentId" />
     <result column="Seq" jdbcType="INTEGER" property="seq" />
-    <result column="TypeName" jdbcType="VARCHAR" property="typename" />
-    <result column="HasChild" jdbcType="INTEGER" property="haschild" />
-    <result column="SysPreSet" jdbcType="INTEGER" property="syspreset" />
+    <result column="TypeName" jdbcType="VARCHAR" property="typeName" />
+    <result column="HasChild" jdbcType="INTEGER" property="hasChild" />
+    <result column="SysPreSet" jdbcType="INTEGER" property="sysPreSet" />
   </resultMap>
 </mapper>

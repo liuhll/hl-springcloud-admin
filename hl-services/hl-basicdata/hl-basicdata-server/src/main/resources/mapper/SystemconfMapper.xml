@@ -6,9 +6,10 @@
       WARNING - @mbg.generated
     -->
     <id column="Id" jdbcType="BIGINT" property="id" />
-    <result column="ConfigName" jdbcType="VARCHAR" property="configname" />
-    <result column="ConfigValue" jdbcType="VARCHAR" property="configvalue" />
+    <result column="ConfigName" jdbcType="VARCHAR" property="configName" />
+    <result column="ConfigValue" jdbcType="VARCHAR" property="configValue" />
     <result column="Memo" jdbcType="VARCHAR" property="memo" />
     <result column="Seq" jdbcType="INTEGER" property="seq" />
+    <result column="SysPreSet" jdbcType="INTEGER" property="sysPreSet" />
   </resultMap>
 </mapper>

@@ -5,11 +5,6 @@ import javax.persistence.*;
 
 @Table(name = "`bd_dictionary`")
 public class HlDictionary extends FullAuditedEntity {
-
-    public HlDictionary(){
-        this.syspreset = 0;
-    }
-
     /**
      * 主键
      */
@@ -40,7 +35,7 @@ public class HlDictionary extends FullAuditedEntity {
      * 父级Id
      */
     @Column(name = "`ParentId`")
-    private Long parentid;
+    private Long parentId;
 
     /**
      * 序号
@@ -52,19 +47,19 @@ public class HlDictionary extends FullAuditedEntity {
      * 分类名称
      */
     @Column(name = "`TypeName`")
-    private String typename;
+    private String typeName;
 
     /**
      * 0.没有 1.有
      */
     @Column(name = "`HasChild`")
-    private Integer haschild;
+    private Integer hasChild;
 
     /**
      * 0. 否 1.是
      */
     @Column(name = "`SysPreSet`")
-    private Integer syspreset;
+    private Integer sysPreSet;
 
     /**
      * 获取主键
@@ -143,17 +138,17 @@ public class HlDictionary extends FullAuditedEntity {
      *
      * @return ParentId - 父级Id
      */
-    public Long getParentid() {
-        return parentid;
+    public Long getParentId() {
+        return parentId;
     }
 
     /**
      * 设置父级Id
      *
-     * @param parentid 父级Id
+     * @param parentId 父级Id
      */
-    public void setParentid(Long parentid) {
-        this.parentid = parentid;
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
     }
 
     /**
@@ -179,17 +174,17 @@ public class HlDictionary extends FullAuditedEntity {
      *
      * @return TypeName - 分类名称
      */
-    public String getTypename() {
-        return typename;
+    public String getTypeName() {
+        return typeName;
     }
 
     /**
      * 设置分类名称
      *
-     * @param typename 分类名称
+     * @param typeName 分类名称
      */
-    public void setTypename(String typename) {
-        this.typename = typename == null ? null : typename.trim();
+    public void setTypeName(String typeName) {
+        this.typeName = typeName == null ? null : typeName.trim();
     }
 
     /**
@@ -197,17 +192,17 @@ public class HlDictionary extends FullAuditedEntity {
      *
      * @return HasChild - 0.没有 1.有
      */
-    public Integer getHaschild() {
-        return haschild;
+    public Integer getHasChild() {
+        return hasChild;
     }
 
     /**
      * 设置0.没有 1.有
      *
-     * @param haschild 0.没有 1.有
+     * @param hasChild 0.没有 1.有
      */
-    public void setHaschild(Integer haschild) {
-        this.haschild = haschild;
+    public void setHasChild(Integer hasChild) {
+        this.hasChild = hasChild;
     }
 
     /**
@@ -215,16 +210,16 @@ public class HlDictionary extends FullAuditedEntity {
      *
      * @return SysPreSet - 0. 否 1.是
      */
-    public Integer getSyspreset() {
-        return syspreset;
+    public Integer getSysPreSet() {
+        return sysPreSet;
     }
 
     /**
      * 设置0. 否 1.是
      *
-     * @param syspreset 0. 否 1.是
+     * @param sysPreSet 0. 否 1.是
      */
-    public void setSyspreset(Integer syspreset) {
-        this.syspreset = syspreset;
+    public void setSysPreSet(Integer sysPreSet) {
+        this.sysPreSet = sysPreSet;
     }
 }

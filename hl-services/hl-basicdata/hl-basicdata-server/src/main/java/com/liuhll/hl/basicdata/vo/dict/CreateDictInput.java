@@ -17,11 +17,11 @@ public class CreateDictInput {
     @NotBlank(message = "字典值不允许为空")
     private String value;
 
-    private Long parentid;
+    private Long parentId;
 
     private Integer seq = 1;
 
-    private String typename;
+    private String typeName;
 
-    private Integer haschild = 0;
+    private Integer hasChild = 0;
 }
