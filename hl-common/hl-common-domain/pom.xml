@@ -28,7 +28,7 @@
         </dependency>
         <dependency>
             <groupId>com.liuhll.hl</groupId>
-            <artifactId>hl-common-auth</artifactId>
+            <artifactId>hl-common-core</artifactId>
             <version>${hl.vsersion}</version>
         </dependency>
     </dependencies>
