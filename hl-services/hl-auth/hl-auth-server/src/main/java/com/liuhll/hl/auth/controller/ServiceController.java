@@ -36,7 +36,7 @@ public class ServiceController {
     public List<String> getAllowedClients(@RequestParam String clientId, @RequestParam String secret){
         authClientService.validate(clientId,secret);
         List<ServiceComponent> serviceComponents = serviceComponentService.getAllValidServiceComponents();
-        return serviceComponents.stream().map(p->p.getServiceid()).collect(Collectors.toList());
+        return serviceComponents.stream().map(p->p.getServiceId()).collect(Collectors.toList());
     }
 
     @PostMapping("/service/jwtsecret")

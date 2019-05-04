@@ -19,7 +19,6 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping()
-    @IgnoreUserToken
     public String addEmployee(@RequestBody @Validated EmployeeInput input){
         Employee employee = new Employee();
         BeanUtils.copyProperties(input,employee);

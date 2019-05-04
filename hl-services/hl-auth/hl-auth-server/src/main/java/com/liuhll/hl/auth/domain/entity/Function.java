@@ -29,7 +29,7 @@ public class Function extends FullAuditedEntity {
      * webapi
      */
     @Column(name = "`WebApi`")
-    private Integer webapi;
+    private Integer webApi;
 
     /**
      * 状态
@@ -47,7 +47,7 @@ public class Function extends FullAuditedEntity {
      * 父Id
      */
     @Column(name = "`ParentId`")
-    private Long parentid;
+    private Long parentId;
 
     /**
      * 备注
@@ -114,17 +114,17 @@ public class Function extends FullAuditedEntity {
      *
      * @return WebApi - webapi
      */
-    public Integer getWebapi() {
-        return webapi;
+    public Integer getWebApi() {
+        return webApi;
     }
 
     /**
      * 设置webapi
      *
-     * @param webapi webapi
+     * @param webApi webapi
      */
-    public void setWebapi(Integer webapi) {
-        this.webapi = webapi;
+    public void setWebApi(Integer webApi) {
+        this.webApi = webApi;
     }
 
     /**
@@ -168,17 +168,17 @@ public class Function extends FullAuditedEntity {
      *
      * @return ParentId - 父Id
      */
-    public Long getParentid() {
-        return parentid;
+    public Long getParentId() {
+        return parentId;
     }
 
     /**
      * 设置父Id
      *
-     * @param parentid 父Id
+     * @param parentId 父Id
      */
-    public void setParentid(Long parentid) {
-        this.parentid = parentid;
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
     }
 
     /**

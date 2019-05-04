@@ -17,13 +17,13 @@ public class UserGroup extends AuditedEntity {
      * 父用户组Id
      */
     @Column(name = "`ParentId`")
-    private String parentid;
+    private String parentId;
 
     /**
      * 用户组名称
      */
     @Column(name = "`GroupName`")
-    private String groupname;
+    private String groupName;
 
     /**
      * 状态
@@ -54,17 +54,17 @@ public class UserGroup extends AuditedEntity {
      *
      * @return ParentId - 父用户组Id
      */
-    public String getParentid() {
-        return parentid;
+    public String getParentId() {
+        return parentId;
     }
 
     /**
      * 设置父用户组Id
      *
-     * @param parentid 父用户组Id
+     * @param parentId 父用户组Id
      */
-    public void setParentid(String parentid) {
-        this.parentid = parentid == null ? null : parentid.trim();
+    public void setParentId(String parentId) {
+        this.parentId = parentId == null ? null : parentId.trim();
     }
 
     /**
@@ -72,17 +72,17 @@ public class UserGroup extends AuditedEntity {
      *
      * @return GroupName - 用户组名称
      */
-    public String getGroupname() {
-        return groupname;
+    public String getGroupName() {
+        return groupName;
     }
 
     /**
      * 设置用户组名称
      *
-     * @param groupname 用户组名称
+     * @param groupName 用户组名称
      */
-    public void setGroupname(String groupname) {
-        this.groupname = groupname == null ? null : groupname.trim();
+    public void setGroupName(String groupName) {
+        this.groupName = groupName == null ? null : groupName.trim();
     }
 
     /**

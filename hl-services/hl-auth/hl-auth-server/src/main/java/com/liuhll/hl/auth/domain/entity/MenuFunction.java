@@ -14,10 +14,10 @@ public class MenuFunction extends AuditedEntity {
     private Long id;
 
     @Column(name = "`MenuId`")
-    private Long menuid;
+    private Long menuId;
 
     @Column(name = "`FunctionId`")
-    private Long functionid;
+    private Long functionId;
 
     /**
      * 获取主键
@@ -40,28 +40,28 @@ public class MenuFunction extends AuditedEntity {
     /**
      * @return MenuId
      */
-    public Long getMenuid() {
-        return menuid;
+    public Long getMenuId() {
+        return menuId;
     }
 
     /**
-     * @param menuid
+     * @param menuId
      */
-    public void setMenuid(Long menuid) {
-        this.menuid = menuid;
+    public void setMenuId(Long menuId) {
+        this.menuId = menuId;
     }
 
     /**
      * @return FunctionId
      */
-    public Long getFunctionid() {
-        return functionid;
+    public Long getFunctionId() {
+        return functionId;
     }
 
     /**
-     * @param functionid
+     * @param functionId
      */
-    public void setFunctionid(Long functionid) {
-        this.functionid = functionid;
+    public void setFunctionId(Long functionId) {
+        this.functionId = functionId;
     }
 }

@@ -2,7 +2,14 @@ package com.liuhll.hl.auth.domain.entity;
 
 import com.liuhll.hl.auth.domain.models.Gender;
 import com.liuhll.hl.auth.domain.models.PoliticalStatus;
+import com.liuhll.hl.auth.typehandler.GenderTypeHandler;
+import com.liuhll.hl.auth.typehandler.PoliticalStatusTypeHandler;
 import com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity;
+import com.liuhll.hl.common.core.domain.models.Status;
+import com.liuhll.hl.common.core.typehandler.StatusTypeHandler;
+import org.apache.ibatis.type.JdbcType;
+import tk.mybatis.mapper.annotation.ColumnType;
+
 import java.util.Date;
 import javax.persistence.*;
 
@@ -20,13 +27,13 @@ public class Employee extends FullAuditedEntity {
      * 用户名
      */
     @Column(name = "`UserName`")
-    private String username;
+    private String userName;
 
     /**
      * 中文名
      */
     @Column(name = "`ChineseName`")
-    private String chinesename;
+    private String chineseName;
 
     /**
      * 电子邮件
@@ -44,6 +51,7 @@ public class Employee extends FullAuditedEntity {
      * 性别
      */
     @Column(name = "`Gender`")
+    @ColumnType(jdbcType = JdbcType.INTEGER,typeHandler = GenderTypeHandler.class)
     private Gender gender;
 
     /**
@@ -56,7 +64,7 @@ public class Employee extends FullAuditedEntity {
      * 籍贯
      */
     @Column(name = "`NativePlace`")
-    private String nativeplace;
+    private String nativePlace;
 
     /**
      * 住址
@@ -74,13 +82,14 @@ public class Employee extends FullAuditedEntity {
      * 政治面貌
      */
     @Column(name = "`PoliticalStatus`")
-    private PoliticalStatus politicalstatus;
+    @ColumnType(jdbcType = JdbcType.INTEGER,typeHandler = PoliticalStatusTypeHandler.class)
+    private PoliticalStatus politicalStatus;
 
     /**
      * 毕业院校
      */
     @Column(name = "`GraduateInstitutions`")
-    private String graduateinstitutions;
+    private String graduateInstitutions;
 
     /**
      * 学历
@@ -110,7 +119,8 @@ public class Employee extends FullAuditedEntity {
      * 状态
      */
     @Column(name = "`Status`")
-    private Integer status;
+    @ColumnType(jdbcType = JdbcType.INTEGER,typeHandler = StatusTypeHandler.class)
+    private Status status;
 
     /**
      * 获取主键
@@ -135,17 +145,17 @@ public class Employee extends FullAuditedEntity {
      *
      * @return UserName - 用户名
      */
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     /**
      * 设置用户名
      *
-     * @param username 用户名
+     * @param userName 用户名
      */
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
     /**
@@ -153,17 +163,17 @@ public class Employee extends FullAuditedEntity {
      *
      * @return ChineseName - 中文名
      */
-    public String getChinesename() {
-        return chinesename;
+    public String getChineseName() {
+        return chineseName;
     }
 
     /**
      * 设置中文名
      *
-     * @param chinesename 中文名
+     * @param chineseName 中文名
      */
-    public void setChinesename(String chinesename) {
-        this.chinesename = chinesename == null ? null : chinesename.trim();
+    public void setChineseName(String chineseName) {
+        this.chineseName = chineseName == null ? null : chineseName.trim();
     }
 
     /**
@@ -243,17 +253,17 @@ public class Employee extends FullAuditedEntity {
      *
      * @return NativePlace - 籍贯
      */
-    public String getNativeplace() {
-        return nativeplace;
+    public String getNativePlace() {
+        return nativePlace;
     }
 
     /**
      * 设置籍贯
      *
-     * @param nativeplace 籍贯
+     * @param nativePlace 籍贯
      */
-    public void setNativeplace(String nativeplace) {
-        this.nativeplace = nativeplace == null ? null : nativeplace.trim();
+    public void setNativePlace(String nativePlace) {
+        this.nativePlace = nativePlace == null ? null : nativePlace.trim();
     }
 
     /**
@@ -297,17 +307,17 @@ public class Employee extends FullAuditedEntity {
      *
      * @return PoliticalStatus - 政治面貌
      */
-    public PoliticalStatus getPoliticalstatus() {
-        return politicalstatus;
+    public PoliticalStatus getPoliticalStatus() {
+        return politicalStatus;
     }
 
     /**
      * 设置政治面貌
      *
-     * @param politicalstatus 政治面貌
+     * @param politicalStatus 政治面貌
      */
-    public void setPoliticalstatus(PoliticalStatus politicalstatus) {
-        this.politicalstatus = politicalstatus;
+    public void setPoliticalStatus(PoliticalStatus politicalStatus) {
+        this.politicalStatus = politicalStatus;
     }
 
     /**
@@ -315,17 +325,17 @@ public class Employee extends FullAuditedEntity {
      *
      * @return GraduateInstitutions - 毕业院校
      */
-    public String getGraduateinstitutions() {
-        return graduateinstitutions;
+    public String getGraduateInstitutions() {
+        return graduateInstitutions;
     }
 
     /**
      * 设置毕业院校
      *
-     * @param graduateinstitutions 毕业院校
+     * @param graduateInstitutions 毕业院校
      */
-    public void setGraduateinstitutions(String graduateinstitutions) {
-        this.graduateinstitutions = graduateinstitutions == null ? null : graduateinstitutions.trim();
+    public void setGraduateInstitutions(String graduateInstitutions) {
+        this.graduateInstitutions = graduateInstitutions == null ? null : graduateInstitutions.trim();
     }
 
     /**
@@ -405,7 +415,7 @@ public class Employee extends FullAuditedEntity {
      *
      * @return Status - 状态
      */
-    public Integer getStatus() {
+    public Status getStatus() {
         return status;
     }
 
@@ -414,7 +424,7 @@ public class Employee extends FullAuditedEntity {
      *
      * @param status 状态
      */
-    public void setStatus(Integer status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 }

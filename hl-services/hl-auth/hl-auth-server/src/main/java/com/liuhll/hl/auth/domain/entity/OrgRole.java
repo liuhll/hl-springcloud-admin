@@ -14,10 +14,10 @@ public class OrgRole extends AuditedEntity {
     private Long id;
 
     @Column(name = "`OrgId`")
-    private Long orgid;
+    private Long orgId;
 
     @Column(name = "`RoleId`")
-    private Long roleid;
+    private Long roleId;
 
     /**
      * 获取主键
@@ -40,28 +40,28 @@ public class OrgRole extends AuditedEntity {
     /**
      * @return OrgId
      */
-    public Long getOrgid() {
-        return orgid;
+    public Long getOrgId() {
+        return orgId;
     }
 
     /**
-     * @param orgid
+     * @param orgId
      */
-    public void setOrgid(Long orgid) {
-        this.orgid = orgid;
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
     }
 
     /**
      * @return RoleId
      */
-    public Long getRoleid() {
-        return roleid;
+    public Long getRoleId() {
+        return roleId;
     }
 
     /**
-     * @param roleid
+     * @param roleId
      */
-    public void setRoleid(Long roleid) {
-        this.roleid = roleid;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 }

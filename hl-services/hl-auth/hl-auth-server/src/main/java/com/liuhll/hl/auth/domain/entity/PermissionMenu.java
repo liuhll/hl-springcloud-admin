@@ -14,10 +14,10 @@ public class PermissionMenu extends AuditedEntity {
     private Long id;
 
     @Column(name = "`PermissionId`")
-    private Long permissionid;
+    private Long permissionId;
 
     @Column(name = "`MenuId`")
-    private Long menuid;
+    private Long menuId;
 
     /**
      * 获取主键
@@ -40,28 +40,28 @@ public class PermissionMenu extends AuditedEntity {
     /**
      * @return PermissionId
      */
-    public Long getPermissionid() {
-        return permissionid;
+    public Long getPermissionId() {
+        return permissionId;
     }
 
     /**
-     * @param permissionid
+     * @param permissionId
      */
-    public void setPermissionid(Long permissionid) {
-        this.permissionid = permissionid;
+    public void setPermissionId(Long permissionId) {
+        this.permissionId = permissionId;
     }
 
     /**
      * @return MenuId
      */
-    public Long getMenuid() {
-        return menuid;
+    public Long getMenuId() {
+        return menuId;
     }
 
     /**
-     * @param menuid
+     * @param menuId
      */
-    public void setMenuid(Long menuid) {
-        this.menuid = menuid;
+    public void setMenuId(Long menuId) {
+        this.menuId = menuId;
     }
 }

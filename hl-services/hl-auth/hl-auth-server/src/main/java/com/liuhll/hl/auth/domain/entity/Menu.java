@@ -29,13 +29,13 @@ public class Menu extends FullAuditedEntity {
      * 菜单URL
      */
     @Column(name = "`UrlPath`")
-    private Integer urlpath;
+    private Integer urlPath;
 
     /**
      * 父Id
      */
     @Column(name = "`ParentId`")
-    private Long parentid;
+    private Long parentId;
 
     /**
      * 层级
@@ -59,7 +59,7 @@ public class Menu extends FullAuditedEntity {
      * 前端组件
      */
     @Column(name = "`FrontEndComponent`")
-    private String frontendcomponent;
+    private String frontEndComponent;
 
     /**
      * 排序
@@ -138,17 +138,17 @@ public class Menu extends FullAuditedEntity {
      *
      * @return UrlPath - 菜单URL
      */
-    public Integer getUrlpath() {
-        return urlpath;
+    public Integer getUrlPath() {
+        return urlPath;
     }
 
     /**
      * 设置菜单URL
      *
-     * @param urlpath 菜单URL
+     * @param urlPath 菜单URL
      */
-    public void setUrlpath(Integer urlpath) {
-        this.urlpath = urlpath;
+    public void setUrlPath(Integer urlPath) {
+        this.urlPath = urlPath;
     }
 
     /**
@@ -156,17 +156,17 @@ public class Menu extends FullAuditedEntity {
      *
      * @return ParentId - 父Id
      */
-    public Long getParentid() {
-        return parentid;
+    public Long getParentId() {
+        return parentId;
     }
 
     /**
      * 设置父Id
      *
-     * @param parentid 父Id
+     * @param parentId 父Id
      */
-    public void setParentid(Long parentid) {
-        this.parentid = parentid;
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
     }
 
     /**
@@ -228,17 +228,17 @@ public class Menu extends FullAuditedEntity {
      *
      * @return FrontEndComponent - 前端组件
      */
-    public String getFrontendcomponent() {
-        return frontendcomponent;
+    public String getFrontEndComponent() {
+        return frontEndComponent;
     }
 
     /**
      * 设置前端组件
      *
-     * @param frontendcomponent 前端组件
+     * @param frontEndComponent 前端组件
      */
-    public void setFrontendcomponent(String frontendcomponent) {
-        this.frontendcomponent = frontendcomponent == null ? null : frontendcomponent.trim();
+    public void setFrontEndComponent(String frontEndComponent) {
+        this.frontEndComponent = frontEndComponent == null ? null : frontEndComponent.trim();
     }
 
     /**

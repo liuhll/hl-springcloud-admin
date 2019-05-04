@@ -14,10 +14,10 @@ public class UsergroupRole extends AuditedEntity {
     private Long id;
 
     @Column(name = "`UserGroupId`")
-    private Long usergroupid;
+    private Long userGroupId;
 
     @Column(name = "`RoleId`")
-    private Long roleid;
+    private Long roleId;
 
     /**
      * 获取主键
@@ -40,28 +40,28 @@ public class UsergroupRole extends AuditedEntity {
     /**
      * @return UserGroupId
      */
-    public Long getUsergroupid() {
-        return usergroupid;
+    public Long getUserGroupId() {
+        return userGroupId;
     }
 
     /**
-     * @param usergroupid
+     * @param userGroupId
      */
-    public void setUsergroupid(Long usergroupid) {
-        this.usergroupid = usergroupid;
+    public void setUserGroupId(Long userGroupId) {
+        this.userGroupId = userGroupId;
     }
 
     /**
      * @return RoleId
      */
-    public Long getRoleid() {
-        return roleid;
+    public Long getRoleId() {
+        return roleId;
     }
 
     /**
-     * @param roleid
+     * @param roleId
      */
-    public void setRoleid(Long roleid) {
-        this.roleid = roleid;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 }

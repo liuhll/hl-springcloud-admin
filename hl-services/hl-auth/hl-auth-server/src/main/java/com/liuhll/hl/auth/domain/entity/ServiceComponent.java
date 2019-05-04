@@ -10,11 +10,6 @@ import javax.persistence.*;
 
 @Table(name = "`auth_service_component`")
 public class ServiceComponent extends FullAuditedEntity {
-
-    public ServiceComponent(){
-        this.status = Status.Valid;
-    }
-
     /**
      * 主键
      */
@@ -27,7 +22,7 @@ public class ServiceComponent extends FullAuditedEntity {
      * 服务id
      */
     @Column(name = "`ServiceId`")
-    private String serviceid;
+    private String serviceId;
 
     /**
      * 名称
@@ -77,17 +72,17 @@ public class ServiceComponent extends FullAuditedEntity {
      *
      * @return ServiceId - 服务id
      */
-    public String getServiceid() {
-        return serviceid;
+    public String getServiceId() {
+        return serviceId;
     }
 
     /**
      * 设置服务id
      *
-     * @param serviceid 服务id
+     * @param serviceId 服务id
      */
-    public void setServiceid(String serviceid) {
-        this.serviceid = serviceid == null ? null : serviceid.trim();
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId == null ? null : serviceId.trim();
     }
 
     /**
@@ -123,7 +118,7 @@ public class ServiceComponent extends FullAuditedEntity {
      * @param secret 服务密钥
      */
     public void setSecret(String secret) {
-        this.secret = secret;
+        this.secret = secret == null ? null : secret.trim();
     }
 
     /**

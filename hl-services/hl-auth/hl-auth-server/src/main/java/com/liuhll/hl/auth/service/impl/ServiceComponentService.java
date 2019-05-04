@@ -42,11 +42,11 @@ public class ServiceComponentService extends BaseService<ServiceComponentMapper,
 
     public int saveServiceComponent(ServiceComponent component){
         Example example = Example.builder(ServiceComponent.class)
-                .where(Sqls.custom().orEqualTo("serviceid",component.getServiceid()))
+                .where(Sqls.custom().orEqualTo("serviceid",component.getServiceId()))
                 .build();
         ServiceComponent exsitServiceComponent = mapper.selectOneByExample(example);
         if ( exsitServiceComponent != null ){
-            throw new BussinessException("已经存在ServiceId".concat(component.getServiceid()).concat("的服务组件"));
+            throw new BussinessException("已经存在ServiceId".concat(component.getServiceId()).concat("的服务组件"));
         }
         component.setSecret(passwordEncoder.encode(component.getSecret()));
         return save(component);
@@ -55,7 +55,7 @@ public class ServiceComponentService extends BaseService<ServiceComponentMapper,
     public ServiceComponent getServiceComponent(String serviceid){
         ServiceComponent query = new ServiceComponent();
 //        query.setStatus(Status.Valid);
-        query.setServiceid(serviceid);
+        query.setServiceId(serviceid);
         return mapper.selectOne(query);
     }
 

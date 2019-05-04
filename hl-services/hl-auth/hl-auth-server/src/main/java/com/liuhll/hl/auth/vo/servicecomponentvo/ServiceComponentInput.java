@@ -9,7 +9,7 @@ import javax.validation.constraints.Pattern;
 public class ServiceComponentInput {
     @NotBlank(message = "用户名不允许为空")
     @Pattern(regexp = "^([a-zA-Z0-9_-]|-){4,16}$",message = "服务组件名称不正确")
-    private String serviceid;
+    private String serviceId;
 
     @NotBlank(message = "服务名不允许为空")
     private String name;

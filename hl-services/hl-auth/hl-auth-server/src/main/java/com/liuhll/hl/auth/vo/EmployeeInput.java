@@ -15,10 +15,10 @@ public class EmployeeInput {
 
     @NotBlank(message = "用户名不允许为空")
     @Pattern(regexp = "^[a-zA-Z0-9_-]{4,16}$",message = "用户名格式不正确")
-    private String username;
+    private String userName;
 
     @NotBlank(message = "姓名不允许为空")
-    private String chinesename;
+    private String chineseName;
 
     @NotBlank(message = "电子邮件不允许为空")
     @Email(message = "电子邮件格式不正确")
@@ -33,15 +33,15 @@ public class EmployeeInput {
 
     private Date birth;
 
-    private String nativeplace;
+    private String nativePlace;
 
     private String address;
 
     private String folk;
 
-    private PoliticalStatus politicalstatus;
+    private PoliticalStatus politicalStatus;
 
-    private String graduateinstitutions;
+    private String graduateInstitutions;
 
     private String education;
 

@@ -14,10 +14,10 @@ public class PermissionFunction extends AuditedEntity {
     private Long id;
 
     @Column(name = "`PermissionId`")
-    private Long permissionid;
+    private Long permissionId;
 
     @Column(name = "`FunctionId`")
-    private Long functionid;
+    private Long functionId;
 
     /**
      * 获取主键
@@ -40,28 +40,28 @@ public class PermissionFunction extends AuditedEntity {
     /**
      * @return PermissionId
      */
-    public Long getPermissionid() {
-        return permissionid;
+    public Long getPermissionId() {
+        return permissionId;
     }
 
     /**
-     * @param permissionid
+     * @param permissionId
      */
-    public void setPermissionid(Long permissionid) {
-        this.permissionid = permissionid;
+    public void setPermissionId(Long permissionId) {
+        this.permissionId = permissionId;
     }
 
     /**
      * @return FunctionId
      */
-    public Long getFunctionid() {
-        return functionid;
+    public Long getFunctionId() {
+        return functionId;
     }
 
     /**
-     * @param functionid
+     * @param functionId
      */
-    public void setFunctionid(Long functionid) {
-        this.functionid = functionid;
+    public void setFunctionId(Long functionId) {
+        this.functionId = functionId;
     }
 }

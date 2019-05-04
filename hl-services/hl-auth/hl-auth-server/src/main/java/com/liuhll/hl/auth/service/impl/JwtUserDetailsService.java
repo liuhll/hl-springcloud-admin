@@ -33,6 +33,6 @@ public class JwtUserDetailsService implements UserDetailsService {
         Collection<Role> roles = roleService.getRolesByUserId(userInfo.getId());
         Collection<SimpleGrantedAuthority> authorities = roles.stream().map(role->new SimpleGrantedAuthority(role.getCode())).collect(Collectors.toList());
 
-        return new JwtUser(userInfo.getId().toString(),userInfo.getUsername(),userInfo.getPassword(),authorities);
+        return new JwtUser(userInfo.getId().toString(),userInfo.getUserName(),userInfo.getPassword(),authorities);
     }
 }

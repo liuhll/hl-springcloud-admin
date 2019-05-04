@@ -17,7 +17,7 @@ public class UserInfo extends FullAuditedEntity {
      * 员工Id
      */
     @Column(name = "`EmployeeId`")
-    private Long employeeid;
+    private Long employeeId;
 
     /**
      * 电子邮件
@@ -35,7 +35,7 @@ public class UserInfo extends FullAuditedEntity {
      * 用户名
      */
     @Column(name = "`UserName`")
-    private String username;
+    private String userName;
 
     /**
      * 密码
@@ -72,17 +72,17 @@ public class UserInfo extends FullAuditedEntity {
      *
      * @return EmployeeId - 员工Id
      */
-    public Long getEmployeeid() {
-        return employeeid;
+    public Long getEmployeeId() {
+        return employeeId;
     }
 
     /**
      * 设置员工Id
      *
-     * @param employeeid 员工Id
+     * @param employeeId 员工Id
      */
-    public void setEmployeeid(Long employeeid) {
-        this.employeeid = employeeid;
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
     }
 
     /**
@@ -126,17 +126,17 @@ public class UserInfo extends FullAuditedEntity {
      *
      * @return UserName - 用户名
      */
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     /**
      * 设置用户名
      *
-     * @param username 用户名
+     * @param userName 用户名
      */
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
     /**

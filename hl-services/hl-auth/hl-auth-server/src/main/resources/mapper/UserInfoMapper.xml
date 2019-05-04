@@ -6,10 +6,10 @@
       WARNING - @mbg.generated
     -->
     <id column="Id" jdbcType="BIGINT" property="id" />
-    <result column="EmployeeId" jdbcType="BIGINT" property="employeeid" />
+    <result column="EmployeeId" jdbcType="BIGINT" property="employeeId" />
     <result column="Email" jdbcType="VARCHAR" property="email" />
     <result column="Phone" jdbcType="VARCHAR" property="phone" />
-    <result column="UserName" jdbcType="VARCHAR" property="username" />
+    <result column="UserName" jdbcType="VARCHAR" property="userName" />
     <result column="Password" jdbcType="VARCHAR" property="password" />
     <result column="Status" jdbcType="INTEGER" property="status" />
   </resultMap>

@@ -14,7 +14,7 @@ public class UserInfoService extends BaseService<UserInfoMapper,UserInfo> {
     public UserInfo selectUserByAccount(String account){
         Example example = Example.builder(UserInfo.class)
                 .where(Sqls.custom()
-                        .orEqualTo("username",account)
+                        .orEqualTo("userName",account)
                         .orEqualTo("email",account)
                         .orEqualTo("phone",account))
                 .build();

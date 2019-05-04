@@ -6,8 +6,8 @@
       WARNING - @mbg.generated
     -->
     <id column="Id" jdbcType="BIGINT" property="id" />
-    <result column="ParentId" jdbcType="VARCHAR" property="parentid" />
-    <result column="GroupName" jdbcType="VARCHAR" property="groupname" />
+    <result column="ParentId" jdbcType="VARCHAR" property="parentId" />
+    <result column="GroupName" jdbcType="VARCHAR" property="groupName" />
     <result column="Status" jdbcType="INTEGER" property="status" />
   </resultMap>
 </mapper>

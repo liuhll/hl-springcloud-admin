@@ -14,10 +14,10 @@ public class PermissionFile extends AuditedEntity {
     private Long id;
 
     @Column(name = "`PermissionId`")
-    private Long permissionid;
+    private Long permissionId;
 
     @Column(name = "`FileId`")
-    private Long fileid;
+    private Long fileId;
 
     /**
      * 获取主键
@@ -40,28 +40,28 @@ public class PermissionFile extends AuditedEntity {
     /**
      * @return PermissionId
      */
-    public Long getPermissionid() {
-        return permissionid;
+    public Long getPermissionId() {
+        return permissionId;
     }
 
     /**
-     * @param permissionid
+     * @param permissionId
      */
-    public void setPermissionid(Long permissionid) {
-        this.permissionid = permissionid;
+    public void setPermissionId(Long permissionId) {
+        this.permissionId = permissionId;
     }
 
     /**
      * @return FileId
      */
-    public Long getFileid() {
-        return fileid;
+    public Long getFileId() {
+        return fileId;
     }
 
     /**
-     * @param fileid
+     * @param fileId
      */
-    public void setFileid(Long fileid) {
-        this.fileid = fileid;
+    public void setFileId(Long fileId) {
+        this.fileId = fileId;
     }
 }

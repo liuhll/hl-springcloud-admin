@@ -26,10 +26,10 @@ public class File extends FullAuditedEntity {
     private String name;
 
     @Column(name = "`FIleName`")
-    private String filename;
+    private String FIleName;
 
     @Column(name = "`FilePath`")
-    private String filepath;
+    private String filePath;
 
     /**
      * 备注
@@ -100,29 +100,29 @@ public class File extends FullAuditedEntity {
     /**
      * @return FIleName
      */
-    public String getFilename() {
-        return filename;
+    public String getFIleName() {
+        return FIleName;
     }
 
     /**
-     * @param filename
+     * @param FIleName
      */
-    public void setFilename(String filename) {
-        this.filename = filename == null ? null : filename.trim();
+    public void setFIleName(String FIleName) {
+        this.FIleName = FIleName == null ? null : FIleName.trim();
     }
 
     /**
      * @return FilePath
      */
-    public String getFilepath() {
-        return filepath;
+    public String getFilePath() {
+        return filePath;
     }
 
     /**
-     * @param filepath
+     * @param filePath
      */
-    public void setFilepath(String filepath) {
-        this.filepath = filepath == null ? null : filepath.trim();
+    public void setFilePath(String filePath) {
+        this.filePath = filePath == null ? null : filePath.trim();
     }
 
     /**

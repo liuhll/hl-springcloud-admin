@@ -8,8 +8,8 @@
     <id column="Id" jdbcType="BIGINT" property="id" />
     <result column="Code" jdbcType="VARCHAR" property="code" />
     <result column="Name" jdbcType="VARCHAR" property="name" />
-    <result column="FIleName" jdbcType="VARCHAR" property="filename" />
-    <result column="FilePath" jdbcType="VARCHAR" property="filepath" />
+    <result column="FIleName" jdbcType="VARCHAR" property="FIleName" />
+    <result column="FilePath" jdbcType="VARCHAR" property="filePath" />
     <result column="Memo" jdbcType="VARCHAR" property="memo" />
     <result column="Status" jdbcType="INTEGER" property="status" />
   </resultMap>

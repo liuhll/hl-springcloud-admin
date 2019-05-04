@@ -6,9 +6,9 @@
       WARNING - @mbg.generated
     -->
     <id column="Id" jdbcType="BIGINT" property="id" />
-    <result column="ServiceId" jdbcType="VARCHAR" property="serviceid" />
+    <result column="ServiceId" jdbcType="VARCHAR" property="serviceId" />
     <result column="Name" jdbcType="VARCHAR" property="name" />
-    <result column="Secret" jdbcType="INTEGER" property="secret" />
+    <result column="Secret" jdbcType="VARCHAR" property="secret" />
     <result column="Status" jdbcType="INTEGER" property="status" />
     <result column="Memo" jdbcType="VARCHAR" property="memo" />
   </resultMap>

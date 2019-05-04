@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class GetServiceComponentOutput {
-    private String serviceid;
+    private String serviceId;
 
     private String name ;
 

@@ -14,10 +14,10 @@ public class RolePermission extends AuditedEntity {
     private Long id;
 
     @Column(name = "`RoleId`")
-    private Long roleid;
+    private Long roleId;
 
     @Column(name = "`PerssionId`")
-    private String perssionid;
+    private String perssionId;
 
     /**
      * 获取主键
@@ -40,28 +40,28 @@ public class RolePermission extends AuditedEntity {
     /**
      * @return RoleId
      */
-    public Long getRoleid() {
-        return roleid;
+    public Long getRoleId() {
+        return roleId;
     }
 
     /**
-     * @param roleid
+     * @param roleId
      */
-    public void setRoleid(Long roleid) {
-        this.roleid = roleid;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 
     /**
      * @return PerssionId
      */
-    public String getPerssionid() {
-        return perssionid;
+    public String getPerssionId() {
+        return perssionId;
     }
 
     /**
-     * @param perssionid
+     * @param perssionId
      */
-    public void setPerssionid(String perssionid) {
-        this.perssionid = perssionid == null ? null : perssionid.trim();
+    public void setPerssionId(String perssionId) {
+        this.perssionId = perssionId == null ? null : perssionId.trim();
     }
 }

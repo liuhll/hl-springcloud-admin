@@ -8,12 +8,12 @@
     <id column="Id" jdbcType="BIGINT" property="id" />
     <result column="Code" jdbcType="VARCHAR" property="code" />
     <result column="Name" jdbcType="VARCHAR" property="name" />
-    <result column="UrlPath" jdbcType="INTEGER" property="urlpath" />
-    <result column="ParentId" jdbcType="BIGINT" property="parentid" />
+    <result column="UrlPath" jdbcType="INTEGER" property="urlPath" />
+    <result column="ParentId" jdbcType="BIGINT" property="parentId" />
     <result column="Level" jdbcType="INTEGER" property="level" />
     <result column="Mold" jdbcType="INTEGER" property="mold" />
     <result column="Icon" jdbcType="VARCHAR" property="icon" />
-    <result column="FrontEndComponent" jdbcType="VARCHAR" property="frontendcomponent" />
+    <result column="FrontEndComponent" jdbcType="VARCHAR" property="frontEndComponent" />
     <result column="Sort" jdbcType="INTEGER" property="sort" />
     <result column="Memo" jdbcType="VARCHAR" property="memo" />
     <result column="Status" jdbcType="INTEGER" property="status" />

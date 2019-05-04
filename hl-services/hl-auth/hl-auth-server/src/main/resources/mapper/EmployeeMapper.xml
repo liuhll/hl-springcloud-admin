@@ -6,17 +6,17 @@
       WARNING - @mbg.generated
     -->
     <id column="Id" jdbcType="BIGINT" property="id" />
-    <result column="UserName" jdbcType="VARCHAR" property="username" />
-    <result column="ChineseName" jdbcType="VARCHAR" property="chinesename" />
+    <result column="UserName" jdbcType="VARCHAR" property="userName" />
+    <result column="ChineseName" jdbcType="VARCHAR" property="chineseName" />
     <result column="Email" jdbcType="VARCHAR" property="email" />
     <result column="Phone" jdbcType="VARCHAR" property="phone" />
     <result column="Gender" jdbcType="INTEGER" property="gender" />
     <result column="Birth" jdbcType="DATE" property="birth" />
-    <result column="NativePlace" jdbcType="VARCHAR" property="nativeplace" />
+    <result column="NativePlace" jdbcType="VARCHAR" property="nativePlace" />
     <result column="Address" jdbcType="VARCHAR" property="address" />
     <result column="Folk" jdbcType="VARCHAR" property="folk" />
-    <result column="PoliticalStatus" jdbcType="INTEGER" property="politicalstatus" />
-    <result column="GraduateInstitutions" jdbcType="VARCHAR" property="graduateinstitutions" />
+    <result column="PoliticalStatus" jdbcType="INTEGER" property="politicalStatus" />
+    <result column="GraduateInstitutions" jdbcType="VARCHAR" property="graduateInstitutions" />
     <result column="Education" jdbcType="VARCHAR" property="education" />
     <result column="Major" jdbcType="VARCHAR" property="major" />
     <result column="Resume" jdbcType="VARCHAR" property="resume" />

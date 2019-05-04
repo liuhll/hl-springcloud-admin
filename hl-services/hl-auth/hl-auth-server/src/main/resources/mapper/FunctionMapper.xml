@@ -8,10 +8,10 @@
     <id column="Id" jdbcType="BIGINT" property="id" />
     <result column="Code" jdbcType="VARCHAR" property="code" />
     <result column="Name" jdbcType="VARCHAR" property="name" />
-    <result column="WebApi" jdbcType="INTEGER" property="webapi" />
+    <result column="WebApi" jdbcType="INTEGER" property="webApi" />
     <result column="Status" jdbcType="INTEGER" property="status" />
     <result column="Method" jdbcType="INTEGER" property="method" />
-    <result column="ParentId" jdbcType="BIGINT" property="parentid" />
+    <result column="ParentId" jdbcType="BIGINT" property="parentId" />
     <result column="Memo" jdbcType="VARCHAR" property="memo" />
   </resultMap>
 </mapper>

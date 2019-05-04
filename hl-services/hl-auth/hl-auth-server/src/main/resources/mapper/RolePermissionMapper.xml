@@ -6,7 +6,7 @@
       WARNING - @mbg.generated
     -->
     <id column="Id" jdbcType="BIGINT" property="id" />
-    <result column="RoleId" jdbcType="BIGINT" property="roleid" />
-    <result column="PerssionId" jdbcType="CHAR" property="perssionid" />
+    <result column="RoleId" jdbcType="BIGINT" property="roleId" />
+    <result column="PerssionId" jdbcType="CHAR" property="perssionId" />
   </resultMap>
 </mapper>

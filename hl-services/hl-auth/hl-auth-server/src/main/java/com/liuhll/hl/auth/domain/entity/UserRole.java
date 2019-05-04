@@ -14,10 +14,10 @@ public class UserRole extends AuditedEntity {
     private Long id;
 
     @Column(name = "`UserId`")
-    private Long userid;
+    private Long userId;
 
     @Column(name = "`RoleId`")
-    private Long roleid;
+    private Long roleId;
 
     /**
      * 获取主键
@@ -40,28 +40,28 @@ public class UserRole extends AuditedEntity {
     /**
      * @return UserId
      */
-    public Long getUserid() {
-        return userid;
+    public Long getUserId() {
+        return userId;
     }
 
     /**
-     * @param userid
+     * @param userId
      */
-    public void setUserid(Long userid) {
-        this.userid = userid;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     /**
      * @return RoleId
      */
-    public Long getRoleid() {
-        return roleid;
+    public Long getRoleId() {
+        return roleId;
     }
 
     /**
-     * @param roleid
+     * @param roleId
      */
-    public void setRoleid(Long roleid) {
-        this.roleid = roleid;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 }

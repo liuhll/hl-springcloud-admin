@@ -15,6 +15,7 @@
     <modules>
         <module>hl-basicdata-server</module>
         <module>hl-basicdata-common</module>
+        <module>hl-basicdata-client</module>
     </modules>
     <packaging>pom</packaging>
 
