@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 public class HlServiceAuthConfiguration {
 
     @Bean
-    ServiceAuthConfig getServiceAuthConfig(){
+    ServiceAuthConfig serviceAuthConfig(){
         return new ServiceAuthConfig();
     }
 

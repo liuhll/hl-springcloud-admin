@@ -313,6 +313,8 @@ create table auth_user
    Phone                varchar(22) not null comment '联系电话',
    UserName             varchar(50) not null comment '用户名',
    Password             varchar(100) not null comment '密码',
+   LoginFailCount       int not null comment '登录失败次数',
+   Locked               int not null comment '是否被锁定：0.未锁定；1.锁定',
    Status               int comment '状态',
    CreateBy             bigint comment '创建人',
    CreateTime           datetime comment '创建日期',
@@ -323,6 +325,9 @@ create table auth_user
    DeleteTime           datetime comment '删除时间',
    primary key (Id)
 );
+
+alter table auth_user comment '用户表';
+
 
 alter table auth_user comment '用户表';
 

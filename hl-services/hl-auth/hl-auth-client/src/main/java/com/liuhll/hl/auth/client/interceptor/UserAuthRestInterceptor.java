@@ -12,6 +12,7 @@ import com.liuhll.hl.common.vo.ResponseResult;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.Cookie;

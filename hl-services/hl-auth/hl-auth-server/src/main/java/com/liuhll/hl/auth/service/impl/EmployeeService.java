@@ -3,6 +3,7 @@ package com.liuhll.hl.auth.service.impl;
 import com.liuhll.hl.auth.constant.AuthServerConstant;
 import com.liuhll.hl.auth.domain.entity.Employee;
 import com.liuhll.hl.auth.domain.entity.UserInfo;
+import com.liuhll.hl.auth.domain.models.UserPwdGenerateMode;
 import com.liuhll.hl.auth.mapper.EmployeeMapper;
 import com.liuhll.hl.auth.utils.PasswordGenerator;
 import com.liuhll.hl.basicdata.client.SysConfigClient;
@@ -44,11 +45,23 @@ public class EmployeeService extends BaseService<EmployeeMapper, Employee> {
         if (userInfoService.getMapper().selectOne(userInfo) != null) {
             throw new UserFriendlyException("已经存在该员工信息,请不要重复添加");
         }
-        ResponseResult<GetSysConfigOutput> result = sysConfigClient.getSysConfigByName(AuthServerConstant.SYSCONFIG_PWD_MOD);
-        if (result.getCode() != ResultCode.Ok){
-            throw new UserFriendlyException("获取员工密码模式失败,请先初始化系统");
+        ResponseResult<GetSysConfigOutput> userPwdGenerateModeConf = sysConfigClient.getSysConfigByName(AuthServerConstant.SYSCONFIG_PWD_MOD);
+        if (userPwdGenerateModeConf.getCode() != ResultCode.Ok){
+            throw new UserFriendlyException(userPwdGenerateModeConf.getValidError().toString());
         }
-        userInfo.setPassword(passwordEncoder.encode("123qwe"));
+
+        String plainPassword = "";
+
+        if (Integer.parseInt(userPwdGenerateModeConf.getData().getConfigValue()) == UserPwdGenerateMode.Fixed.getValue()){
+            ResponseResult<GetSysConfigOutput> userfixedPwdConf = sysConfigClient.getSysConfigByName(AuthServerConstant.SYSCONFIG_FIXED_PWD);
+            if (userfixedPwdConf.getCode() != ResultCode.Ok){
+                throw new UserFriendlyException(userfixedPwdConf.getValidError().toString());
+            }
+            plainPassword = userfixedPwdConf.getData().getConfigValue();
+        }else {
+            plainPassword = passwordGenerator.generate(AuthServerConstant.SYSCONFIG_RANDOM_PWD_LENGTH);
+        }
+        userInfo.setPassword(passwordEncoder.encode(plainPassword));
         userInfo.setEmployeeId(employee.getId());
         userInfoService.save(userInfo);
     }

@@ -15,6 +15,11 @@ import javax.persistence.*;
 
 @Table(name = "`auth_employee`")
 public class Employee extends FullAuditedEntity {
+
+    public Employee(){
+        this.status = Status.Invalid;
+    }
+
     /**
      * 主键
      */

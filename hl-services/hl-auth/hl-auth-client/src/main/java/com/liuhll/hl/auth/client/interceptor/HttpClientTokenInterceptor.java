@@ -12,7 +12,6 @@ import org.springframework.util.StringUtils;
 public class HttpClientTokenInterceptor implements RequestInterceptor {
 
     @Autowired
-    @Lazy
     private ServiceAuthConfig serviceAuthConfig;
 
 

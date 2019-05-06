@@ -13,6 +13,11 @@ public class HlOnlyUserAuthConfiguration {
     }
 
     @Bean
+    ServiceAuthConfig serviceAuthConfig(){
+        return new ServiceAuthConfig();
+    }
+
+    @Bean
     @ConditionalOnBean({JwtConfig.class})
     OnlyUserHlAuthRestIntterceptor authClientUserAuthRestIntterceptor(){
         return new OnlyUserHlAuthRestIntterceptor();

@@ -5,6 +5,7 @@ import com.liuhll.hl.auth.client.feign.ServiceAuthClient;
 import com.liuhll.hl.common.exception.ClientForbiddenException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

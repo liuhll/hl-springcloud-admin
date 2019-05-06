@@ -3,7 +3,7 @@ package com.liuhll.hl.auth.client.conf;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 
-@Data
+ @Data
 public class JwtConfig {
 
     @Value("${jwt.secret}")

@@ -1,10 +1,24 @@
 package com.liuhll.hl.auth.domain.entity;
 
+import com.liuhll.hl.auth.domain.models.UserLocked;
+import com.liuhll.hl.auth.typehandler.UserLockedTypeHandler;
 import com.liuhll.hl.common.core.domain.auditing.FullAuditedEntity;
+import com.liuhll.hl.common.core.domain.models.Status;
+import com.liuhll.hl.common.core.typehandler.StatusTypeHandler;
+import org.apache.ibatis.type.JdbcType;
+import tk.mybatis.mapper.annotation.ColumnType;
+
 import javax.persistence.*;
 
 @Table(name = "`auth_user`")
 public class UserInfo extends FullAuditedEntity {
+
+    public UserInfo(){
+        this.status = Status.Invalid;
+        this.locked = UserLocked.UnLocked;
+        this.loginFailCount = 0;
+    }
+
     /**
      * 主键
      */
@@ -43,11 +57,19 @@ public class UserInfo extends FullAuditedEntity {
     @Column(name = "`Password`")
     private String password;
 
+    @Column(name = "`Locked`")
+    @ColumnType(jdbcType = JdbcType.INTEGER,typeHandler = UserLockedTypeHandler.class)
+    private UserLocked locked;
+
+    @Column(name = "`LoginFailCount`")
+    private Integer loginFailCount;
+
     /**
      * 状态
      */
     @Column(name = "`Status`")
-    private Integer status;
+    @ColumnType(jdbcType = JdbcType.INTEGER,typeHandler = StatusTypeHandler.class)
+    private Status status;
 
     /**
      * 获取主键
@@ -162,7 +184,7 @@ public class UserInfo extends FullAuditedEntity {
      *
      * @return Status - 状态
      */
-    public Integer getStatus() {
+    public Status getStatus() {
         return status;
     }
 
@@ -171,7 +193,24 @@ public class UserInfo extends FullAuditedEntity {
      *
      * @param status 状态
      */
-    public void setStatus(Integer status) {
+    public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public UserLocked getLocked() {
+        return locked;
+    }
+
+    public void setLocked(UserLocked locked) {
+        this.locked = locked;
+    }
+
+
+    public Integer getLoginFailCount() {
+        return loginFailCount;
+    }
+
+    public void setLoginFailCount(Integer loginFailCount) {
+        this.loginFailCount = loginFailCount;
     }
 }
