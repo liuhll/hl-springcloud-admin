@@ -5,6 +5,7 @@ import com.liuhll.hl.common.auth.jwt.IJwtTokenProvider;
 import com.liuhll.hl.common.auth.jwt.JwtUserClaims;
 import com.liuhll.hl.auth.jwt.JwtUser;
 import com.liuhll.hl.auth.service.IAuthService;
+import com.liuhll.hl.common.exception.HlException;
 import com.liuhll.hl.common.exception.UnAuthenticationException;
 import lombok.SneakyThrows;
 import org.springframework.beans.BeanUtils;
@@ -49,7 +50,9 @@ public class AuthService implements IAuthService {
         }catch (BadCredentialsException ex){
             throw new UnAuthenticationException("密码错误,请检查密码");
         }catch (AuthenticationException ex){
-            throw new UnAuthenticationException(ex.getMessage());
+            throw ex.getCause();
+        }catch (HlException ex){
+            throw ex;
         }
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
