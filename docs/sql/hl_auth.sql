@@ -7,8 +7,6 @@ CREATE DATABASE hl_auth DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
 USE hl_auth;
 
 
-drop table if exists auth_employee;
-
 drop table if exists auth_file;
 
 drop table if exists auth_function;
@@ -31,7 +29,7 @@ drop table if exists auth_role;
 
 drop table if exists auth_role_permission;
 
-drop table if exists auth_user;
+drop table if exists auth_userinfo;
 
 drop table if exists auth_user_group;
 
@@ -44,12 +42,13 @@ drop table if exists auth_usergroup_role;
 drop table if exists auth_service_component;
 
 /*==============================================================*/
-/* Table: auth_employee                                         */
+/* Table: auth_userinfo                                         */
 /*==============================================================*/
-create table auth_employee
+create table auth_userinfo
 (
    Id                   bigint not null auto_increment comment '主键',
    UserName             varchar(50) not null comment '用户名',
+   Password             varchar(100) not null comment '密码',
    ChineseName          varchar(50) not null comment '中文名',
    Email                varchar(50) not null comment '电子邮件',
    Phone                varchar(22) not null comment '联系电话',
@@ -64,7 +63,9 @@ create table auth_employee
    Major                varchar(50) comment '专业',
    Resume               varchar(500) comment '简历',
    Memo                 varchar(500) comment '备注',
-   Status               int comment '状态',
+   LastLoginTime        datetime comment '最后登录时间',
+   LoginFailedCount     int not null comment '登录失败次数',
+   Status               int not null comment '状态',
    CreateBy             bigint comment '创建人',
    CreateTime           datetime comment '创建日期',
    UpdateBy             bigint comment '修改人',
@@ -75,7 +76,7 @@ create table auth_employee
    primary key (Id)
 );
 
-alter table auth_employee comment '职员表';
+alter table auth_userinfo comment '用户表';
 
 /*==============================================================*/
 /* Table: auth_file                                             */
@@ -301,32 +302,6 @@ create table auth_role_permission
 );
 
 alter table auth_role_permission comment '角色权限表';
-
-/*==============================================================*/
-/* Table: auth_user                                             */
-/*==============================================================*/
-create table auth_user
-(
-   Id                   bigint not null auto_increment comment '主键',
-   EmployeeId           bigint not null comment '员工Id',
-   Email                varchar(50) not null comment '电子邮件',
-   Phone                varchar(22) not null comment '联系电话',
-   UserName             varchar(50) not null comment '用户名',
-   Password             varchar(100) not null comment '密码',
-   LoginFailCount       int not null comment '登录失败次数',
-   Locked               int not null comment '是否被锁定：0.未锁定；1.锁定',
-   Status               int comment '状态',
-   CreateBy             bigint comment '创建人',
-   CreateTime           datetime comment '创建日期',
-   UpdateBy             bigint comment '修改人',
-   UpdateTime           datetime comment '修改日期',
-   IsDeleted            int comment '软删除标识',
-   DeleteBy             bigint comment '删除用户',
-   DeleteTime           datetime comment '删除时间',
-   primary key (Id)
-);
-
-alter table auth_user comment '用户表';
 
 
 /*==============================================================*/
